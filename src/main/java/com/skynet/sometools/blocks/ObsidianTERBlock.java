@@ -1,6 +1,6 @@
 package com.skynet.sometools.blocks;
 
-import com.skynet.sometools.entity.blockentity.ObsidianTERTileEntity;
+import com.skynet.sometools.blocks.blockentity.ObsidianTERTileEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockReader;

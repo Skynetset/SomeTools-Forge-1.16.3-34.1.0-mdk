@@ -1,9 +1,7 @@
 package com.skynet.sometools;
 
 import com.skynet.sometools.common.Utils;
-import com.skynet.sometools.register.BlockRegister;
-import com.skynet.sometools.register.ItemRegister;
-import com.skynet.sometools.register.TileEntityTypeRegister;
+import com.skynet.sometools.register.SomeRegister;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
@@ -17,8 +15,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod(Utils.MOD_ID)
 public class SomeTools {
     public SomeTools() {
-        ItemRegister.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        BlockRegister.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        TileEntityTypeRegister.TILE_ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
+        SomeRegister.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        SomeRegister.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        SomeRegister.TILE_ENTITIES.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 }

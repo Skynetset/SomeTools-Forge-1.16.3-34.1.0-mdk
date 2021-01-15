@@ -1,6 +1,6 @@
-package com.skynet.sometools;
+package com.skynet.sometools.item.tab;
 
-import com.skynet.sometools.tab.*;
+import com.skynet.sometools.item.tab.*;
 import net.minecraft.item.ItemGroup;
 
 /**

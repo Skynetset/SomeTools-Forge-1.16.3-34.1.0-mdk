@@ -1,6 +1,7 @@
-package com.skynet.sometools.register;
+package com.skynet.sometools.handler.clienteventhandler;
 
-import com.skynet.sometools.tileentityrenderer.ObsidianTER;
+import com.skynet.sometools.blocks.blockentity.TileEntityTypeRegister;
+import com.skynet.sometools.render.tileentityrenderer.ObsidianTER;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
@@ -16,7 +17,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
  */
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-public class ClientEventHandler {
+public class ObsidianTerTileEntity {
     @SubscribeEvent
     public static void onClientEvent(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {

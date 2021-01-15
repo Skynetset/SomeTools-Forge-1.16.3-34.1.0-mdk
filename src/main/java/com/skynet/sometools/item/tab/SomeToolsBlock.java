@@ -1,6 +1,6 @@
-package com.skynet.sometools.tab;
+package com.skynet.sometools.item.tab;
 
-import com.skynet.sometools.register.BlockRegister;
+import com.skynet.sometools.blocks.blockentity.BlockRegister;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 

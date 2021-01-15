@@ -1,20 +1,21 @@
-package com.skynet.sometools.register;
+package com.skynet.sometools.item;
 
-import com.skynet.sometools.SomeToolsGroup;
-import com.skynet.sometools.common.Utils;
+import com.skynet.sometools.blocks.blockentity.BlockRegister;
 import com.skynet.sometools.item.armors.SomeToolsArmorMaterial;
 import com.skynet.sometools.item.food.ObsidianApple;
 import com.skynet.sometools.item.ingot.MagicIngot;
 import com.skynet.sometools.item.ingot.ObsidianIngot;
 import com.skynet.sometools.item.sword.ObsidianSword;
+import com.skynet.sometools.item.tab.SomeToolsGroup;
+import com.skynet.sometools.item.tools.ObsidianWrench;
 import com.skynet.sometools.item.tools.pickaxe.ObsidianPickaxe;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
+
+import static com.skynet.sometools.register.SomeRegister.ITEMS;
 
 /**
  * TODO itemRegister
@@ -25,8 +26,6 @@ import net.minecraftforge.registries.ForgeRegistries;
  */
 
 public class ItemRegister {
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Utils.MOD_ID);
-
     public static final RegistryObject<Item> OBSIDIAN_BLOCK = ITEMS.register("obsidian_block",
             () -> new BlockItem(BlockRegister.OBSIDIAN_BLOCK.get(), new Item.Properties().group(SomeToolsGroup.blockGroup)));
     public static final RegistryObject<Item> OBSIDIAN_RUBIK_CUBE = ITEMS.register("obsidian_rubik_cube",
@@ -56,6 +55,9 @@ public class ItemRegister {
     public static final RegistryObject<Item> OBSIDIAN_SWORD = ITEMS.register("obsidian_sword", ObsidianSword::new);
     public static final RegistryObject<Item> OBSIDIAN_PICKAXE = ITEMS.register("obsidian_pickaxe",
             ObsidianPickaxe::new);
+    public static final RegistryObject<Item> Obsidian_Wrench = ITEMS.register("obsidian_wrench",
+            ObsidianWrench::new);
+
     public static final RegistryObject<Item> OBSIDIAN_HELMET = ITEMS.register("obsidian_helmet",
             () -> new ArmorItem(SomeToolsArmorMaterial.OBSIDIAN, EquipmentSlotType.HEAD,
                     (new Item.Properties()).group(SomeToolsGroup.armerGroup)));

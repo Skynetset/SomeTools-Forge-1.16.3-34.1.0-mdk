@@ -1,6 +1,6 @@
 package com.skynet.sometools.blocks;
 
-import com.skynet.sometools.entity.blockentity.ObsidianHelloTileEntity;
+import com.skynet.sometools.blocks.blockentity.ObsidianHelloTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;

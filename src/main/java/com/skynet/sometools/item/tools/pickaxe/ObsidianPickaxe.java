@@ -1,8 +1,7 @@
 package com.skynet.sometools.item.tools.pickaxe;
 
-import com.skynet.sometools.SomeToolsGroup;
-import com.skynet.sometools.SomeToolsItemTier;
-import net.minecraft.item.IItemTier;
+import com.skynet.sometools.item.tab.SomeToolsGroup;
+import com.skynet.sometools.item.SomeToolsItemTier;
 import net.minecraft.item.Item;
 import net.minecraft.item.PickaxeItem;
 

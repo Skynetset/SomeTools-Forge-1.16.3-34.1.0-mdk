@@ -1,6 +1,7 @@
-package com.skynet.sometools.register;
+package com.skynet.sometools.handler.modbuseventhandler;
 
 import com.skynet.sometools.ibakedmodel.ObsidianHiddenBlockModel;
+import com.skynet.sometools.blocks.blockentity.BlockRegister;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.renderer.BlockModelShapes;
 import net.minecraft.client.renderer.model.IBakedModel;
@@ -19,7 +20,7 @@ import net.minecraftforge.fml.common.Mod;
  */
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD,value = Dist.CLIENT)
-public class ModBusEventHandler {
+public class ObsidianHiddenBlock {
     @SubscribeEvent
     public static void onModelBaked(ModelBakeEvent event) {
         for (BlockState blockstate : BlockRegister.OBSIDIAN_HIDDEN_BLOCK.get().getStateContainer().getValidStates()) {

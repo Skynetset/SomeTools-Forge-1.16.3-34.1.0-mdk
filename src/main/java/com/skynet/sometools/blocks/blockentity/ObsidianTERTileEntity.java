@@ -1,6 +1,5 @@
-package com.skynet.sometools.entity.blockentity;
+package com.skynet.sometools.blocks.blockentity;
 
-import com.skynet.sometools.register.TileEntityTypeRegister;
 import net.minecraft.tileentity.TileEntity;
 
 /**

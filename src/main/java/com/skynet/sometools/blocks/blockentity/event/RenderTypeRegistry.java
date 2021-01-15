@@ -1,5 +1,6 @@
-package com.skynet.sometools.register;
+package com.skynet.sometools.blocks.blockentity.event;
 
+import com.skynet.sometools.blocks.blockentity.BlockRegister;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.api.distmarker.Dist;

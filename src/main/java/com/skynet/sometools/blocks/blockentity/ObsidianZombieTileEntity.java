@@ -1,6 +1,5 @@
-package com.skynet.sometools.entity.blockentity;
+package com.skynet.sometools.blocks.blockentity;
 
-import com.skynet.sometools.register.TileEntityTypeRegister;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
@@ -24,7 +23,7 @@ import javax.annotation.Nullable;
 
 public class ObsidianZombieTileEntity extends TileEntity implements ITickableTileEntity {
     private boolean flag = false;
-    private int MAX_TIME = 5 * 20;
+    private final int MAX_TIME = 5 * 20;
     private int timer = 0;
 
 

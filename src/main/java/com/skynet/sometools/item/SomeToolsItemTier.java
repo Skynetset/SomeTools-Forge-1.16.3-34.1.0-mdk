@@ -1,6 +1,6 @@
-package com.skynet.sometools;
+package com.skynet.sometools.item;
 
-import com.skynet.sometools.register.ItemRegister;
+import com.skynet.sometools.item.ItemRegister;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyValue;

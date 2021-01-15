@@ -1,6 +1,6 @@
 package com.skynet.sometools.item.food;
 
-import com.skynet.sometools.SomeToolsGroup;
+import com.skynet.sometools.item.tab.SomeToolsGroup;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.potion.EffectInstance;

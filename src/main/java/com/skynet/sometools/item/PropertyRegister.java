@@ -1,6 +1,7 @@
-package com.skynet.sometools.register;
+package com.skynet.sometools.item;
 
 import com.skynet.sometools.common.Utils;
+import com.skynet.sometools.item.ItemRegister;
 import net.minecraft.item.ItemModelsProperties;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;

@@ -1,9 +1,7 @@
 package com.skynet.sometools.item.ingot;
 
-import com.skynet.sometools.SomeToolsGroup;
+import com.skynet.sometools.item.tab.SomeToolsGroup;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Items;
 
 /**
  * TODO ObsidianIngot

@@ -15,7 +15,7 @@ import net.minecraft.state.StateContainer;
  */
 
 public class ObsidianRubikCube extends Block {
-    private static IntegerProperty STATE = IntegerProperty.create("face", 0, 1);
+    private static final IntegerProperty STATE = IntegerProperty.create("face", 0, 1);
 
     public ObsidianRubikCube() {
         super(Properties.create(Material.ROCK).hardnessAndResistance(5));

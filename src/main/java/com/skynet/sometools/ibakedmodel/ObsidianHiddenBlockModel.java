@@ -1,6 +1,6 @@
 package com.skynet.sometools.ibakedmodel;
 
-import com.skynet.sometools.register.BlockRegister;
+import com.skynet.sometools.blocks.blockentity.BlockRegister;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
