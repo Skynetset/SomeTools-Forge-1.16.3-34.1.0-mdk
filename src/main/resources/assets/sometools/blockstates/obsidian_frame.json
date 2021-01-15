@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "sometools:block/obsidian_frame" }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "sometools:block/obsidian_block_texture"
+  }
+}

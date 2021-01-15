@@ -1,0 +1,5 @@
+{
+  "loader": "forge:obj",
+  "model": "sometools:models/block/obsidian_obj.obj",
+  "flip-v": true
+}

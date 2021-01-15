@@ -1,0 +1,25 @@
+{
+  "message.neutrino.counter": "计数：%d",
+  "message.hello_block.hello": "你好",
+
+  "item.sometools.obsidian_ingot":"Obsidian Ingot",
+  "block.sometools.obsidian_block":"Obsidian Block",
+  "item.sometools.magic_ingot":"Magic Ingot",
+
+  "item.sometools.obsidian_apple":"Obsidian Apple",
+
+  "item.sometools.obsidian_sword":"Obsidian Sword",
+
+  "item.sometools.obsidian_pickaxe":"Obsidian Pickaxe",
+
+  "item.sometools.obsidian_helmet":"Obsidian Helmet",
+  "item.sometools.obsidian_chestplate":"Obsidian Chestplate",
+  "item.sometools.obsidian_leggings":"Obsidian Leggings",
+  "item.sometools.obsidian_boots":"Obsidian Boots",
+
+  "itemGroup.Some Tools Ingot":"Ingot",
+  "itemGroup.Some Tools Block":"Block",
+  "itemGroup.Some Tools Food":"Food",
+  "itemGroup.Some Tools Tools":"Tools",
+  "itemGroup.Some Tools Armer":"Armer"
+}

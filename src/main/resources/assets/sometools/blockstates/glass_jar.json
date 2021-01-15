@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "sometools:block/glass_jar"
+    }
+  }
+}
