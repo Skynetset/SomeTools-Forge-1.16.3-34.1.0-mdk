@@ -14,7 +14,7 @@ import net.minecraft.item.ItemStack;
 
 public class SomeToolsArmer extends ItemGroup {
     public SomeToolsArmer() {
-        super("Some Tools Armer");
+        super("armer");
     }
 
     @Override

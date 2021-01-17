@@ -1,6 +1,10 @@
 {
   "message.neutrino.counter": "计数：%d",
+  "message.sometools.config": "配置文件值：%d",
   "message.hello_block.hello": "你好",
+  "message.obsidian_speed_show": "level=%d",
+  "message.my_chest_with_container.open": "箱子打开了",
+  "message.my_chest_with_container.close": "箱子关闭了",
 
   "item.sometools.obsidian_ingot":"Obsidian Ingot",
   "block.sometools.obsidian_block":"Obsidian Block",
@@ -17,9 +21,9 @@
   "item.sometools.obsidian_leggings":"Obsidian Leggings",
   "item.sometools.obsidian_boots":"Obsidian Boots",
 
-  "itemGroup.Some Tools Ingot":"Ingot",
-  "itemGroup.Some Tools Block":"Block",
-  "itemGroup.Some Tools Food":"Food",
-  "itemGroup.Some Tools Tools":"Tools",
-  "itemGroup.Some Tools Armer":"Armer"
+  "itemGroup.ingot":"Ingot",
+  "itemGroup.block":"Block",
+  "itemGroup.food":"Food",
+  "itemGroup.tools":"Tools",
+  "itemGroup.armer":"Armer"
 }

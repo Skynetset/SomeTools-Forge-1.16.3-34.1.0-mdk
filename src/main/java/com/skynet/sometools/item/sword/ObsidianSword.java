@@ -14,6 +14,6 @@ import net.minecraft.item.SwordItem;
 
 public class ObsidianSword extends SwordItem {
     public ObsidianSword() {
-        super(SomeToolsItemTier.OBSIDIAN, 30, -0.5F, new Properties().group(SomeToolsGroup.toolsGroup));
+        super(SomeToolsItemTier.OBSIDIAN, 3000000, -0.5F, new Properties().group(SomeToolsGroup.TOOLS_GROUP));
     }
 }

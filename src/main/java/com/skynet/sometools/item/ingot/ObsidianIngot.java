@@ -13,6 +13,6 @@ import net.minecraft.item.Item;
 
 public class ObsidianIngot extends Item {
     public ObsidianIngot() {
-        super(new Properties().group(SomeToolsGroup.ingotGroup));
+        super(new Properties().group(SomeToolsGroup.INGOT_GROUP));
     }
 }

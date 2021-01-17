@@ -14,7 +14,7 @@ import net.minecraft.item.Item;
 
 public class ObsidianWrench extends Item {
     public ObsidianWrench() {
-        super(new Properties().group(SomeToolsGroup.toolsGroup).setISTER(() -> ObsidianWrenchItemStackTileEntityRenderer::new));
+        super(new Properties().group(SomeToolsGroup.TOOLS_GROUP).setISTER(() -> ObsidianWrenchItemStackTileEntityRenderer::new));
     }
 }
 

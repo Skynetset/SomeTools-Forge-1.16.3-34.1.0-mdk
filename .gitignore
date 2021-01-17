@@ -26,3 +26,4 @@ forge*changelog.txt
 /logs/
 /.gitattributes
 /changelog.txt
+/src/generated/*

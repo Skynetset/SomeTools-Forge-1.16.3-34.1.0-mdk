@@ -15,6 +15,6 @@ import net.minecraft.item.PickaxeItem;
 
 public class ObsidianPickaxe extends PickaxeItem {
     public ObsidianPickaxe() {
-        super(SomeToolsItemTier.OBSIDIAN, 2, -0.5F, (new Item.Properties()).group(SomeToolsGroup.toolsGroup));
+        super(SomeToolsItemTier.OBSIDIAN, 2, -0.5F, (new Item.Properties()).group(SomeToolsGroup.TOOLS_GROUP));
     }
 }

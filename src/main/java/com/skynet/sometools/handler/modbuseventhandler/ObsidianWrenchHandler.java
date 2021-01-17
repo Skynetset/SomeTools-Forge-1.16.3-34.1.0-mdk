@@ -24,11 +24,11 @@ import java.util.Map;
  */
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-public class ObsidianWrench {
+public class ObsidianWrenchHandler {
     @SubscribeEvent
     public static void onModelBaked(ModelBakeEvent event) {
         Map<ResourceLocation, IBakedModel> modelRegistry = event.getModelRegistry();
-        ModelResourceLocation location = new ModelResourceLocation(ItemRegister.Obsidian_Wrench.get().getRegistryName()
+        ModelResourceLocation location = new ModelResourceLocation(ItemRegister.OBSIDIAN_WRENCH.get().getRegistryName()
                 , "inventory");
         IBakedModel existingModel = modelRegistry.get(location);
         if (existingModel == null) {

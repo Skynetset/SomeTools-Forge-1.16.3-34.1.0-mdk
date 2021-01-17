@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "sometools:block/my_chest_with_container" }
+  }
+}

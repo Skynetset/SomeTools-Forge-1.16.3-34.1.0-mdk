@@ -17,7 +17,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
  */
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-public class ObsidianTerTileEntity {
+public class ObsidianTerTileEntityHandler {
     @SubscribeEvent
     public static void onClientEvent(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {

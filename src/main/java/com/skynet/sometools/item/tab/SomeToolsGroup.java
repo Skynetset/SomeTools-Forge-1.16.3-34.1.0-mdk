@@ -12,9 +12,10 @@ import net.minecraft.item.ItemGroup;
  */
 
 public class SomeToolsGroup {
-    public static final ItemGroup ingotGroup = new SomeToolsIngot();
-    public static final ItemGroup foodGroup = new SomeToolsFood();
-    public static final ItemGroup toolsGroup = new SomeToolsTools();
-    public static final ItemGroup armerGroup = new SomeToolsArmer();
-    public static final ItemGroup blockGroup = new SomeToolsBlock();
+    public static final ItemGroup INGOT_GROUP = new SomeToolsIngot();
+    public static final ItemGroup FOOD_GROUP = new SomeToolsFood();
+    public static final ItemGroup TOOLS_GROUP = new SomeToolsTools();
+    public static final ItemGroup ARMER_GROUP = new SomeToolsArmer();
+    public static final ItemGroup BLOCK_GROUP = new SomeToolsBlock();
+    public static final ItemGroup ITEMS_GROUP = new SomeToolsItems();
 }

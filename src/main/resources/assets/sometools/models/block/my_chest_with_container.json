@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "sometools:block/my_chest_with_container"
+  }
+}

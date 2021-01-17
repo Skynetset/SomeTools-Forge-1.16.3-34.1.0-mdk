@@ -14,7 +14,7 @@ import net.minecraft.item.ItemStack;
 
 public class SomeToolsIngot extends ItemGroup {
     public SomeToolsIngot() {
-        super("Some Tools Ingot");
+        super("ingot");
     }
 
     @Override

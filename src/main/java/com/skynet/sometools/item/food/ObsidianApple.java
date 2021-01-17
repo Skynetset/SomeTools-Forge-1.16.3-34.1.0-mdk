@@ -22,6 +22,6 @@ public class ObsidianApple extends Item {
             .effect(()->new EffectInstance(Effects.NIGHT_VISION,30*20,999),1)
             .build();
     public ObsidianApple() {
-        super(new Properties().food(FOOD).group(SomeToolsGroup.foodGroup));
+        super(new Properties().food(FOOD).group(SomeToolsGroup.FOOD_GROUP));
     }
 }

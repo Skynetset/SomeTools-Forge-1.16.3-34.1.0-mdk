@@ -1,6 +1,6 @@
 package com.skynet.sometools.item.tab;
 
-import com.skynet.sometools.blocks.blockentity.BlockRegister;
+import com.skynet.sometools.blocks.BlockRegister;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
@@ -14,7 +14,7 @@ import net.minecraft.item.ItemStack;
 
 public class SomeToolsBlock extends ItemGroup {
     public SomeToolsBlock() {
-        super("Some Tools Block");
+        super("block");
     }
 
     @Override

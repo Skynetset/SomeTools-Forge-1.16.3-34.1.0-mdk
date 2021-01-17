@@ -14,7 +14,7 @@ import net.minecraft.item.Item;
 
 public class MagicIngot extends Item {
     public MagicIngot() {
-        super(new Properties().group(SomeToolsGroup.ingotGroup));
+        super(new Properties().group(SomeToolsGroup.INGOT_GROUP));
     }
 
 }

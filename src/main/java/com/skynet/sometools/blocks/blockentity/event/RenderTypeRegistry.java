@@ -1,6 +1,7 @@
 package com.skynet.sometools.blocks.blockentity.event;
 
-import com.skynet.sometools.blocks.blockentity.BlockRegister;
+import com.skynet.sometools.blocks.BlockRegister;
+import com.skynet.sometools.fluid.FluidRegister;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.api.distmarker.Dist;
@@ -22,6 +23,9 @@ public class RenderTypeRegistry {
     public static void onRenderTypeSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             RenderTypeLookup.setRenderLayer(BlockRegister.GLASS_JAR.get(), RenderType.getTranslucent());
+
+            RenderTypeLookup.setRenderLayer(FluidRegister.obsidianFluid.get(), RenderType.getTranslucent());
+            RenderTypeLookup.setRenderLayer(FluidRegister.obsidianFluidFlowing.get(), RenderType.getTranslucent());
         });
     }
 }
