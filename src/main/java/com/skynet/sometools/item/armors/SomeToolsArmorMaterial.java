@@ -1,6 +1,6 @@
 package com.skynet.sometools.item.armors;
 
-import com.skynet.sometools.item.ItemRegister;
+import com.skynet.sometools.item.tab.ItemRegister;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.crafting.Ingredient;

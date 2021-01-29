@@ -1,7 +1,7 @@
 package com.skynet.sometools.client.hud.event;
 
 import com.skynet.sometools.client.hud.ObsidianGUI;
-import com.skynet.sometools.item.ItemRegister;
+import com.skynet.sometools.item.tab.ItemRegister;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.Hand;
 import net.minecraftforge.api.distmarker.Dist;

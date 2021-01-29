@@ -1,7 +1,7 @@
 package com.skynet.sometools.handler.modbuseventhandler;
 
+import com.skynet.sometools.item.blocks.BlockRegister;
 import com.skynet.sometools.ibakedmodel.ObsidianHiddenBlockModel;
-import com.skynet.sometools.blocks.BlockRegister;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.renderer.BlockModelShapes;
 import net.minecraft.client.renderer.model.IBakedModel;

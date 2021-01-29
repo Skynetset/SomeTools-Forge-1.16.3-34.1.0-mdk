@@ -1,6 +1,6 @@
 package com.skynet.sometools.handler.clienteventhandler;
 
-import com.skynet.sometools.blocks.blockentity.TileEntityTypeRegister;
+import com.skynet.sometools.item.blocks.blockentity.TileEntityTypeRegister;
 import com.skynet.sometools.render.tileentityrenderer.ObsidianTER;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

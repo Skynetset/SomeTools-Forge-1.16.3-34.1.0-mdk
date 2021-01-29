@@ -1,7 +1,7 @@
 package com.skynet.sometools.handler.modbuseventhandler;
 
 import com.skynet.sometools.ibakedmodel.ObsidianWrenchBakedModel;
-import com.skynet.sometools.item.ItemRegister;
+import com.skynet.sometools.item.tab.ItemRegister;
 import net.minecraft.client.renderer.model.IBakedModel;
 import net.minecraft.client.renderer.model.ModelResourceLocation;
 import net.minecraft.util.ResourceLocation;

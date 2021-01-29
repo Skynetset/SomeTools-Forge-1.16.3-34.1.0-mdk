@@ -58,7 +58,7 @@ public class ObsidianFirstGui extends Screen {
         this.minecraft.getTextureManager().bindTexture(OBSIDIAN_FIRST_GUI_TEXTURE);
         int textureWidth = 208;
         int textureHeight = 156;
-        this.blit(matrixStack, this.width / 2 - 150, 10, 0, 0, 300, 200, textureWidth, textureHeight);
+        blit(matrixStack, this.width / 2 - 150, 10, 0, 0, 300, 200, textureWidth, textureHeight);
         drawCenteredString(matrixStack, this.font, content, this.width / 2 - 10, 30, 0xeb0505);
         this.textFieldWidget.render(matrixStack, mouseX, mouseY, partialTicks);
         this.button.render(matrixStack, mouseX, mouseY, partialTicks);

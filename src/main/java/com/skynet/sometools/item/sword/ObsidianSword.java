@@ -1,7 +1,7 @@
 package com.skynet.sometools.item.sword;
 
 import com.skynet.sometools.item.tab.SomeToolsGroup;
-import com.skynet.sometools.item.SomeToolsItemTier;
+import com.skynet.sometools.item.tools.SomeToolsItemTier;
 import net.minecraft.item.SwordItem;
 
 /**

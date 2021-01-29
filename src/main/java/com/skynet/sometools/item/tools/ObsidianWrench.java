@@ -1,7 +1,7 @@
 package com.skynet.sometools.item.tools;
 
 import com.skynet.sometools.item.tab.SomeToolsGroup;
-import com.skynet.sometools.render.itemstacktileentityrenderer.ObsidianWrenchItemStackTileEntityRenderer;
+import com.skynet.sometools.item.itemstacktileentityrenderer.ObsidianWrenchItemStackTileEntityRenderer;
 import net.minecraft.item.Item;
 
 /**

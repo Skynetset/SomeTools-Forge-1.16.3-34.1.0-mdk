@@ -22,7 +22,7 @@ import net.minecraft.util.math.vector.Vector3f;
  */
 
 public class FlyingSwordRender extends EntityRenderer<FlyingSwordEntity> {
-    private EntityModel<FlyingSwordEntity> flyingSwordModel;
+    private final EntityModel<FlyingSwordEntity> flyingSwordModel;
 
     public FlyingSwordRender(EntityRendererManager renderManager) {
         super(renderManager);

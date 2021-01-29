@@ -21,7 +21,7 @@ import org.apache.logging.log4j.Logger;
  */
 
 public class FlyingSwordEntity extends Entity {
-    private Logger logger = LogManager.getLogger();
+    private final Logger logger = LogManager.getLogger();
     /**
      * 数据同步
      * 所有同步的数据，都得先声明好，

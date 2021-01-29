@@ -1,19 +1,9 @@
 package com.skynet.sometools.entity.event.attributessetevent;
 
-import com.skynet.sometools.common.Utils;
 import com.skynet.sometools.entity.EntityTypeRegister;
-import com.skynet.sometools.entity.capability.ISpeedUpCapability;
-import com.skynet.sometools.entity.capability.SomeToolsCapability;
-import com.skynet.sometools.entity.capability.provider.SpeedUpCapabilityProvider;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.event.AttachCapabilitiesEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;

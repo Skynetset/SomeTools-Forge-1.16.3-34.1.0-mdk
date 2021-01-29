@@ -1,0 +1,12 @@
+{
+  "mea": {
+    "subtitle": "mea",
+    "replace": "true",
+    "sounds": [
+      {
+        "name": "sometools:mea",
+        "steam": true
+      }
+    ]
+  }
+}

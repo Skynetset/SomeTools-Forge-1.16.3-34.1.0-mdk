@@ -1,7 +1,8 @@
 package com.skynet.sometools.item.tab;
 
-import com.skynet.sometools.item.tab.*;
+import com.skynet.sometools.item.blocks.BlockRegister;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 
 /**
  * TODO groups
@@ -12,10 +13,40 @@ import net.minecraft.item.ItemGroup;
  */
 
 public class SomeToolsGroup {
-    public static final ItemGroup INGOT_GROUP = new SomeToolsIngot();
-    public static final ItemGroup FOOD_GROUP = new SomeToolsFood();
-    public static final ItemGroup TOOLS_GROUP = new SomeToolsTools();
-    public static final ItemGroup ARMER_GROUP = new SomeToolsArmer();
-    public static final ItemGroup BLOCK_GROUP = new SomeToolsBlock();
-    public static final ItemGroup ITEMS_GROUP = new SomeToolsItems();
+    public static final ItemGroup INGOT_GROUP = new ItemGroup("ingot") {
+        @Override
+        public ItemStack createIcon() {
+            return new ItemStack(ItemRegister.OBSIDIAN_INGOT.get());
+        }
+    };
+    public static final ItemGroup FOOD_GROUP = new ItemGroup("food") {
+        @Override
+        public ItemStack createIcon() {
+            return new ItemStack(ItemRegister.OBSIDIAN_APPLE.get());
+        }
+    };
+    public static final ItemGroup TOOLS_GROUP = new ItemGroup("tools") {
+        @Override
+        public ItemStack createIcon() {
+            return new ItemStack(ItemRegister.OBSIDIAN_SWORD.get());
+        }
+    };
+    public static final ItemGroup ARMER_GROUP = new ItemGroup("armer") {
+        @Override
+        public ItemStack createIcon() {
+            return new ItemStack(ItemRegister.OBSIDIAN_CHEST_PLATE.get());
+        }
+    };
+    public static final ItemGroup BLOCK_GROUP = new ItemGroup("blocks") {
+        @Override
+        public ItemStack createIcon() {
+            return new ItemStack(BlockRegister.OBSIDIAN_BLOCK.get());
+        }
+    };
+    public static final ItemGroup ITEMS_GROUP = new ItemGroup("items") {
+        @Override
+        public ItemStack createIcon() {
+            return new ItemStack(ItemRegister.obsidianFluidBucket.get());
+        }
+    };
 }

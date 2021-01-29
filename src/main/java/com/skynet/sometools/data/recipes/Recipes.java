@@ -1,6 +1,6 @@
 package com.skynet.sometools.data.recipes;
 
-import com.skynet.sometools.item.ItemRegister;
+import com.skynet.sometools.item.tab.ItemRegister;
 import net.minecraft.advancements.criterion.InventoryChangeTrigger;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
