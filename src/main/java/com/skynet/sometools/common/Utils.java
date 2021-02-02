@@ -1,5 +1,8 @@
 package com.skynet.sometools.common;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  * TODO baseUtils
  *
@@ -9,5 +12,6 @@ package com.skynet.sometools.common;
  */
 
 public class Utils {
-    public static final String MOD_ID= "sometools";
+    public static final String MOD_ID = "sometools";
+    public static final Logger LOGGER = LogManager.getLogger();
 }

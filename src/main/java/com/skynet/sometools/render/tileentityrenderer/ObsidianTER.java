@@ -1,7 +1,7 @@
 package com.skynet.sometools.render.tileentityrenderer;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
-import com.skynet.sometools.item.blocks.blockentity.ObsidianTERTileEntity;
+import com.skynet.sometools.listregistered.tileentities.ObsidianTERTileEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
