@@ -15,9 +15,10 @@ import java.util.function.Supplier;
  * @create: 2021-01-13 15:58
  */
 
-public enum  SomeToolsItemTier implements IItemTier {
+public enum SomeToolsItemTier implements IItemTier {
     /**
      * 新增黑曜石等级
+     *
      * @author : 1260535819@qq.com
      * @date : 2021/1/13 16:06
      * @param null :
@@ -35,7 +36,8 @@ public enum  SomeToolsItemTier implements IItemTier {
     private final int enchantAbility;
     private final LazyValue<Ingredient> repairMaterial;
 
-    SomeToolsItemTier(int harvestLevelIn, int maxUsesIn, float efficiencyIn, float attackDamageIn, int enchantAbilityIn, Supplier<Ingredient> repairMaterialIn) {
+    SomeToolsItemTier(int harvestLevelIn, int maxUsesIn, float efficiencyIn, float attackDamageIn,
+                      int enchantAbilityIn, Supplier<Ingredient> repairMaterialIn) {
         this.harvestLevel = harvestLevelIn;
         this.maxUses = maxUsesIn;
         this.efficiency = efficiencyIn;

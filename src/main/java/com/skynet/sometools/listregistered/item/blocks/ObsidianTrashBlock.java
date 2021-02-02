@@ -21,6 +21,7 @@ public class ObsidianTrashBlock extends Block {
     public ObsidianTrashBlock() {
         super(Properties.create(Material.ROCK).hardnessAndResistance(5));
     }
+
     @Override
     public boolean hasTileEntity(BlockState state) {
         return true;

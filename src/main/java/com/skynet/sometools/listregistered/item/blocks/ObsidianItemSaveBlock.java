@@ -27,7 +27,8 @@ public class ObsidianItemSaveBlock extends Block {
     }
 
     @Override
-    public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+    public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player,
+                                             Hand handIn, BlockRayTraceResult hit) {
         if (!worldIn.isRemote && handIn == Hand.MAIN_HAND) {
             ObsidianWorldSavedData worldSavedData = ObsidianWorldSavedData.get(worldIn);
             ItemStack mainHandItemStack = player.getItemStackFromSlot(EquipmentSlotType.MAINHAND);

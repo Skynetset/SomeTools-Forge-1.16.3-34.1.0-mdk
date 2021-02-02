@@ -19,11 +19,11 @@ import net.minecraftforge.fml.common.Mod;
  * @create: 2021-01-14 21:53
  */
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD,value = Dist.CLIENT)
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ObsidianHiddenBlockHandler {
     @SubscribeEvent
     public static void onModelBaked(ModelBakeEvent event) {
-        for (BlockState blockstate : RegisteredBlockList.OBSIDIAN_HIDDEN_BLOCK.getStateContainer().getValidStates()) {
+        for (BlockState blockstate : RegisteredBlockList.obsidian_hidden_block.getStateContainer().getValidStates()) {
             ModelResourceLocation modelResourceLocation = BlockModelShapes.getModelLocation(blockstate);
             IBakedModel existingModel = event.getModelRegistry().get(modelResourceLocation);
             if (existingModel == null) {

@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "sometools:block/obsidian_zombie_block" }
+    "": {
+      "model": "sometools:block/obsidian_zombie_block"
+    }
   }
 }

@@ -13,7 +13,7 @@ import net.minecraft.tileentity.TileEntity;
 
 public class ObsidianTERTileEntity extends TileEntity {
     public ObsidianTERTileEntity() {
-        super(RegisteredTileEntityTypeList.OBSIDIAN_TER_TILE_ENTITY);
+        super(RegisteredTileEntityTypeList.obsidian_ter_tile_block);
     }
 }
 

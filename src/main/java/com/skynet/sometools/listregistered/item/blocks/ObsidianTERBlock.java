@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
  * @create: 2021-01-15 11:30
  */
 
-public class ObsidianTERBlock extends ObsidianFrame{
+public class ObsidianTERBlock extends ObsidianFrame {
     @Override
     public boolean hasTileEntity(BlockState state) {
         return true;

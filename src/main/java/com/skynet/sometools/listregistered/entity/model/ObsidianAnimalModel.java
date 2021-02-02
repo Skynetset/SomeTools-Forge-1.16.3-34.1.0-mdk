@@ -27,12 +27,14 @@ public class ObsidianAnimalModel extends EntityModel<ObsidianAnimalEntity> {
     }
 
     @Override
-    public void setRotationAngles(ObsidianAnimalEntity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks,
+    public void setRotationAngles(ObsidianAnimalEntity entityIn, float limbSwing, float limbSwingAmount,
+                                  float ageInTicks,
                                   float netHeadYaw, float headPitch) {
     }
 
     @Override
-    public void render(MatrixStack matrixStackIn, IVertexBuilder bufferIn, int packedLightIn, int packedOverlayIn, float red, float green, float blue, float alpha) {
+    public void render(MatrixStack matrixStackIn, IVertexBuilder bufferIn, int packedLightIn, int packedOverlayIn,
+                       float red, float green, float blue, float alpha) {
         body.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn);
     }
 }

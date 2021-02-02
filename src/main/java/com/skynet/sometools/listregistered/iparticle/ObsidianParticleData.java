@@ -21,13 +21,11 @@ import java.util.Locale;
  */
 
 public class ObsidianParticleData implements IParticleData {
-    private final Vector3d speed;
-    private final Color color;
-    private final float diameter;
     public static final IDeserializer<ObsidianParticleData> DESERIALIZER = new IDeserializer<ObsidianParticleData>() {
 
         @Override
-        public ObsidianParticleData deserialize(ParticleType<ObsidianParticleData> particleTypeIn, StringReader reader) throws CommandSyntaxException {
+        public ObsidianParticleData deserialize(ParticleType<ObsidianParticleData> particleTypeIn,
+                                                StringReader reader) throws CommandSyntaxException {
             final int MIN_COLOUR = 0;
             final int MAX_COLOUR = 255;
             reader.expect(' ');
@@ -46,7 +44,8 @@ public class ObsidianParticleData implements IParticleData {
             int alpha = MathHelper.clamp(reader.readInt(), 1, MAX_COLOUR);
             reader.expect(' ');
             float diameter = reader.readFloat();
-            return new ObsidianParticleData(new Vector3d(speedX, speedY, speedZ), new Color(red, green, blue, alpha), diameter);
+            return new ObsidianParticleData(new Vector3d(speedX, speedY, speedZ), new Color(red, green, blue, alpha),
+                    diameter);
         }
 
         @Override
@@ -61,9 +60,13 @@ public class ObsidianParticleData implements IParticleData {
             int blue = MathHelper.clamp(buffer.readInt(), MIN_COLOUR, MAX_COLOUR);
             int alpha = MathHelper.clamp(buffer.readInt(), 1, MAX_COLOUR);
             float diameter = buffer.readFloat();
-            return new ObsidianParticleData(new Vector3d(speedX, speedY, speedZ), new Color(red, green, blue, alpha), diameter);
+            return new ObsidianParticleData(new Vector3d(speedX, speedY, speedZ), new Color(red, green, blue, alpha),
+                    diameter);
         }
     };
+    private final Vector3d speed;
+    private final Color color;
+    private final float diameter;
 
     public ObsidianParticleData(Vector3d speed, Color color, float diameter) {
         this.speed = speed;
@@ -91,7 +94,8 @@ public class ObsidianParticleData implements IParticleData {
     @Override
     public String getParameters() {
         return String.format(Locale.ROOT, "%s %.2f %i %i %i %i %.2d %.2d %.2d",
-                this.getType().getRegistryName(), diameter, color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha(), speed.getX(), speed.getY(), speed.getZ());
+                this.getType().getRegistryName(), diameter, color.getRed(), color.getGreen(), color.getBlue(),
+                color.getAlpha(), speed.getX(), speed.getY(), speed.getZ());
     }
 
     public Vector3d getSpeed() {

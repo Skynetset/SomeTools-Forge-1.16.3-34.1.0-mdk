@@ -35,12 +35,15 @@ public class FlyingSwordRender extends EntityRenderer<FlyingSwordEntity> {
     }
 
     @Override
-    public void render(FlyingSwordEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
+    public void render(FlyingSwordEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn,
+                       IRenderTypeBuffer bufferIn, int packedLightIn) {
         super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
         matrixStackIn.push();
         matrixStackIn.rotate(Vector3f.YN.rotationDegrees(45));
-        IVertexBuilder ivertexbuilder = bufferIn.getBuffer(this.flyingSwordModel.getRenderType(this.getEntityTexture(entityIn)));
-        this.flyingSwordModel.render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+        IVertexBuilder ivertexbuilder =
+                bufferIn.getBuffer(this.flyingSwordModel.getRenderType(this.getEntityTexture(entityIn)));
+        this.flyingSwordModel.render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F,
+                1.0F, 1.0F, 1.0F);
         matrixStackIn.pop();
     }
 }

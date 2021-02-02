@@ -37,9 +37,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
         _interface = IChestLid.class
 )
 public class MyChestWithContainerTileEntity extends LockableLootTileEntity implements IChestLid, ITickableTileEntity {
-    public static final Integer SLOT_NUM=27;
-    private NonNullList<ItemStack> chestContents = NonNullList.withSize(SLOT_NUM, ItemStack.EMPTY);
-
+    public static final Integer SLOT_NUM = 27;
     /**
      * The current angle of the lid (between 0 and 1)
      * 盖子的当前角度（0到1之间）
@@ -55,6 +53,7 @@ public class MyChestWithContainerTileEntity extends LockableLootTileEntity imple
      * 当前使用此箱子的玩家数量
      */
     protected int numPlayersUsing;
+    private NonNullList<ItemStack> chestContents = NonNullList.withSize(SLOT_NUM, ItemStack.EMPTY);
     /**
      * A counter that is incremented once each tick. Used to determine when to recompute ; this is done every 200
      * ticks (but staggered between different chests). However, the new value isn't actually sent to clients when it is
@@ -66,11 +65,40 @@ public class MyChestWithContainerTileEntity extends LockableLootTileEntity imple
     private int ticksSinceSync;
 
 
-//    private Inventory inventory = new Inventory(SLOT_NUM);
-//    private ObsidianFirstContainerItemNumber itemNumber = new ObsidianFirstContainerItemNumber();
+    //    private Inventory inventory = new Inventory(SLOT_NUM);
+    //    private ObsidianFirstContainerItemNumber itemNumber = new ObsidianFirstContainerItemNumber();
 
     public MyChestWithContainerTileEntity() {
-        super(RegisteredTileEntityTypeList.MY_CHEST_WITH_CONTAINER_TILE_ENTITY);
+        super(RegisteredTileEntityTypeList.my_chest_with_container_tile_entity);
+    }
+
+    public static int calculatePlayersUsingSync(World p_213977_0_, LockableTileEntity p_213977_1_, int p_213977_2_,
+                                                int p_213977_3_, int p_213977_4_, int p_213977_5_, int p_213977_6_) {
+        if (!p_213977_0_.isRemote && p_213977_6_ != 0 && (p_213977_2_ + p_213977_3_ + p_213977_4_ + p_213977_5_) % 200 == 0) {
+            p_213977_6_ = calculatePlayersUsing(p_213977_0_, p_213977_1_, p_213977_3_, p_213977_4_, p_213977_5_);
+        }
+
+        return p_213977_6_;
+    }
+
+    public static int calculatePlayersUsing(World p_213976_0_, LockableTileEntity p_213976_1_, int p_213976_2_,
+                                            int p_213976_3_, int p_213976_4_) {
+        int i = 0;
+        float f = 5.0F;
+
+        for (PlayerEntity playerentity : p_213976_0_.getEntitiesWithinAABB(PlayerEntity.class,
+                new AxisAlignedBB((float) p_213976_2_ - 5.0F, (float) p_213976_3_ - 5.0F, (float) p_213976_4_ - 5.0F,
+                        (float) (p_213976_2_ + 1) + 5.0F, (float) (p_213976_3_ + 1) + 5.0F,
+                        (float) (p_213976_4_ + 1) + 5.0F))) {
+            if (playerentity.openContainer instanceof ChestContainer) {
+                IInventory iinventory = ((ChestContainer) playerentity.openContainer).getLowerChestInventory();
+                if (iinventory == p_213976_1_ || iinventory instanceof DoubleSidedInventory && ((DoubleSidedInventory) iinventory).isPartOfLargeChest(p_213976_1_)) {
+                    ++i;
+                }
+            }
+        }
+
+        return i;
     }
 
     @Override
@@ -124,11 +152,12 @@ public class MyChestWithContainerTileEntity extends LockableLootTileEntity imple
             int j = this.pos.getY();
             int k = this.pos.getZ();
             ++this.ticksSinceSync;
-            this.numPlayersUsing = calculatePlayersUsingSync(this.world, this, this.ticksSinceSync, i, j, k, this.numPlayersUsing);
+            this.numPlayersUsing = calculatePlayersUsingSync(this.world, this, this.ticksSinceSync, i, j, k,
+                    this.numPlayersUsing);
             this.prevLidAngle = this.lidAngle;
             float f = 0.1F;
             if (this.numPlayersUsing > 0 && this.lidAngle == 0.0F) {
-//                this.playSound(SoundEvents.BLOCK_CHEST_OPEN);
+                //                this.playSound(SoundEvents.BLOCK_CHEST_OPEN);
                 PlayerEntity player = world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 10, false);
                 if (player != null) {
                     player.sendStatusMessage(new TranslationTextComponent("message.my_chest_with_container.open"),
@@ -150,7 +179,7 @@ public class MyChestWithContainerTileEntity extends LockableLootTileEntity imple
 
                 float f2 = 0.5F;
                 if (this.lidAngle < 0.5F && f1 >= 0.5F) {
-//                    this.playSound(SoundEvents.BLOCK_CHEST_CLOSE);
+                    //                    this.playSound(SoundEvents.BLOCK_CHEST_CLOSE);
                     PlayerEntity player = world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 10, false);
                     if (player != null) {
                         player.sendStatusMessage(new TranslationTextComponent("message.my_chest_with_container.close"),
@@ -174,28 +203,5 @@ public class MyChestWithContainerTileEntity extends LockableLootTileEntity imple
     @Override
     public float getLidAngle(float partialTicks) {
         return this.lidAngle;
-    }
-
-    public static int calculatePlayersUsingSync(World p_213977_0_, LockableTileEntity p_213977_1_, int p_213977_2_, int p_213977_3_, int p_213977_4_, int p_213977_5_, int p_213977_6_) {
-        if (!p_213977_0_.isRemote && p_213977_6_ != 0 && (p_213977_2_ + p_213977_3_ + p_213977_4_ + p_213977_5_) % 200 == 0) {
-            p_213977_6_ = calculatePlayersUsing(p_213977_0_, p_213977_1_, p_213977_3_, p_213977_4_, p_213977_5_);
-        }
-
-        return p_213977_6_;
-    }
-    public static int calculatePlayersUsing(World p_213976_0_, LockableTileEntity p_213976_1_, int p_213976_2_, int p_213976_3_, int p_213976_4_) {
-        int i = 0;
-        float f = 5.0F;
-
-        for(PlayerEntity playerentity : p_213976_0_.getEntitiesWithinAABB(PlayerEntity.class, new AxisAlignedBB((float)p_213976_2_ - 5.0F, (float)p_213976_3_ - 5.0F, (float)p_213976_4_ - 5.0F, (float)(p_213976_2_ + 1) + 5.0F, (float)(p_213976_3_ + 1) + 5.0F, (float)(p_213976_4_ + 1) + 5.0F))) {
-            if (playerentity.openContainer instanceof ChestContainer) {
-                IInventory iinventory = ((ChestContainer)playerentity.openContainer).getLowerChestInventory();
-                if (iinventory == p_213976_1_ || iinventory instanceof DoubleSidedInventory && ((DoubleSidedInventory)iinventory).isPartOfLargeChest(p_213976_1_)) {
-                    ++i;
-                }
-            }
-        }
-
-        return i;
     }
 }

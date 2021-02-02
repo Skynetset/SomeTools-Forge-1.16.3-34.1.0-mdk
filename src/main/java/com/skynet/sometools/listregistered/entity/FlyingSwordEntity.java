@@ -21,7 +21,6 @@ import org.apache.logging.log4j.Logger;
  */
 
 public class FlyingSwordEntity extends Entity {
-    private final Logger logger = LogManager.getLogger();
     /**
      * 数据同步
      * 所有同步的数据，都得先声明好，
@@ -31,12 +30,15 @@ public class FlyingSwordEntity extends Entity {
      * 对于Integer类型来说用DataSerializers.VARINT就行了，
      * 但是对于Float类型就需要特殊的序列化方式（这和浮点数的表示有关。），
      * DataSerializers 下面已经写好了许多方便的实例。
+     *
      * @author : 1260535819@qq.com
      * @date : 2021/1/16 17:33
      * @param null :
      * @return : null
      */
-    private static final DataParameter<Integer> COUNTER = EntityDataManager.createKey(FlyingSwordEntity.class, DataSerializers.VARINT);
+    private static final DataParameter<Integer> COUNTER = EntityDataManager.createKey(FlyingSwordEntity.class,
+            DataSerializers.VARINT);
+    private final Logger logger = LogManager.getLogger();
 
     public FlyingSwordEntity(EntityType<?> entityTypeIn, World worldIn) {
         super(entityTypeIn, worldIn);
@@ -45,9 +47,11 @@ public class FlyingSwordEntity extends Entity {
     /**
      * 注册创建的数据同步
      * 所有需要同步的数据都需要注册进this.dataManager中
+     *
+     * @return : void
+     *
      * @author : 1260535819@qq.com
      * @date : 2021/1/16 17:36
-     * @return : void
      */
     @Override
     protected void registerData() {
@@ -56,10 +60,13 @@ public class FlyingSwordEntity extends Entity {
 
     /**
      * 保持和恢复数据
+     *
+     * @param compound :
+     *
+     * @return : void
+     *
      * @author : 1260535819@qq.com
      * @date : 2021/1/16 17:37
-     * @param compound :
-     * @return : void
      */
     @Override
     protected void readAdditional(CompoundNBT compound) {
@@ -73,9 +80,11 @@ public class FlyingSwordEntity extends Entity {
 
     /**
      * 具体逻辑
+     *
+     * @return : void
+     *
      * @author : 1260535819@qq.com
      * @date : 2021/1/16 17:38
-     * @return : void
      */
     @Override
     public void tick() {
@@ -93,9 +102,11 @@ public class FlyingSwordEntity extends Entity {
      * 实体是在服务端创建以后再通知客户端创建，所以这里涉及到了发包操作，
      * 不能再这里复用Minecraft原版提供的方法，这里必须使用Forge提供的NetworkHooks.getEntitySpawningPacket(this);
      * 来在客户端创建实体
+     *
+     * @return : net.minecraft.network.IPacket<?>
+     *
      * @author : 1260535819@qq.com
      * @date : 2021/1/16 17:32
-     * @return : net.minecraft.network.IPacket<?>
      */
     @Override
     public IPacket<?> createSpawnPacket() {

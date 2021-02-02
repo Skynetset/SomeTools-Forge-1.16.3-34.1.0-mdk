@@ -28,19 +28,6 @@ public class ObsidianWorldSavedData extends WorldSavedData {
         super(NAME);
     }
 
-    public void putItem(ItemStack item) {
-        itemStacks.push(item);
-        markDirty();
-    }
-
-    public ItemStack getItem() {
-        if (itemStacks.isEmpty()) {
-            return new ItemStack(Items.AIR);
-        }
-        markDirty();
-        return itemStacks.pop();
-    }
-
     public ObsidianWorldSavedData(String name) {
         super(name);
     }
@@ -56,6 +43,19 @@ public class ObsidianWorldSavedData extends WorldSavedData {
          */
         DimensionSavedDataManager storage = world.getSavedData();
         return storage.getOrCreate(ObsidianWorldSavedData::new, NAME);
+    }
+
+    public void putItem(ItemStack item) {
+        itemStacks.push(item);
+        markDirty();
+    }
+
+    public ItemStack getItem() {
+        if (itemStacks.isEmpty()) {
+            return new ItemStack(Items.AIR);
+        }
+        markDirty();
+        return itemStacks.pop();
     }
 
     @Override

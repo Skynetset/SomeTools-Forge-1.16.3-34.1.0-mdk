@@ -13,7 +13,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
-import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.model.IBakedModel;
 import net.minecraft.client.renderer.model.ModelResourceLocation;
 import net.minecraft.item.ItemModelsProperties;
@@ -39,6 +38,9 @@ import java.util.Map;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 class ClientSideRegistryEvents {
 
+    private ClientSideRegistryEvents() {
+    }
+
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
 
@@ -56,16 +58,18 @@ class ClientSideRegistryEvents {
 
         // 魔法锭
         event.enqueueWork(() -> {
-            ItemModelsProperties.registerProperty(RegisteredItemList.magic_ingot, new ResourceLocation(Utils.MOD_ID, "size"),
+            ItemModelsProperties.registerProperty(RegisteredItemList.magic_ingot, new ResourceLocation(Utils.MOD_ID,
+                            "size"),
                     (itemStack, clientWorld, livingEntity) -> itemStack.getCount());
         });
 
         event.enqueueWork(() -> {
-            ClientRegistry.bindTileEntityRenderer(RegisteredTileEntityTypeList.OBSIDIAN_TER_TILE_ENTITY, ObsidianTER::new);
+            ClientRegistry.bindTileEntityRenderer(RegisteredTileEntityTypeList.obsidian_ter_tile_block,
+                    ObsidianTER::new);
         });
 
         event.enqueueWork(() -> {
-            RenderTypeLookup.setRenderLayer(RegisteredBlockList.GLASS_JAR, RenderType.getTranslucent());
+            RenderTypeLookup.setRenderLayer(RegisteredBlockList.glass_jar, RenderType.getTranslucent());
 
             RenderTypeLookup.setRenderLayer(RegisteredFluidList.obsidianFluid, RenderType.getTranslucent());
             RenderTypeLookup.setRenderLayer(RegisteredFluidList.obsidianFluidFlowing, RenderType.getTranslucent());
@@ -73,14 +77,9 @@ class ClientSideRegistryEvents {
 
         // 实体渲染
         RenderingRegistry.registerEntityRenderingHandler(RegisteredEntityTypeList.FLYING_SWORD_ENTITY,
-                (EntityRendererManager manager) -> {
-                    return new FlyingSwordRender(manager);
-                });
+                FlyingSwordRender::new);
         RenderingRegistry.registerEntityRenderingHandler(RegisteredEntityTypeList.OBSIDIAN_ANIMAL_ENTITY,
-                (EntityRendererManager manager) -> {
-                    return new ObsidianAnimalRender(manager);
-                });
-
+                ObsidianAnimalRender::new);
 
 
     }

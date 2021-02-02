@@ -15,12 +15,13 @@ import net.minecraft.potion.Effects;
  */
 
 public class ObsidianApple extends Item {
-    public static final Food FOOD=(new Food.Builder())
+    public static final Food FOOD = (new Food.Builder())
             .saturation(10)
             .hunger(20)
-            .effect(()->new EffectInstance(Effects.LUCK,30*20,999),1)
-            .effect(()->new EffectInstance(Effects.NIGHT_VISION,30*20,999),1)
+            .effect(() -> new EffectInstance(Effects.LUCK, 30 * 20, 999), 1)
+            .effect(() -> new EffectInstance(Effects.NIGHT_VISION, 30 * 20, 999), 1)
             .build();
+
     public ObsidianApple() {
         super(new Properties().food(FOOD).group(SomeToolsGroup.FOOD_GROUP));
     }

@@ -31,7 +31,8 @@ public class ObsidianSpeedUpShowItem extends Item {
             LazyOptional<ISpeedUpCapability> speedCap = playerIn.getCapability(SomeToolsCapability.SPEED_UP_CAPABILITY);
             speedCap.ifPresent((l) -> {
                         int level = l.getLevel();
-                        playerIn.sendMessage(new TranslationTextComponent("message.obsidian_speed_show", level), playerIn.getUniqueID());
+                        playerIn.sendMessage(new TranslationTextComponent("message.obsidian_speed_show", level),
+                                playerIn.getUniqueID());
                     }
             );
         }

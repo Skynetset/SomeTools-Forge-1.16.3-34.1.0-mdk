@@ -23,13 +23,13 @@ import javax.annotation.Nullable;
  */
 
 public class ObsidianZombieTileEntity extends TileEntity implements ITickableTileEntity {
-    private boolean flag = false;
     private final int MAX_TIME = 5 * 20;
+    private boolean flag = false;
     private int timer = 0;
 
 
     public ObsidianZombieTileEntity() {
-        super(RegisteredTileEntityTypeList.OBSIDIAN_ZOMBIE_TILE_ENTITY);
+        super(RegisteredTileEntityTypeList.obsidian_zombie_tile_block);
     }
 
     @Override
@@ -52,9 +52,11 @@ public class ObsidianZombieTileEntity extends TileEntity implements ITickableTil
 
     /**
      * 服务端发送数据包
+     *
+     * @return : net.minecraft.network.play.server.SUpdateTileEntityPacket
+     *
      * @author : 1260535819@qq.com
      * @date : 2021/1/14 20:18
-     * @return : net.minecraft.network.play.server.SUpdateTileEntityPacket
      */
     @Nullable
     @Override
@@ -64,11 +66,14 @@ public class ObsidianZombieTileEntity extends TileEntity implements ITickableTil
 
     /**
      * 客户端接受数据包
-     * @author : 1260535819@qq.com
-     * @date : 2021/1/14 20:18
+     *
      * @param net :
      * @param pkt :
+     *
      * @return : void
+     *
+     * @author : 1260535819@qq.com
+     * @date : 2021/1/14 20:18
      */
     @Override
     public void onDataPacket(NetworkManager net, SUpdateTileEntityPacket pkt) {
@@ -77,9 +82,11 @@ public class ObsidianZombieTileEntity extends TileEntity implements ITickableTil
 
     /**
      * 区块刚被载入时被调用
+     *
+     * @return : net.minecraft.nbt.CompoundNBT
+     *
      * @author : 1260535819@qq.com
      * @date : 2021/1/14 20:24
-     * @return : net.minecraft.nbt.CompoundNBT
      */
     @Override
     public CompoundNBT getUpdateTag() {
@@ -90,11 +97,14 @@ public class ObsidianZombieTileEntity extends TileEntity implements ITickableTil
 
     /**
      * 区块刚被载入时被调用
+     *
+     * @param state :
+     * @param tag   :
+     *
+     * @return : void
+     *
      * @author : 1260535819@qq.com
      * @date : 2021/1/14 20:24
-     * @param state :
-     * @param tag :
-     * @return : void
      */
     @Override
     public void handleUpdateTag(BlockState state, CompoundNBT tag) {

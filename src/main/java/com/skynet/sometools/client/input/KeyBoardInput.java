@@ -34,7 +34,8 @@ public class KeyBoardInput {
     public static void onKeyboardInput(InputEvent.KeyInputEvent event) {
         if (MESSAGE_KEY.isPressed()) {
             assert Minecraft.getInstance().player != null;
-            Minecraft.getInstance().player.sendMessage(new TranslationTextComponent("message." + Utils.MOD_ID + ".press"), Minecraft.getInstance().player.getUniqueID());
+            Minecraft.getInstance().player.sendMessage(new TranslationTextComponent("message." + Utils.MOD_ID +
+                    ".press"), Minecraft.getInstance().player.getUniqueID());
         }
     }
 }

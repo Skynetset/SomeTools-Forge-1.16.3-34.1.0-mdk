@@ -43,10 +43,13 @@ public class ObsidianFirstContainerBlock extends Block {
     }
 
     @Override
-    public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+    public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player,
+                                             Hand handIn, BlockRayTraceResult hit) {
         if (!worldIn.isRemote && handIn == Hand.MAIN_HAND) {
-            ObsidianFirstContainerTileEntity obsidianFirstContainerTileEntity = (ObsidianFirstContainerTileEntity) worldIn.getTileEntity(pos);
-            NetworkHooks.openGui((ServerPlayerEntity) player, obsidianFirstContainerTileEntity, (PacketBuffer packerBuffer) -> {
+            ObsidianFirstContainerTileEntity obsidianFirstContainerTileEntity =
+                    (ObsidianFirstContainerTileEntity) worldIn.getTileEntity(pos);
+            NetworkHooks.openGui((ServerPlayerEntity) player, obsidianFirstContainerTileEntity,
+                    (PacketBuffer packerBuffer) -> {
                 packerBuffer.writeBlockPos(obsidianFirstContainerTileEntity.getPos());
             });
         }

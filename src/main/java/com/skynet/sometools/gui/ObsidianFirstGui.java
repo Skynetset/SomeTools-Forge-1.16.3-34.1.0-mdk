@@ -36,16 +36,21 @@ public class ObsidianFirstGui extends Screen {
     @Override
     protected void init() {
         this.minecraft.keyboardListener.enableRepeatEvents(true);
-        this.textFieldWidget = new TextFieldWidget(this.font, this.width / 2 - 100, 66, 200, 20, new TranslationTextComponent("gui." + Utils.MOD_ID + ".first.context"));
+        this.textFieldWidget = new TextFieldWidget(this.font, this.width / 2 - 100, 66, 200, 20,
+                new TranslationTextComponent("gui." + Utils.MOD_ID + ".first.context"));
         this.children.add(this.textFieldWidget);
 
-        this.button = new Button(this.width / 2 - 40, 96, 80, 20, new TranslationTextComponent("gui." + Utils.MOD_ID + ".first.save"), (button) -> {
+        this.button = new Button(this.width / 2 - 40, 96, 80, 20,
+                new TranslationTextComponent("gui." + Utils.MOD_ID + ".first.save"), (button) -> {
         });
         this.addButton(button);
 
-        this.sliderPercentageOption = new SliderPercentageOption(Utils.MOD_ID + ".sliderbar", 5, 100, 5, (setting) -> Double.valueOf(0), (setting, value) -> {
-        }, (gameSettings, sliderPercentageOption1) -> new TranslationTextComponent("gui." + Utils.MOD_ID + ".first.test"));
-        this.sliderBar = this.sliderPercentageOption.createWidget(Minecraft.getInstance().gameSettings, this.width / 2 - 100, 120, 200);
+        this.sliderPercentageOption = new SliderPercentageOption(Utils.MOD_ID + ".sliderbar", 5, 100, 5,
+                (setting) -> Double.valueOf(0), (setting, value) -> {
+        }, (gameSettings, sliderPercentageOption1) -> new TranslationTextComponent("gui." + Utils.MOD_ID + ".first" +
+                ".test"));
+        this.sliderBar = this.sliderPercentageOption.createWidget(Minecraft.getInstance().gameSettings,
+                this.width / 2 - 100, 120, 200);
         this.children.add(this.sliderBar);
 
         super.init();

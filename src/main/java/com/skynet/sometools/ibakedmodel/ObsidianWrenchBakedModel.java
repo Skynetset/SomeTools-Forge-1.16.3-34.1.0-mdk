@@ -32,7 +32,8 @@ public class ObsidianWrenchBakedModel implements IBakedModel {
 
     @Nonnull
     @Override
-    public List<BakedQuad> getQuads(@Nullable BlockState state, @Nullable Direction side, @Nonnull Random rand, @Nonnull IModelData extraData) {
+    public List<BakedQuad> getQuads(@Nullable BlockState state, @Nullable Direction side, @Nonnull Random rand,
+                                    @Nonnull IModelData extraData) {
         throw new AssertionError("IForgeBakedModel::getQuads should never be called, only IForgeBakedModel::getQuads");
     }
 

@@ -19,7 +19,7 @@ public class ObsidianHelloTileEntity extends TileEntity implements ITickableTile
     private int timer = 0;
 
     public ObsidianHelloTileEntity() {
-        super(RegisteredTileEntityTypeList.OBSIDIAN_HELLO_TILE_ENTITY);
+        super(RegisteredTileEntityTypeList.obsidian_hello_block);
     }
 
     @Override
@@ -27,7 +27,8 @@ public class ObsidianHelloTileEntity extends TileEntity implements ITickableTile
         if (world != null && !world.isRemote) {
             if (timer == MAX_TIME) {
                 PlayerEntity player = world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 10, false);
-                TranslationTextComponent translationTextComponent = new TranslationTextComponent("message.hello_block.hello");
+                TranslationTextComponent translationTextComponent = new TranslationTextComponent("message.hello_block" +
+                        ".hello");
                 if (player != null) {
                     player.sendStatusMessage(translationTextComponent, false);
                 }

@@ -64,14 +64,16 @@ public class FlyingSwordModel extends EntityModel<FlyingSwordEntity> {
     }
 
     @Override
-    public void setRotationAngles(FlyingSwordEntity entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setRotationAngles(FlyingSwordEntity entityIn, float limbSwing, float limbSwingAmount,
+                                  float ageInTicks, float netHeadYaw, float headPitch) {
         body.rotateAngleX = limbSwing;
         body.rotateAngleY = netHeadYaw;
         body.rotateAngleZ = headPitch;
     }
 
     @Override
-    public void render(MatrixStack matrixStackIn, IVertexBuilder bufferIn, int packedLightIn, int packedOverlayIn, float red, float green, float blue, float alpha) {
+    public void render(MatrixStack matrixStackIn, IVertexBuilder bufferIn, int packedLightIn, int packedOverlayIn,
+                       float red, float green, float blue, float alpha) {
         body.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn);
     }
 }

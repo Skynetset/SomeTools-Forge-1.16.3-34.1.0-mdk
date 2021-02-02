@@ -27,6 +27,33 @@ public class MyChestContainer extends Container {
         this(type, id, player, new Inventory(9 * rows), rows);
     }
 
+    public MyChestContainer(ContainerType<?> type, int id, PlayerInventory playerInventoryIn, IInventory p_i50092_4_,
+                            int rows) {
+        super(type, id);
+        assertInventorySize(p_i50092_4_, rows * 9);
+        this.lowerChestInventory = p_i50092_4_;
+        this.numRows = rows;
+        p_i50092_4_.openInventory(playerInventoryIn.player);
+        int i = (this.numRows - 4) * 18;
+
+        for (int j = 0; j < this.numRows; ++j) {
+            for (int k = 0; k < 9; ++k) {
+                this.addSlot(new Slot(p_i50092_4_, k + j * 9, 8 + k * 18, 18 + j * 18));
+            }
+        }
+
+        for (int l = 0; l < 3; ++l) {
+            for (int j1 = 0; j1 < 9; ++j1) {
+                this.addSlot(new Slot(playerInventoryIn, j1 + l * 9 + 9, 8 + j1 * 18, 103 + l * 18 + i));
+            }
+        }
+
+        for (int i1 = 0; i1 < 9; ++i1) {
+            this.addSlot(new Slot(playerInventoryIn, i1, 8 + i1 * 18, 161 + i));
+        }
+
+    }
+
     public static MyChestContainer createGeneric9X1(int id, PlayerInventory player) {
         return new MyChestContainer(ContainerType.GENERIC_9X1, id, player, 1);
     }
@@ -59,42 +86,17 @@ public class MyChestContainer extends Container {
         return new MyChestContainer(ContainerType.GENERIC_9X6, id, player, blockEntity, 6);
     }
 
-    public MyChestContainer(ContainerType<?> type, int id, PlayerInventory playerInventoryIn, IInventory p_i50092_4_, int rows) {
-        super(type, id);
-        assertInventorySize(p_i50092_4_, rows * 9);
-        this.lowerChestInventory = p_i50092_4_;
-        this.numRows = rows;
-        p_i50092_4_.openInventory(playerInventoryIn.player);
-        int i = (this.numRows - 4) * 18;
-
-        for(int j = 0; j < this.numRows; ++j) {
-            for(int k = 0; k < 9; ++k) {
-                this.addSlot(new Slot(p_i50092_4_, k + j * 9, 8 + k * 18, 18 + j * 18));
-            }
-        }
-
-        for(int l = 0; l < 3; ++l) {
-            for(int j1 = 0; j1 < 9; ++j1) {
-                this.addSlot(new Slot(playerInventoryIn, j1 + l * 9 + 9, 8 + j1 * 18, 103 + l * 18 + i));
-            }
-        }
-
-        for(int i1 = 0; i1 < 9; ++i1) {
-            this.addSlot(new Slot(playerInventoryIn, i1, 8 + i1 * 18, 161 + i));
-        }
-
-    }
-
-//    public MyChestContainer(int id, PlayerInventory playerInventory, BlockPos pos, World world,
-//                            ObsidianFirstContainerItemNumber intArray) {
-//        super(ContainerTypeRegister.obsidianFirstContainer.get(), id);
-//        this.intArray = intArray;
-//        trackIntArray(this.intArray);
-//        ObsidianFirstContainerTileEntity obsidianFirstContainerTileEntity = (ObsidianFirstContainerTileEntity) world.getTileEntity(pos);
-//        this.addSlot(new Slot(obsidianFirstContainerTileEntity.getInventory(), 0, 80, 32));
-//        this.addSlot(new Slot(obsidianFirstContainerTileEntity.getInventory(), 0, 80, 32));
-//        layoutPlayerInventorySlots(playerInventory, 8, 84);
-//    }
+    //    public MyChestContainer(int id, PlayerInventory playerInventory, BlockPos pos, World world,
+    //                            ObsidianFirstContainerItemNumber intArray) {
+    //        super(ContainerTypeRegister.obsidianFirstContainer.get(), id);
+    //        this.intArray = intArray;
+    //        trackIntArray(this.intArray);
+    //        ObsidianFirstContainerTileEntity obsidianFirstContainerTileEntity = (ObsidianFirstContainerTileEntity)
+    //        world.getTileEntity(pos);
+    //        this.addSlot(new Slot(obsidianFirstContainerTileEntity.getInventory(), 0, 80, 32));
+    //        this.addSlot(new Slot(obsidianFirstContainerTileEntity.getInventory(), 0, 80, 32));
+    //        layoutPlayerInventorySlots(playerInventory, 8, 84);
+    //    }
 
     private int addSlotRange(IInventory inventory, int index, int x, int y, int amount, int dx) {
         for (int i = 0; i < amount; i++) {
@@ -105,7 +107,8 @@ public class MyChestContainer extends Container {
         return index;
     }
 
-    private int addSlotBox(IInventory inventory, int index, int x, int y, int horAmount, int dx, int verAmount, int dy) {
+    private int addSlotBox(IInventory inventory, int index, int x, int y, int horAmount, int dx, int verAmount,
+                           int dy) {
         for (int j = 0; j < verAmount; j++) {
             index = addSlotRange(inventory, index, x, y, horAmount, dx);
             y += dy;

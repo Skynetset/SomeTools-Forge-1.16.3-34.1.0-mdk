@@ -16,10 +16,15 @@
 //  */
 //
 // public class EntityTypeRegister {
-//     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES, Utils.MOD_ID);
+//     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries
+//     .ENTITIES, Utils.MOD_ID);
 //
-//     public static final RegistryObject<EntityType<FlyingSwordEntity>> FLYING_SWORD_ENTITY = ENTITY_TYPES.register("flying_sword", () -> EntityType.Builder.create(FlyingSwordEntity::new, EntityClassification.MISC).size(3, 0.5F).build("flying_sword"));
-//     public static final RegistryObject<EntityType<ObsidianAnimalEntity>> OBSIDIAN_ANIMAL_ENTITY = ENTITY_TYPES.register(
-//             "obsidian_animal", () -> EntityType.Builder.create(ObsidianAnimalEntity::new, EntityClassification.MISC).size(3, 0.5F).build(
+//     public static final RegistryObject<EntityType<FlyingSwordEntity>> FLYING_SWORD_ENTITY = ENTITY_TYPES.register
+//     ("flying_sword", () -> EntityType.Builder.create(FlyingSwordEntity::new, EntityClassification.MISC).size(3, 0
+//     .5F).build("flying_sword"));
+//     public static final RegistryObject<EntityType<ObsidianAnimalEntity>> OBSIDIAN_ANIMAL_ENTITY = ENTITY_TYPES
+//     .register(
+//             "obsidian_animal", () -> EntityType.Builder.create(ObsidianAnimalEntity::new, EntityClassification
+//             .MISC).size(3, 0.5F).build(
 //                     "obsidian_animal"));
 // }

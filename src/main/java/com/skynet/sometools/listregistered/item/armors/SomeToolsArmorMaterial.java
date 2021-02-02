@@ -23,7 +23,7 @@ public enum SomeToolsArmorMaterial implements IArmorMaterial {
     /**
      * @author : 1260535819@qq.com
      * @date : 2021/1/13 17:25
-     * @param null : 
+     * @param null :
      * @return : null
      */
     OBSIDIAN("obsidian", 40, new int[]{50, 80, 100, 50}, 20, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F, 0.0F, () -> {
@@ -40,7 +40,9 @@ public enum SomeToolsArmorMaterial implements IArmorMaterial {
     private final float knockbackResistance;
     private final LazyValue<Ingredient> repairMaterial;
 
-    SomeToolsArmorMaterial(String name, int maxDamageFactor, int[] damageReductionAmountArray, int enchantability, SoundEvent soundEvent, float toughness, float knockbackResistance, Supplier<Ingredient> repairMaterial) {
+    SomeToolsArmorMaterial(String name, int maxDamageFactor, int[] damageReductionAmountArray, int enchantability,
+                           SoundEvent soundEvent, float toughness, float knockbackResistance,
+                           Supplier<Ingredient> repairMaterial) {
         this.name = name;
         this.maxDamageFactor = maxDamageFactor;
         this.damageReductionAmountArray = damageReductionAmountArray;

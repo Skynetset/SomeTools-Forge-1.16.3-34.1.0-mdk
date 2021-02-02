@@ -20,16 +20,20 @@
 //
 //
 // public class BlockRegister {
-//     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Utils.MOD_ID);
+//     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Utils
+//     .MOD_ID);
 //
 //     public static final RegistryObject<Block> OBSIDIAN_BLOCK = BLOCKS.register("obsidian_block", ObsidianBlock::new);
-//     public static final RegistryObject<Block> OBSIDIAN_RUBIK_CUBE = BLOCKS.register("obsidian_rubik_cube", ObsidianRubikCube::new);
+//     public static final RegistryObject<Block> OBSIDIAN_RUBIK_CUBE = BLOCKS.register("obsidian_rubik_cube",
+//     ObsidianRubikCube::new);
 //     public static final RegistryObject<Block> OBSIDIAN_FRAME = BLOCKS.register("obsidian_frame", ObsidianFrame::new);
 //     public static final RegistryObject<GlassJar> GLASS_JAR = BLOCKS.register("glass_jar", GlassJar::new);
 //     public static final RegistryObject<Block> OBSIDIAN_OBJ = BLOCKS.register("obsidian_obj", ObsidianOBJ::new);
 //
-//     public static final RegistryObject<Block> OBSIDIAN_COUNTER = BLOCKS.register("obsidian_counter_block", ObsidianCounter::new);
-//     public static final RegistryObject<Block> OBSIDIAN_HELLO = BLOCKS.register("obsidian_hello_block", ObsidianHelloBlock::new);
+//     public static final RegistryObject<Block> OBSIDIAN_COUNTER = BLOCKS.register("obsidian_counter_block",
+//     ObsidianCounter::new);
+//     public static final RegistryObject<Block> OBSIDIAN_HELLO = BLOCKS.register("obsidian_hello_block",
+//     ObsidianHelloBlock::new);
 //     public static final RegistryObject<Block> OBSIDIAN_ZOMBIE_BLOCK = BLOCKS.register("obsidian_zombie_block",
 //             ObsidianZombieBlock::new);
 //     public static final RegistryObject<Block> OBSIDIAN_HIDDEN_BLOCK = BLOCKS.register("obsidian_hidden_block",
@@ -44,12 +48,14 @@
 //             ObsidianTrashBlock::new);
 //     public static final RegistryObject<Block> OBSIDIAN_ITEM_SAVE_BLOCK = BLOCKS.register("obsidian_item_save",
 //             ObsidianItemSaveBlock::new);
-//     public static final RegistryObject<Block> OBSIDIAN_FIRST_CONTAINER_BLOCK = BLOCKS.register("obsidian_first_container",
+//     public static final RegistryObject<Block> OBSIDIAN_FIRST_CONTAINER_BLOCK = BLOCKS.register
+//     ("obsidian_first_container",
 //             ObsidianFirstContainerBlock::new);
 //     public static final RegistryObject<Block> MY_CHEST_WITH_CONTAINER_BLOCK = BLOCKS.register(
 //             "my_chest_with_container",
 //             MyChestWithContainerBlock::new);
 //
 //     public static final RegistryObject<FlowingFluidBlock> OBSIDIAN_FLUID_BLOCK = BLOCKS.register(
-//             "obsidian_fluid",() -> new FlowingFluidBlock(FluidRegister.obsidianFluid, Block.Properties.create(Material.WATER).doesNotBlockMovement().hardnessAndResistance(100.0F).noDrops()));
+//             "obsidian_fluid",() -> new FlowingFluidBlock(FluidRegister.obsidianFluid, Block.Properties.create
+//             (Material.WATER).doesNotBlockMovement().hardnessAndResistance(100.0F).noDrops()));
 // }

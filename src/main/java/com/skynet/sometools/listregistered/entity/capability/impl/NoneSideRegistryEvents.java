@@ -29,6 +29,9 @@ import javax.annotation.Nullable;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 class NoneSideRegistryEvents {
 
+    private NoneSideRegistryEvents() {
+    }
+
     @SubscribeEvent
     public static void dataGen(GatherDataEvent event) {
         event.getGenerator().addProvider(new Recipes(event.getGenerator()));
@@ -39,14 +42,14 @@ class NoneSideRegistryEvents {
         event.enqueueWork(NetWorking::registerMessage);
 
         event.enqueueWork(() -> {
-            /**
-             * 在FMLCommonSetupEvent这个事件中为实体添加了属性，必须放在event.enqueueWork中。
-             *
-             * GlobalEntityTypeAttributes.put有两个参数，
-             * 第一个参数是EntityType   第二个就是这个实体应该有哪些属性，以及这些属性的默认值是什么，
-             * 这里调用了createMutableAttribute
-             * 添加了一个属性即Attributes.MAX_HEALTH，并且设置了默认值是100，这样生物默认就是100点的血量。
-             * @param event
+            /*
+              在FMLCommonSetupEvent这个事件中为实体添加了属性，必须放在event.enqueueWork中。
+
+              GlobalEntityTypeAttributes.put有两个参数，
+              第一个参数是EntityType   第二个就是这个实体应该有哪些属性，以及这些属性的默认值是什么，
+              这里调用了createMutableAttribute
+              添加了一个属性即Attributes.MAX_HEALTH，并且设置了默认值是100，这样生物默认就是100点的血量。
+              @param event
              */
             GlobalEntityTypeAttributes.put(RegisteredEntityTypeList.OBSIDIAN_ANIMAL_ENTITY,
                     MobEntity.func_233666_p_().createMutableAttribute(Attributes.MAX_HEALTH, 100.0D).create());
@@ -64,7 +67,6 @@ class NoneSideRegistryEvents {
                         @Override
                         public void readNBT(Capability<ISimpleCapability> capability, ISimpleCapability instance,
                                             Direction side, INBT nbt) {
-
                         }
                     },
                     () -> null

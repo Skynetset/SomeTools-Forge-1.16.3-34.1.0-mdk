@@ -31,19 +31,22 @@ public class Recipes extends ForgeRecipeProvider {
                 .patternLine(" G ")
                 .key('I', Items.IRON_INGOT)
                 .key('G', Items.GOLD_INGOT)
-                .addCriterion("iron_ingot", InventoryChangeTrigger.Instance.forItems(Items.IRON_INGOT, Items.GOLD_INGOT))
+                .addCriterion("iron_ingot", InventoryChangeTrigger.Instance.forItems(Items.IRON_INGOT,
+                        Items.GOLD_INGOT))
                 .build(consumer);
         ShapedRecipeBuilder.shapedRecipe(RegisteredItemList.obsidian_block)
                 .patternLine("III")
                 .patternLine("III")
                 .patternLine("III")
                 .key('I', RegisteredItemList.obsidian_ingot)
-                .addCriterion("obsidian_ingot", InventoryChangeTrigger.Instance.forItems(RegisteredItemList.obsidian_ingot))
+                .addCriterion("obsidian_ingot",
+                        InventoryChangeTrigger.Instance.forItems(RegisteredItemList.obsidian_ingot))
                 .build(consumer);
         ShapedRecipeBuilder.shapedRecipe(RegisteredItemList.obsidian_ingot)
                 .patternLine("I  ")
                 .key('I', RegisteredItemList.obsidian_block)
-                .addCriterion("obsidian_block", InventoryChangeTrigger.Instance.forItems(RegisteredItemList.obsidian_block))
+                .addCriterion("obsidian_block",
+                        InventoryChangeTrigger.Instance.forItems(RegisteredItemList.obsidian_block))
                 .build(consumer);
     }
 }

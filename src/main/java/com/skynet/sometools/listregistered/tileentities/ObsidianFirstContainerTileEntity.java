@@ -27,14 +27,15 @@ import javax.annotation.Nullable;
  * @create: 2021-01-16 23:25
  */
 
-public class ObsidianFirstContainerTileEntity extends TileEntity implements ITickableTileEntity, INamedContainerProvider {
-    public static final Integer SLOT_NUM=1;
+public class ObsidianFirstContainerTileEntity extends TileEntity implements ITickableTileEntity,
+        INamedContainerProvider {
+    public static final Integer SLOT_NUM = 1;
 
     private final Inventory inventory = new Inventory(SLOT_NUM);
     private final ObsidianFirstContainerItemNumber itemNumber = new ObsidianFirstContainerItemNumber();
 
     public ObsidianFirstContainerTileEntity() {
-        super(RegisteredTileEntityTypeList.OBSIDIAN_FIRST_CONTAINER_TILE_ENTITY);
+        super(RegisteredTileEntityTypeList.obsidian_first_container_tile_entity);
     }
 
     @Override

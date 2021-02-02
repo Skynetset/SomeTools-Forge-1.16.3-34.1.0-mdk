@@ -22,7 +22,9 @@ public class ObsidianWrenchItemStackTileEntityRenderer extends ItemStackTileEnti
     private int degree = 0;
 
     @Override
-    public void func_239207_a_(ItemStack stack, ItemCameraTransforms.TransformType transformType, MatrixStack matrixStack, IRenderTypeBuffer buffer, int combinedLight, int combinedOverlay) {
+    public void func_239207_a_(ItemStack stack, ItemCameraTransforms.TransformType transformType,
+                               MatrixStack matrixStack, IRenderTypeBuffer buffer, int combinedLight,
+                               int combinedOverlay) {
         if (degree == 360) {
             degree = 0;
         }
@@ -36,7 +38,8 @@ public class ObsidianWrenchItemStackTileEntityRenderer extends ItemStackTileEnti
         matrixStack.translate(-xOffset, 0, -zOffset);
         matrixStack.rotate(Vector3f.YP.rotationDegrees(degree));
         matrixStack.translate(xOffset, 0, zOffset);
-        itemRenderer.renderItem(stack, ItemCameraTransforms.TransformType.NONE, false, matrixStack, buffer, combinedLight, combinedOverlay, ibakedmodel.getBakedModel());
+        itemRenderer.renderItem(stack, ItemCameraTransforms.TransformType.NONE, false, matrixStack, buffer,
+                combinedLight, combinedOverlay, ibakedmodel.getBakedModel());
         matrixStack.pop();
     }
 }

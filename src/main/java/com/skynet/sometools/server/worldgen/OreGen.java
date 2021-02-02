@@ -16,16 +16,18 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 public class OreGen {
     /**
      * 世界生成都是服务端的行为，这里需要订阅FMLCommonSetupEvent事件。
-     *
+     * <p>
      * 通过ForgeRegistries.BIOMES获取所有注册好的生物群系，
      * 并且调用biome.generateFeatures向生物群系中添加Feature（矿物）。
      * Feature有不同的阶段，这里GenerationStage.Decoration.UNDERGROUND_ORES代表矿物生成阶段。
      * 然后通过Feature.ORE.withConfiguration来创建一个矿物生成的Feature。
      *
+     * @param event :
+     *
+     * @return : void
+     *
      * @author : 1260535819@qq.com
      * @date : 2021/1/30 10:15
-     * @param event :
-     * @return : void
      */
     @SubscribeEvent
     public static void onSetUpEvent(FMLCommonSetupEvent event) {

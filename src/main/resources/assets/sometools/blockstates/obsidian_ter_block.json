@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "sometools:block/obsidian_ter_block" }
+    "": {
+      "model": "sometools:block/obsidian_ter_block"
+    }
   }
 }

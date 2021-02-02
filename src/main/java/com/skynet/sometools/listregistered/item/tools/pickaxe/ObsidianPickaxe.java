@@ -27,6 +27,7 @@ import java.util.List;
 
 public class ObsidianPickaxe extends PickaxeItem {
     private static final Logger LOGGER = LogManager.getLogger();
+
     public ObsidianPickaxe() {
         super(SomeToolsItemTier.OBSIDIAN, 2, -0.5F, (new Item.Properties()).group(SomeToolsGroup.TOOLS_GROUP));
     }
@@ -52,6 +53,7 @@ public class ObsidianPickaxe extends PickaxeItem {
     @Override
     public float getDestroySpeed(ItemStack stack, BlockState state) {
         Material material = state.getMaterial();
-        return material != Material.IRON && material != Material.ANVIL && material != Material.ROCK ? super.getDestroySpeed(stack, state) : this.efficiency;
+        return material != Material.IRON && material != Material.ANVIL && material != Material.ROCK ?
+                super.getDestroySpeed(stack, state) : this.efficiency;
     }
 }

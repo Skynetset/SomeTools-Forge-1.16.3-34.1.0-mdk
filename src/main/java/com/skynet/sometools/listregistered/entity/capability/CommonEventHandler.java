@@ -29,17 +29,20 @@ public class CommonEventHandler {
      * 所以在一开始把这个函数理解成成event.addCapabilityProvider。
      * 这里的第一个参数是一个标记符，每一个附加的CapabilityProvider都必须是唯一的，ResourceLocation
      * 第一个参数一般情况填入你的modId，后一个参数随喜好填。
-     *
+     * <p>
      * 可以填入的值有：
      * Entity
      * TileEntity
      * ItemStack
      * World
      * Chunk
+     *
+     * @param event :
+     *
+     * @return : void
+     *
      * @author : 1260535819@qq.com
      * @date : 2021/1/16 21:34
-     * @param event :
-     * @return : void
      */
     @SubscribeEvent
     public static void onAttachCapabilityEvent(AttachCapabilitiesEvent<Entity> event) {
@@ -56,21 +59,25 @@ public class CommonEventHandler {
      * event.isWasDeath() 为真代表玩家死亡后重生，为假代表从末地回到主世界。
      * event.getOriginal() 得到的是玩家之前的实体，
      * event.getPlayer() 代表的是玩家重生之后的实体。
-     *
+     * <p>
      * newCap.deserializeNBT(oldCap.serializeNBT());
      * 在这里恢复数据，这就是为什么需要让Capability实现INBTSerializable<CompoundNBT>。
      * 末地返回时保存数据
      *
+     * @param event :e
+     *
+     * @return : void
+     *
      * @author : 1260535819@qq.com
      * @date : 2021/1/16 21:33
-     * @param event :e
-     * @return : void
      */
     @SubscribeEvent
     public static void onPlayerCloned(PlayerEvent.Clone event) {
         if (!event.isWasDeath()) {
-            LazyOptional<ISpeedUpCapability> oldSpeedCap = event.getOriginal().getCapability(SomeToolsCapability.SPEED_UP_CAPABILITY);
-            LazyOptional<ISpeedUpCapability> newSpeedCap = event.getPlayer().getCapability(SomeToolsCapability.SPEED_UP_CAPABILITY);
+            LazyOptional<ISpeedUpCapability> oldSpeedCap =
+                    event.getOriginal().getCapability(SomeToolsCapability.SPEED_UP_CAPABILITY);
+            LazyOptional<ISpeedUpCapability> newSpeedCap =
+                    event.getPlayer().getCapability(SomeToolsCapability.SPEED_UP_CAPABILITY);
             if (oldSpeedCap.isPresent() && newSpeedCap.isPresent()) {
                 newSpeedCap.ifPresent((newCap) -> {
                     oldSpeedCap.ifPresent((oldCap) -> {

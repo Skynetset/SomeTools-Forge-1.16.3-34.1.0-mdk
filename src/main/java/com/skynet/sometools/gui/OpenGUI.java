@@ -14,6 +14,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class OpenGUI {
     public OpenGUI() {
-        Minecraft.getInstance().displayGuiScreen(new ObsidianFirstGui(new TranslationTextComponent(Utils.MOD_ID + ".test")));
+        Minecraft.getInstance().displayGuiScreen(new ObsidianFirstGui(new TranslationTextComponent(Utils.MOD_ID +
+                ".test")));
     }
 }

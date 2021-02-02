@@ -17,9 +17,17 @@ import net.minecraft.util.text.ITextComponent;
  */
 
 public class ObsidianFirstContainerScreen extends ContainerScreen<ObsidianFirstContainer> {
-    private final ResourceLocation OBSIDIAN_CONTAINER_RESOURCE = new ResourceLocation(Utils.MOD_ID, "textures/gui/container.png");
+    private final ResourceLocation OBSIDIAN_CONTAINER_RESOURCE = new ResourceLocation(Utils.MOD_ID, "textures/gui" +
+            "/container.png");
     private final int textureWidth = 176;
     private final int textureHeight = 166;
+
+    public ObsidianFirstContainerScreen(ObsidianFirstContainer screenContainer, PlayerInventory inv,
+                                        ITextComponent titleIn) {
+        super(screenContainer, inv, titleIn);
+        this.xSize = textureWidth;
+        this.ySize = textureHeight;
+    }
 
     @Override
     public void render(MatrixStack matrixStack, int mouseX, int mouseY, float partialTicks) {
@@ -28,15 +36,10 @@ public class ObsidianFirstContainerScreen extends ContainerScreen<ObsidianFirstC
         renderHoveredTooltip(matrixStack, mouseX, mouseY);
     }
 
-    public ObsidianFirstContainerScreen(ObsidianFirstContainer screenContainer, PlayerInventory inv, ITextComponent titleIn) {
-        super(screenContainer, inv, titleIn);
-        this.xSize = textureWidth;
-        this.ySize = textureHeight;
-    }
-
     @Override
     protected void drawGuiContainerForegroundLayer(MatrixStack matrixStack, int x, int y) {
-        drawCenteredString(matrixStack, this.font, Integer.toString(this.getContainer().getIntArray().get(0)), 82, 20, 0xeb0505);
+        drawCenteredString(matrixStack, this.font, Integer.toString(this.getContainer().getIntArray().get(0)), 82, 20
+                , 0xeb0505);
     }
 
     @Override

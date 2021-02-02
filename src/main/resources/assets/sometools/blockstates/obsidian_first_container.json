@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "sometools:block/obsidian_first_container" }
+    "": {
+      "model": "sometools:block/obsidian_first_container"
+    }
   }
 }

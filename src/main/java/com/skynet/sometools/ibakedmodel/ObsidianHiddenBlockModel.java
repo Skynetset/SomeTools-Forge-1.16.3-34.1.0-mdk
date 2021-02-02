@@ -31,8 +31,8 @@ import java.util.Random;
  */
 
 public class ObsidianHiddenBlockModel implements IBakedModel {
-    IBakedModel defaultModel;
     public static ModelProperty<BlockState> COPIED_BLOCK = new ModelProperty<>();
+    IBakedModel defaultModel;
 
     public ObsidianHiddenBlockModel(IBakedModel existingModel) {
         defaultModel = existingModel;
@@ -40,7 +40,8 @@ public class ObsidianHiddenBlockModel implements IBakedModel {
 
     @Nonnull
     @Override
-    public List<BakedQuad> getQuads(@Nullable BlockState state, @Nullable Direction side, @Nonnull Random rand, @Nonnull IModelData extraData) {
+    public List<BakedQuad> getQuads(@Nullable BlockState state, @Nullable Direction side, @Nonnull Random rand,
+                                    @Nonnull IModelData extraData) {
         IBakedModel renderModel = defaultModel;
         if (extraData.hasProperty(COPIED_BLOCK)) {
             BlockState copiedBlock = extraData.getData(COPIED_BLOCK);
@@ -51,9 +52,9 @@ public class ObsidianHiddenBlockModel implements IBakedModel {
                 defaultModel.isAmbientOcclusion(copiedBlock);
             }
         }
-        try{
+        try {
             renderModel.getQuads(state, side, rand, extraData);
-        }catch (Throwable t){
+        } catch (Throwable t) {
             renderModel = defaultModel;
         }
         return renderModel.getQuads(state, side, rand, extraData);
@@ -66,9 +67,9 @@ public class ObsidianHiddenBlockModel implements IBakedModel {
         BlockState downBlockState;
         ModelDataMap modelDataMap = new ModelDataMap.Builder().withInitial(COPIED_BLOCK, null).build();
         //        获取下方方块的BlockState
-        do{
+        do {
             downBlockState = world.getBlockState(pos.down(i++));
-        }while (downBlockState.getBlock() == RegisteredBlockList.OBSIDIAN_HIDDEN_BLOCK);
+        } while (downBlockState.getBlock() == RegisteredBlockList.obsidian_hidden_block);
 
         if (downBlockState.getBlock() == Blocks.AIR) {
             return modelDataMap;
@@ -84,9 +85,11 @@ public class ObsidianHiddenBlockModel implements IBakedModel {
 
     /**
      * 控制是否开启环境光遮蔽
+     *
+     * @return : boolean
+     *
      * @author : 1260535819@qq.com
      * @date : 2021/1/14 21:40
-     * @return : boolean
      */
     @Override
     public boolean isAmbientOcclusion() {
@@ -95,9 +98,11 @@ public class ObsidianHiddenBlockModel implements IBakedModel {
 
     /**
      * 控制掉落物是否是3D的
+     *
+     * @return : boolean
+     *
      * @author : 1260535819@qq.com
      * @date : 2021/1/14 21:40
-     * @return : boolean
      */
     @Override
     public boolean isGui3d() {
@@ -106,9 +111,11 @@ public class ObsidianHiddenBlockModel implements IBakedModel {
 
     /**
      * 暂不明，应该和物品的渲染光有关
+     *
+     * @return : boolean
+     *
      * @author : 1260535819@qq.com
      * @date : 2021/1/14 21:41
-     * @return : boolean
      */
     @Override
     public boolean isSideLit() {
@@ -117,9 +124,11 @@ public class ObsidianHiddenBlockModel implements IBakedModel {
 
     /**
      * 是否使用内置的渲染，返回Ture会使用ISTR渲染
+     *
+     * @return : boolean
+     *
      * @author : 1260535819@qq.com
      * @date : 2021/1/14 21:41
-     * @return : boolean
      */
     @Override
     public boolean isBuiltInRenderer() {
@@ -128,9 +137,11 @@ public class ObsidianHiddenBlockModel implements IBakedModel {
 
     /**
      * 粒子效果材质
+     *
+     * @return : net.minecraft.client.renderer.texture.TextureAtlasSprite
+     *
      * @author : 1260535819@qq.com
      * @date : 2021/1/14 21:41
-     * @return : net.minecraft.client.renderer.texture.TextureAtlasSprite
      */
     @Override
     public TextureAtlasSprite getParticleTexture() {
@@ -144,9 +155,11 @@ public class ObsidianHiddenBlockModel implements IBakedModel {
 
     /**
      * 获取模型的复写列表
+     *
+     * @return : net.minecraft.client.renderer.model.ItemOverrideList
+     *
      * @author : 1260535819@qq.com
      * @date : 2021/1/14 21:42
-     * @return : net.minecraft.client.renderer.model.ItemOverrideList
      */
     @Override
     public ItemOverrideList getOverrides() {

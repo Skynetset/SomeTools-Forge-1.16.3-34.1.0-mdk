@@ -39,7 +39,8 @@ public class ObsidianAnimalEntity extends AnimalEntity {
                 World world = getEntityWorld();
                 if (!world.isRemote) {
                     BlockPos blockPos = getPosition();
-                    PlayerEntity player = world.getClosestPlayer(blockPos.getX(), blockPos.getY(), blockPos.getZ(), 10, false);
+                    PlayerEntity player = world.getClosestPlayer(blockPos.getX(), blockPos.getY(), blockPos.getZ(),
+                            10, false);
                     if (player != null) {
                         player.addPotionEffect(new EffectInstance(Effects.HUNGER, 3 * 20, 3));
                     }
@@ -52,8 +53,10 @@ public class ObsidianAnimalEntity extends AnimalEntity {
 
     /**
      * 创建后代
+     *
      * @param p_241840_1_
      * @param p_241840_2_
+     *
      * @return
      */
     @Override

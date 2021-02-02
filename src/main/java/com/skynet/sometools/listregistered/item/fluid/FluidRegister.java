@@ -21,13 +21,16 @@
 //  */
 //
 // public class FluidRegister {
-//     public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, Utils.MOD_ID);
+//     public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, Utils
+//     .MOD_ID);
 //
 //     public static final ResourceLocation STILL_OIL_TEXTURE = new ResourceLocation("block/water_still");
 //     public static final ResourceLocation FLOWING_OIL_TEXTURE = new ResourceLocation("block/water_flow");
 //
-//     public static RegistryObject<FlowingFluid> obsidianFluid = FLUIDS.register("obsidian_fluid", () -> new ForgeFlowingFluid.Source(FluidRegister.PROPERTIES));
-//     public static RegistryObject<FlowingFluid> obsidianFluidFlowing = FLUIDS.register("obsidian_fluid_flowing", () -> new ForgeFlowingFluid.Flowing(FluidRegister.PROPERTIES));
+//     public static RegistryObject<FlowingFluid> obsidianFluid = FLUIDS.register("obsidian_fluid", () -> new
+//     ForgeFlowingFluid.Source(FluidRegister.PROPERTIES));
+//     public static RegistryObject<FlowingFluid> obsidianFluidFlowing = FLUIDS.register("obsidian_fluid_flowing", ()
+//     -> new ForgeFlowingFluid.Flowing(FluidRegister.PROPERTIES));
 //
 //     public static ForgeFlowingFluid.Properties PROPERTIES =
 //             new ForgeFlowingFluid.Properties(obsidianFluid

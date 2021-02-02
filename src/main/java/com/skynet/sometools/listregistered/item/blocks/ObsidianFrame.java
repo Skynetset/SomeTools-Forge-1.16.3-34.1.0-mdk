@@ -66,13 +66,15 @@ public class ObsidianFrame extends Block implements IWaterLoggable {
             return blockstate.with(WATERLOGGED, Boolean.valueOf(false));
         } else {
             FluidState fluidstate = context.getWorld().getFluidState(blockpos);
-            BlockState blockstate1 = this.getDefaultState().with(WATERLOGGED, Boolean.valueOf(fluidstate.getFluid() == Fluids.WATER));
+            BlockState blockstate1 = this.getDefaultState().with(WATERLOGGED,
+                    Boolean.valueOf(fluidstate.getFluid() == Fluids.WATER));
             return blockstate1;
         }
     }
 
     @Override
-    public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
+    public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState,
+                                          IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
         if (stateIn.get(WATERLOGGED)) {
             worldIn.getPendingFluidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
         }

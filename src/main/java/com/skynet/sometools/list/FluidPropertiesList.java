@@ -17,15 +17,15 @@ import net.minecraftforge.fluids.ForgeFlowingFluid;
 
 public class FluidPropertiesList {
     public static ForgeFlowingFluid.Properties OBSIDIAN_FLUID_PROPERTIES =
-            new ForgeFlowingFluid.Properties(()->RegisteredFluidList.obsidianFluid
-                    , ()->RegisteredFluidList.obsidianFluidFlowing
+            new ForgeFlowingFluid.Properties(() -> RegisteredFluidList.obsidianFluid
+                    , () -> RegisteredFluidList.obsidianFluidFlowing
                     , FluidAttributes
                     .builder(new ResourceLocation("block/water_still"), new ResourceLocation("block/water_flow"))
                     .color(0xFF420372)
                     .density(4000)
                     .viscosity(4000))
-                    .bucket(()->RegisteredItemList.obsidian_fluid_bucket)
-                    .block(()->RegisteredBlockList.OBSIDIAN_FLUID_BLOCK)
+                    .bucket(() -> RegisteredItemList.obsidian_fluid_bucket)
+                    .block(() -> RegisteredBlockList.obsidian_fluid)
                     .slopeFindDistance(3)
                     .explosionResistance(100F);
 }

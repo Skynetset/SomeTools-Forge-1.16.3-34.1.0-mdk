@@ -23,7 +23,7 @@ import javax.annotation.Nullable;
 
 public class ObsidianTrashTileEntity extends TileEntity {
     public ObsidianTrashTileEntity() {
-        super(RegisteredTileEntityTypeList.OBSIDIAN_TRASH_TILE_ENTITY);
+        super(RegisteredTileEntityTypeList.obsidian_trash_tile_block);
     }
 
     @Nonnull

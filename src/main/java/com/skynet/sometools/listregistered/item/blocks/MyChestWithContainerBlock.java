@@ -47,18 +47,21 @@ public class MyChestWithContainerBlock extends Block implements IWaterLoggable {
     }
 
     @Override
-    public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+    public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player,
+                                             Hand handIn, BlockRayTraceResult hit) {
         if (worldIn.isRemote) {
             return ActionResultType.SUCCESS;
         } else {
             if (!worldIn.isRemote && handIn == Hand.MAIN_HAND) {
-                MyChestWithContainerTileEntity myChestWithContainerTileEntity = (MyChestWithContainerTileEntity) worldIn.getTileEntity(pos);
+                MyChestWithContainerTileEntity myChestWithContainerTileEntity =
+                        (MyChestWithContainerTileEntity) worldIn.getTileEntity(pos);
                 player.openContainer(myChestWithContainerTileEntity);
                 player.addStat(this.getOpenStat());
                 PiglinTasks.func_234478_a_(player, true);
-//                NetworkHooks.openGui((ServerPlayerEntity) player, myChestWithContainerTileEntity, (PacketBuffer packerBuffer) -> {
-//                    packerBuffer.writeBlockPos(myChestWithContainerTileEntity.getPos());
-//                });
+                //                NetworkHooks.openGui((ServerPlayerEntity) player, myChestWithContainerTileEntity,
+                //                (PacketBuffer packerBuffer) -> {
+                //                    packerBuffer.writeBlockPos(myChestWithContainerTileEntity.getPos());
+                //                });
             }
 
             return ActionResultType.CONSUME;

@@ -24,13 +24,15 @@ public class SomeTools {
     public static final Logger LOGGER = Utils.LOGGER;
 
     public static SomeTools instance;
-    public SomeTools(){
+
+    public SomeTools() {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.COMMON_CONFIG);
         instance = this;
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
     }
+
     private void setup(final FMLCommonSetupEvent event) {
     }
 

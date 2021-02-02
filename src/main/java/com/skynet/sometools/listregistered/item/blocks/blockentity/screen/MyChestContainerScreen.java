@@ -21,11 +21,13 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class MyChestContainerScreen extends ContainerScreen<MyChestContainer> implements IHasContainer<MyChestContainer> {
-//    private final ResourceLocation OBSIDIAN_CONTAINER_RESOURCE = new ResourceLocation(Utils.MOD_ID, "textures/gui/container.png");
+    //    private final ResourceLocation OBSIDIAN_CONTAINER_RESOURCE = new ResourceLocation(Utils.MOD_ID,
+    //    "textures/gui/container.png");
     /**
      * The ResourceLocation containing the chest GUI texture.
      */
-    private static final ResourceLocation CHEST_GUI_TEXTURE = new ResourceLocation("textures/gui/container/generic_54.png");
+    private static final ResourceLocation CHEST_GUI_TEXTURE = new ResourceLocation("textures/gui/container/generic_54" +
+            ".png");
     /**
      * Window height is calculated with these values; the more rows, the higher
      */
@@ -33,13 +35,6 @@ public class MyChestContainerScreen extends ContainerScreen<MyChestContainer> im
 
     private final int textureWidth = 176;
     private final int textureHeight = 166;
-
-    @Override
-    public void render(MatrixStack matrixStack, int mouseX, int mouseY, float partialTicks) {
-        this.renderBackground(matrixStack);
-        super.render(matrixStack, mouseX, mouseY, partialTicks);
-        this.renderHoveredTooltip(matrixStack, mouseX, mouseY);
-    }
 
     public MyChestContainerScreen(MyChestContainer container, PlayerInventory playerInventory, ITextComponent title) {
         super(container, playerInventory, title);
@@ -51,10 +46,18 @@ public class MyChestContainerScreen extends ContainerScreen<MyChestContainer> im
         this.playerInventoryTitleY = this.ySize - 94;
     }
 
-//    @Override
-//    protected void drawGuiContainerForegroundLayer(MatrixStack matrixStack, int x, int y) {
-//        drawCenteredString(matrixStack, this.font, Integer.toString(this.getContainer().getIntArray().get(0)), 82, 20, 0xeb0505);
-//    }
+    @Override
+    public void render(MatrixStack matrixStack, int mouseX, int mouseY, float partialTicks) {
+        this.renderBackground(matrixStack);
+        super.render(matrixStack, mouseX, mouseY, partialTicks);
+        this.renderHoveredTooltip(matrixStack, mouseX, mouseY);
+    }
+
+    //    @Override
+    //    protected void drawGuiContainerForegroundLayer(MatrixStack matrixStack, int x, int y) {
+    //        drawCenteredString(matrixStack, this.font, Integer.toString(this.getContainer().getIntArray().get(0)),
+    //        82, 20, 0xeb0505);
+    //    }
 
     @Override
     protected void drawGuiContainerBackgroundLayer(MatrixStack matrixStack, float partialTicks, int x, int y) {

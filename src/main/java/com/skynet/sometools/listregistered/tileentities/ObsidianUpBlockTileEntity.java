@@ -19,11 +19,11 @@ import org.apache.logging.log4j.Logger;
  */
 
 public class ObsidianUpBlockTileEntity extends TileEntity implements ITickableTileEntity {
-    public ObsidianUpBlockTileEntity() {
-        super(RegisteredTileEntityTypeList.OBSIDIAN_UP_BLOCK_ENTITY);
-    }
-
     private static final Logger logger = LogManager.getLogger();
+
+    public ObsidianUpBlockTileEntity() {
+        super(RegisteredTileEntityTypeList.obsidian_up_tile_block);
+    }
 
     @Override
     public void tick() {
@@ -31,7 +31,8 @@ public class ObsidianUpBlockTileEntity extends TileEntity implements ITickableTi
             BlockPos pos = this.pos.down();
             TileEntity tileEntity = world.getTileEntity(pos);
             if (tileEntity != null) {
-                LazyOptional<ISimpleCapability> simpleCapabilityLazyOptional = tileEntity.getCapability(SomeToolsCapability.SIMPLE_CAPABILITY);
+                LazyOptional<ISimpleCapability> simpleCapabilityLazyOptional =
+                        tileEntity.getCapability(SomeToolsCapability.SIMPLE_CAPABILITY);
                 simpleCapabilityLazyOptional.ifPresent((s) -> {
                     String context = s.getString(this.pos);
                     logger.info(context);

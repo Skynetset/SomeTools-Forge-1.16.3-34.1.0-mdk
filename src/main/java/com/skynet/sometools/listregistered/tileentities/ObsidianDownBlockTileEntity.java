@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 
 public class ObsidianDownBlockTileEntity extends TileEntity {
     public ObsidianDownBlockTileEntity() {
-        super(RegisteredTileEntityTypeList.OBSIDIAN_DOWN_BLOCK_ENTITY);
+        super(RegisteredTileEntityTypeList.obsidian_down_tile_block);
     }
 
     @Nonnull

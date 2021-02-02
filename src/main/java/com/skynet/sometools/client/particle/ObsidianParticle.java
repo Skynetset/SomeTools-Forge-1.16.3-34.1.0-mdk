@@ -16,7 +16,8 @@ import java.awt.*;
  */
 
 public class ObsidianParticle extends SpriteTexturedParticle {
-    protected ObsidianParticle(ClientWorld world, double x, double y, double z, Vector3d speed, Color color, float diameter) {
+    protected ObsidianParticle(ClientWorld world, double x, double y, double z, Vector3d speed, Color color,
+                               float diameter) {
         super(world, x, y, z, speed.x, speed.y, speed.z);
         maxAge = 100;
         motionX = speed.x;

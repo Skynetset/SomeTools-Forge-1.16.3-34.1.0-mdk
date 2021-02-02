@@ -28,7 +28,8 @@ public class ObsidianFirstContainer extends Container {
         super(RegisteredContainerTypeList.OBSIDIAN_FIRST_CONTAINER, id);
         this.intArray = intArray;
         trackIntArray(this.intArray);
-        ObsidianFirstContainerTileEntity obsidianFirstContainerTileEntity = (ObsidianFirstContainerTileEntity) world.getTileEntity(pos);
+        ObsidianFirstContainerTileEntity obsidianFirstContainerTileEntity =
+                (ObsidianFirstContainerTileEntity) world.getTileEntity(pos);
         this.addSlot(new Slot(obsidianFirstContainerTileEntity.getInventory(), 0, 80, 32));
         this.addSlot(new Slot(obsidianFirstContainerTileEntity.getInventory(), 0, 80, 32));
         layoutPlayerInventorySlots(playerInventory, 8, 84);
@@ -53,7 +54,8 @@ public class ObsidianFirstContainer extends Container {
         return index;
     }
 
-    private int addSlotBox(IInventory inventory, int index, int x, int y, int horAmount, int dx, int verAmount, int dy) {
+    private int addSlotBox(IInventory inventory, int index, int x, int y, int horAmount, int dx, int verAmount,
+                           int dy) {
         for (int j = 0; j < verAmount; j++) {
             index = addSlotRange(inventory, index, x, y, horAmount, dx);
             y += dy;

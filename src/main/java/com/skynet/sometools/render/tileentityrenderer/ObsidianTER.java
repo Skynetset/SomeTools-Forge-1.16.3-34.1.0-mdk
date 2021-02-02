@@ -31,12 +31,14 @@ public class ObsidianTER extends TileEntityRenderer<ObsidianTERTileEntity> {
     }
 
     @Override
-    public void render(ObsidianTERTileEntity tileEntityIn, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int combinedLightIn, int combinedOverlayIn) {
+    public void render(ObsidianTERTileEntity tileEntityIn, float partialTicks, MatrixStack matrixStackIn,
+                       IRenderTypeBuffer bufferIn, int combinedLightIn, int combinedOverlayIn) {
         matrixStackIn.push();
         matrixStackIn.translate(1, 0, 0);
         BlockRendererDispatcher blockRenderer = Minecraft.getInstance().getBlockRendererDispatcher();
         BlockState state = Blocks.CHEST.getDefaultState();
-        blockRenderer.renderBlock(state, matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, EmptyModelData.INSTANCE);
+        blockRenderer.renderBlock(state, matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn,
+                EmptyModelData.INSTANCE);
         matrixStackIn.pop();
 
         matrixStackIn.push();
@@ -44,7 +46,8 @@ public class ObsidianTER extends TileEntityRenderer<ObsidianTERTileEntity> {
         ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
         ItemStack stack = new ItemStack(Items.DIAMOND);
         IBakedModel ibakedmodel = itemRenderer.getItemModelWithOverrides(stack, tileEntityIn.getWorld(), null);
-        itemRenderer.renderItem(stack, ItemCameraTransforms.TransformType.FIXED, true, matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn, ibakedmodel);
+        itemRenderer.renderItem(stack, ItemCameraTransforms.TransformType.FIXED, true, matrixStackIn, bufferIn,
+                combinedLightIn, combinedOverlayIn, ibakedmodel);
         matrixStackIn.pop();
     }
 }

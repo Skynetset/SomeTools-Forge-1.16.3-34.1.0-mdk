@@ -22,12 +22,14 @@
 //  */
 //
 // public class ContainerTypeRegister {
-//     public static final DeferredRegister<ContainerType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.CONTAINERS, Utils.MOD_ID);
+//     public static final DeferredRegister<ContainerType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries
+//     .CONTAINERS, Utils.MOD_ID);
 //
 //     public static final RegistryObject<ContainerType<ObsidianFirstContainer>> OBSIDIAN_FIRST_CONTAINER =
 //             CONTAINERS.register("obsidian_first_container",
 //                     () -> IForgeContainerType.create((int windowId, PlayerInventory inv, PacketBuffer data) ->
-//                                     new ObsidianFirstContainer(windowId, inv, data.readBlockPos(), Minecraft.getInstance().world, new ObsidianFirstContainerItemNumber())));
+//                                     new ObsidianFirstContainer(windowId, inv, data.readBlockPos(), Minecraft
+//                                     .getInstance().world, new ObsidianFirstContainerItemNumber())));
 //     public static final RegistryObject<ContainerType<MyChestContainer>> MY_CHEST_CONTAINER =
 //             CONTAINERS.register("my_chest_container",
 //                     () -> IForgeContainerType.create((int windowId, PlayerInventory inv, PacketBuffer data) ->

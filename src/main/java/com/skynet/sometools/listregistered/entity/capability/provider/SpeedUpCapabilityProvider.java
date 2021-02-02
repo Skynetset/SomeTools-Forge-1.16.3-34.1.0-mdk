@@ -32,7 +32,8 @@ public class SpeedUpCapabilityProvider implements ICapabilityProvider, INBTSeria
     @Nonnull
     @Override
     public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-        return cap == SomeToolsCapability.SPEED_UP_CAPABILITY ? LazyOptional.of(this::getOrCreateCapability).cast() : LazyOptional.empty();
+        return cap == SomeToolsCapability.SPEED_UP_CAPABILITY ? LazyOptional.of(this::getOrCreateCapability).cast() :
+                LazyOptional.empty();
     }
 
     @Nonnull

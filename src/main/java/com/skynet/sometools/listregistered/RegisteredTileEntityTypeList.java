@@ -15,13 +15,14 @@ import net.minecraftforge.registries.ObjectHolder;
 
 @ObjectHolder(Utils.MOD_ID)
 public class RegisteredTileEntityTypeList {
-    public static TileEntityType<ObsidianCounterTileEntity> OBSIDIAN_COUNTER_TILE_ENTITY;
-    public static TileEntityType<ObsidianHelloTileEntity> OBSIDIAN_HELLO_TILE_ENTITY;
-    public static TileEntityType<ObsidianZombieTileEntity> OBSIDIAN_ZOMBIE_TILE_ENTITY;
-    public static TileEntityType<ObsidianTERTileEntity> OBSIDIAN_TER_TILE_ENTITY;
-    public static TileEntityType<ObsidianUpBlockTileEntity> OBSIDIAN_UP_BLOCK_ENTITY;
-    public static TileEntityType<ObsidianDownBlockTileEntity> OBSIDIAN_DOWN_BLOCK_ENTITY;
-    public static TileEntityType<ObsidianTrashTileEntity> OBSIDIAN_TRASH_TILE_ENTITY;
-    public static TileEntityType<ObsidianFirstContainerTileEntity> OBSIDIAN_FIRST_CONTAINER_TILE_ENTITY;
-    public static TileEntityType<MyChestWithContainerTileEntity> MY_CHEST_WITH_CONTAINER_TILE_ENTITY;
+    public static final TileEntityType<ObsidianCounterTileEntity> obsidian_counter_tile_entity = null;
+
+    public static final TileEntityType<ObsidianHelloTileEntity> obsidian_hello_block = null;
+    public static final TileEntityType<ObsidianZombieTileEntity> obsidian_zombie_tile_block = null;
+    public static final TileEntityType<ObsidianTERTileEntity> obsidian_ter_tile_block = null;
+    public static final TileEntityType<ObsidianUpBlockTileEntity> obsidian_up_tile_block = null;
+    public static final TileEntityType<ObsidianDownBlockTileEntity> obsidian_down_tile_block = null;
+    public static final TileEntityType<ObsidianTrashTileEntity> obsidian_trash_tile_block = null;
+    public static final TileEntityType<ObsidianFirstContainerTileEntity> obsidian_first_container_tile_entity = null;
+    public static final TileEntityType<MyChestWithContainerTileEntity> my_chest_with_container_tile_entity = null;
 }

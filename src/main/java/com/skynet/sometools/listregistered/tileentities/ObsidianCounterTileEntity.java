@@ -18,19 +18,23 @@ public class ObsidianCounterTileEntity extends TileEntity {
 
     /**
      * 传入方块实体的类型
+     *
+     * @return : null
+     *
      * @author : 1260535819@qq.com
      * @date : 2021/1/14 9:30
-     * @return : null
      */
     public ObsidianCounterTileEntity() {
-        super(RegisteredTileEntityTypeList.OBSIDIAN_COUNTER_TILE_ENTITY);
+        super(RegisteredTileEntityTypeList.obsidian_counter_tile_entity);
     }
 
     /**
      * 方块实体功能的具体实现
+     *
+     * @return : int
+     *
      * @author : 1260535819@qq.com
      * @date : 2021/1/14 9:30
-     * @return : int
      */
     public int increase() {
         counter++;
@@ -43,11 +47,14 @@ public class ObsidianCounterTileEntity extends TileEntity {
 
     /**
      * 从存档中获取nbt值
+     *
+     * @param state :
+     * @param nbt   :
+     *
+     * @return : void
+     *
      * @author : 1260535819@qq.com
      * @date : 2021/1/14 12:35
-     * @param state :
-     * @param nbt :
-     * @return : void
      */
     @Override
     public void read(BlockState state, CompoundNBT nbt) {
@@ -56,11 +63,14 @@ public class ObsidianCounterTileEntity extends TileEntity {
     }
 
     /**
-     *  将值存入nbt中以进行持久化操作
+     * 将值存入nbt中以进行持久化操作
+     *
+     * @param compound :
+     *
+     * @return : net.minecraft.nbt.CompoundNBT
+     *
      * @author : 1260535819@qq.com
      * @date : 2021/1/14 12:36
-     * @param compound :
-     * @return : net.minecraft.nbt.CompoundNBT
      */
     @Override
     public CompoundNBT write(CompoundNBT compound) {

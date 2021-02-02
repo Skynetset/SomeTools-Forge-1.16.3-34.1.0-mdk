@@ -16,8 +16,8 @@ import java.util.function.Supplier;
  */
 
 public class SendPack {
-    private final String message;
     private static final Logger LOGGER = LogManager.getLogger();
+    private final String message;
 
     public SendPack(PacketBuffer buffer) {
         message = buffer.readString(Short.MAX_VALUE);

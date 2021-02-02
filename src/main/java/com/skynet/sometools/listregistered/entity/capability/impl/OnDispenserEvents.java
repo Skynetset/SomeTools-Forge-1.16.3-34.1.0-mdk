@@ -23,9 +23,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 class OnDispenserEvents {
 
+    private OnDispenserEvents() {
+    }
+
     @SubscribeEvent
     public static void onDispenserRegister(FMLCommonSetupEvent event) {
-        DispenserBlock.registerDispenseBehavior(()-> RegisteredItemList.obsidian_fluid_bucket,
+        DispenserBlock.registerDispenseBehavior(() -> RegisteredItemList.obsidian_fluid_bucket,
                 new DefaultDispenseItemBehavior() {
                     private final DefaultDispenseItemBehavior dispenseItemBehavior = new DefaultDispenseItemBehavior();
 
@@ -35,7 +38,8 @@ class OnDispenserEvents {
                     @Override
                     public ItemStack dispenseStack(IBlockSource source, ItemStack stack) {
                         BucketItem bucketitem = (BucketItem) stack.getItem();
-                        BlockPos blockpos = source.getBlockPos().offset(source.getBlockState().get(DispenserBlock.FACING));
+                        BlockPos blockpos =
+                                source.getBlockPos().offset(source.getBlockState().get(DispenserBlock.FACING));
                         World world = source.getWorld();
                         if (bucketitem.tryPlaceContainedLiquid(null, world, blockpos, null)) {
                             bucketitem.onLiquidPlaced(world, stack, blockpos);
