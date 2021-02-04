@@ -1,4 +1,4 @@
-package com.skynet.sometools.handler.commandeventhandler;
+package com.skynet.sometools.server;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.tree.LiteralCommandNode;
