@@ -12,7 +12,7 @@ import com.skynet.sometools.listregistered.item.blocks.*;
 import com.skynet.sometools.listregistered.item.blocks.blockentity.container.MyChestContainer;
 import com.skynet.sometools.listregistered.item.blocks.blockentity.container.ObsidianFirstContainer;
 import com.skynet.sometools.listregistered.item.blocks.blockentity.container.ObsidianFirstContainerItemNumber;
-import com.skynet.sometools.listregistered.item.fluid.FluidRegister;
+import com.skynet.sometools.listregistered.fluid.FluidRegister;
 import com.skynet.sometools.listregistered.item.food.ObsidianApple;
 import com.skynet.sometools.listregistered.item.ingot.MagicIngot;
 import com.skynet.sometools.listregistered.item.itemstacktileentityrenderer.ObsidianWrenchItemStackTileEntityRenderer;

@@ -1,8 +1,7 @@
-package com.skynet.sometools.list;
+package com.skynet.sometools.listregistered.fluid;
 
 import com.skynet.sometools.listregistered.RegisteredBlockList;
 import com.skynet.sometools.listregistered.RegisteredItemList;
-import com.skynet.sometools.listregistered.item.fluid.FluidRegister;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidAttributes;
 import net.minecraftforge.fluids.ForgeFlowingFluid;

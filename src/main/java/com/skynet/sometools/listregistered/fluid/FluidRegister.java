@@ -1,7 +1,6 @@
-package com.skynet.sometools.listregistered.item.fluid;
+package com.skynet.sometools.listregistered.fluid;
 
 import com.skynet.sometools.common.Utils;
-import com.skynet.sometools.list.FluidPropertiesList;
 import net.minecraft.fluid.FlowingFluid;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.util.ResourceLocation;

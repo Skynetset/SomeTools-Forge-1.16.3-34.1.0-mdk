@@ -9,7 +9,7 @@ import com.skynet.sometools.listregistered.entity.render.FlyingSwordRender;
 import com.skynet.sometools.listregistered.entity.render.ObsidianAnimalRender;
 import com.skynet.sometools.listregistered.item.blocks.blockentity.screen.MyChestContainerScreen;
 import com.skynet.sometools.listregistered.item.blocks.blockentity.screen.ObsidianFirstContainerScreen;
-import com.skynet.sometools.listregistered.item.fluid.FluidRegister;
+import com.skynet.sometools.listregistered.fluid.FluidRegister;
 import com.skynet.sometools.render.tileentityrenderer.ObsidianTER;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
