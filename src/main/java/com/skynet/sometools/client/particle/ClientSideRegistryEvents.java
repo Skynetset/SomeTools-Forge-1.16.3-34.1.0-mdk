@@ -2,15 +2,19 @@ package com.skynet.sometools.client.particle;
 
 import com.skynet.sometools.client.input.KeyBoardInput;
 import com.skynet.sometools.common.Utils;
+import com.skynet.sometools.ibakedmodel.ObsidianHiddenBlockModel;
 import com.skynet.sometools.ibakedmodel.ObsidianWrenchBakedModel;
 import com.skynet.sometools.listregistered.*;
 import com.skynet.sometools.listregistered.entity.render.FlyingSwordRender;
 import com.skynet.sometools.listregistered.entity.render.ObsidianAnimalRender;
 import com.skynet.sometools.listregistered.item.blocks.blockentity.screen.MyChestContainerScreen;
 import com.skynet.sometools.listregistered.item.blocks.blockentity.screen.ObsidianFirstContainerScreen;
+import com.skynet.sometools.listregistered.item.fluid.FluidRegister;
 import com.skynet.sometools.render.tileentityrenderer.ObsidianTER;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScreenManager;
+import net.minecraft.client.renderer.BlockModelShapes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.renderer.model.IBakedModel;
@@ -71,8 +75,8 @@ class ClientSideRegistryEvents {
         event.enqueueWork(() -> {
             RenderTypeLookup.setRenderLayer(RegisteredBlockList.glass_jar, RenderType.getTranslucent());
 
-            RenderTypeLookup.setRenderLayer(RegisteredFluidList.obsidianFluid, RenderType.getTranslucent());
-            RenderTypeLookup.setRenderLayer(RegisteredFluidList.obsidianFluidFlowing, RenderType.getTranslucent());
+            RenderTypeLookup.setRenderLayer(FluidRegister.obsidianFluid.get(), RenderType.getTranslucent());
+            RenderTypeLookup.setRenderLayer(FluidRegister.obsidianFluidFlowing.get(), RenderType.getTranslucent());
         });
 
         // 实体渲染
@@ -91,7 +95,7 @@ class ClientSideRegistryEvents {
     }
 
     @SubscribeEvent
-    public static void onModelBaked(ModelBakeEvent event) {
+    public static void onObsidianWrenchModelBaked(ModelBakeEvent event) {
         Map<ResourceLocation, IBakedModel> modelRegistry = event.getModelRegistry();
         ModelResourceLocation location = new ModelResourceLocation(RegisteredItemList.obsidian_wrench.getRegistryName()
                 , "inventory");
@@ -103,6 +107,22 @@ class ClientSideRegistryEvents {
         } else {
             ObsidianWrenchBakedModel obsidianWrenchBakedModel = new ObsidianWrenchBakedModel(existingModel);
             event.getModelRegistry().put(location, obsidianWrenchBakedModel);
+        }
+    }
+
+    @SubscribeEvent
+    public static void onObsidianHiddenBlockModelBaked(ModelBakeEvent event) {
+        for (BlockState blockstate : RegisteredBlockList.obsidian_hidden_block.getStateContainer().getValidStates()) {
+            ModelResourceLocation modelResourceLocation = BlockModelShapes.getModelLocation(blockstate);
+            IBakedModel existingModel = event.getModelRegistry().get(modelResourceLocation);
+            if (existingModel == null) {
+                throw new RuntimeException("Did not find Obsidian Hidden in registry");
+            } else if (existingModel instanceof ObsidianHiddenBlockModel) {
+                throw new RuntimeException("Tried to replaceObsidian Hidden twice");
+            } else {
+                ObsidianHiddenBlockModel obsidianHiddenBlockModel = new ObsidianHiddenBlockModel(existingModel);
+                event.getModelRegistry().put(modelResourceLocation, obsidianHiddenBlockModel);
+            }
         }
     }
 }

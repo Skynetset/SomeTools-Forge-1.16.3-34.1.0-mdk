@@ -21,10 +21,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
  * @create: 2021-01-16 18:58
  */
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-class OnDispenserEvents {
+public class OnDispenserEvents {
 
-    private OnDispenserEvents() {
-    }
 
     @SubscribeEvent
     public static void onDispenserRegister(FMLCommonSetupEvent event) {

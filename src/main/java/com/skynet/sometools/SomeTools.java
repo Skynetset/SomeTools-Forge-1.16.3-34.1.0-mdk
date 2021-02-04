@@ -2,6 +2,7 @@ package com.skynet.sometools;
 
 import com.skynet.sometools.common.Utils;
 import com.skynet.sometools.config.Config;
+import com.skynet.sometools.listregistered.item.fluid.FluidRegister;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -29,6 +30,8 @@ public class SomeTools {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.COMMON_CONFIG);
         instance = this;
 
+        // 流体注册
+        FluidRegister.FLUIDS.register(FMLJavaModLoadingContext.get().getModEventBus());
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
     }

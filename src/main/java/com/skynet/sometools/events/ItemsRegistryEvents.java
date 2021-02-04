@@ -4,7 +4,6 @@ import com.skynet.sometools.client.particle.ObsidianParticleType;
 import com.skynet.sometools.common.Utils;
 import com.skynet.sometools.list.*;
 import com.skynet.sometools.listregistered.RegisteredBlockList;
-import com.skynet.sometools.listregistered.RegisteredFluidList;
 import com.skynet.sometools.listregistered.entity.FlyingSwordEntity;
 import com.skynet.sometools.listregistered.entity.ObsidianAnimalEntity;
 import com.skynet.sometools.listregistered.item.SomeToolsGroup;
@@ -13,6 +12,7 @@ import com.skynet.sometools.listregistered.item.blocks.*;
 import com.skynet.sometools.listregistered.item.blocks.blockentity.container.MyChestContainer;
 import com.skynet.sometools.listregistered.item.blocks.blockentity.container.ObsidianFirstContainer;
 import com.skynet.sometools.listregistered.item.blocks.blockentity.container.ObsidianFirstContainerItemNumber;
+import com.skynet.sometools.listregistered.item.fluid.FluidRegister;
 import com.skynet.sometools.listregistered.item.food.ObsidianApple;
 import com.skynet.sometools.listregistered.item.ingot.MagicIngot;
 import com.skynet.sometools.listregistered.item.itemstacktileentityrenderer.ObsidianWrenchItemStackTileEntityRenderer;
@@ -27,12 +27,11 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.fluid.FlowingFluid;
-import net.minecraft.fluid.Fluid;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.particles.ParticleType;
@@ -42,9 +41,10 @@ import net.minecraft.util.SoundEvent;
 import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fluids.ForgeFlowingFluid;
 import net.minecraftforge.fml.common.Mod;
 import org.apache.logging.log4j.Logger;
+
+import static net.minecraft.item.Items.BUCKET;
 
 /**
  * TODO RegistryEvents
@@ -148,9 +148,9 @@ class ItemsRegistryEvents {
                 ItemList.OBSIDIAN_BOOTS = new ArmorItem(SomeToolsArmorMaterial.OBSIDIAN, EquipmentSlotType.FEET,
                         (new Item.Properties()).group(SomeToolsGroup.ARMER_GROUP)).setRegistryName(location(
                         "obsidian_boots")),
-                ItemList.obsidianFluidBucket =
-                        new Item(new Item.Properties().group(SomeToolsGroup.ITEMS_GROUP)).setRegistryName(location(
-                                "obsidian_fluid_bucket"))
+                ItemList.obsidianFluidBucket = new BucketItem(FluidRegister.obsidianFluid,
+                        new Item.Properties().group(SomeToolsGroup.ITEMS_GROUP).containerItem(BUCKET)).setRegistryName(location(
+                        "obsidian_fluid_bucket"))
         );
     }
 
@@ -167,7 +167,7 @@ class ItemsRegistryEvents {
                 BlockList.OBSIDIAN_FIRST_CONTAINER_BLOCK =
                         new ObsidianFirstContainerBlock().setRegistryName(location("obsidian_first_container")),
                 BlockList.OBSIDIAN_FLUID_BLOCK =
-                        (FlowingFluidBlock) new FlowingFluidBlock(() -> RegisteredFluidList.obsidianFluid,
+                        (FlowingFluidBlock) new FlowingFluidBlock(FluidRegister.obsidianFluid,
                                 Block.Properties.create(Material.WATER).doesNotBlockMovement().hardnessAndResistance(100.0F).noDrops()).setRegistryName(location("obsidian_fluid")),
                 BlockList.OBSIDIAN_FRAME = new ObsidianFrame().setRegistryName(location("obsidian_frame")),
                 BlockList.OBSIDIAN_HELLO = new ObsidianHelloBlock().setRegistryName(location("obsidian_hello_block")),
@@ -184,20 +184,6 @@ class ItemsRegistryEvents {
                 BlockList.OBSIDIAN_UP_BLOCK = new ObsidianUpBlock().setRegistryName(location("obsidian_up_block")),
                 BlockList.OBSIDIAN_ZOMBIE_BLOCK = new ObsidianDownBlock().setRegistryName(location(
                         "obsidian_zombie_block"))
-        );
-    }
-
-    @SubscribeEvent
-    public static void registerFluids(final RegistryEvent.Register<Fluid> register) {
-        register.getRegistry().registerAll(
-                FluidList.obsidianFluid = (FlowingFluid)
-                        new ForgeFlowingFluid.
-                                Source(FluidPropertiesList.OBSIDIAN_FLUID_PROPERTIES)
-                                .setRegistryName(location("obsidian_fluid")),
-                FluidList.obsidianFluidFlowing =
-                        (FlowingFluid) new ForgeFlowingFluid
-                                .Flowing(FluidPropertiesList.OBSIDIAN_FLUID_PROPERTIES)
-                                .setRegistryName(location("obsidian_fluid_flowing"))
         );
     }
 

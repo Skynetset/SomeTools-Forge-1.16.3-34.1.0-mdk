@@ -1,8 +1,8 @@
 package com.skynet.sometools.list;
 
 import com.skynet.sometools.listregistered.RegisteredBlockList;
-import com.skynet.sometools.listregistered.RegisteredFluidList;
 import com.skynet.sometools.listregistered.RegisteredItemList;
+import com.skynet.sometools.listregistered.item.fluid.FluidRegister;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidAttributes;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
@@ -17,8 +17,8 @@ import net.minecraftforge.fluids.ForgeFlowingFluid;
 
 public class FluidPropertiesList {
     public static ForgeFlowingFluid.Properties OBSIDIAN_FLUID_PROPERTIES =
-            new ForgeFlowingFluid.Properties(() -> RegisteredFluidList.obsidianFluid
-                    , () -> RegisteredFluidList.obsidianFluidFlowing
+            new ForgeFlowingFluid.Properties(FluidRegister.obsidianFluid
+                    , FluidRegister.obsidianFluidFlowing
                     , FluidAttributes
                     .builder(new ResourceLocation("block/water_still"), new ResourceLocation("block/water_flow"))
                     .color(0xFF420372)
