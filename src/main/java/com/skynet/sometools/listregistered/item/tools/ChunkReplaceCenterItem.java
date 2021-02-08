@@ -6,15 +6,12 @@ import com.skynet.sometools.listregistered.RegisteredBlockList;
 import com.skynet.sometools.listregistered.RegisteredSounds;
 import com.skynet.sometools.listregistered.item.SomeToolsGroup;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.player.ClientPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.IClearable;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
@@ -23,11 +20,9 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.blockplacer.SimpleBlockPlacer;
 import net.minecraft.world.server.ServerWorld;
 
-import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.function.Predicate;
 
 /**
  * SoundTestItem
@@ -47,17 +42,10 @@ public class ChunkReplaceCenterItem extends Item {
 
         //服务端
         if (!worldIn.isRemote) {
-        BlockPos position = playerIn.getPosition();
-        String chunkPos = String.format("Chunk: %d %d %d in %d %d %d", position.getX() & 15, position.getY() & 15,
-                position.getZ() & 15, position.getX() >> 4, position.getY() >> 4, position.getZ() >> 4);
-        playerIn.sendMessage(new TranslationTextComponent(chunkPos), playerIn.getUniqueID());
-
-        // position = position.offset(Direction.DOWN, 1);
-        // clientWorld.invalidateRegionAndSetBlock(position, RegisteredBlockList.obsidian_block.getDefaultState());
-
-        // findChunkMainPoins(position, player, false).forEach(pos -> clientWorld.invalidateRegionAndSetBlock(pos,
-        //         RegisteredBlockList.obsidian_block.getDefaultState()));
-        // if (worldIn instanceof ServerWorld) {
+            BlockPos position = playerIn.getPosition();
+            String chunkPos = String.format("Chunk: %d %d %d in %d %d %d", position.getX() & 15, position.getY() & 15,
+                    position.getZ() & 15, position.getX() >> 4, position.getY() >> 4, position.getZ() >> 4);
+            playerIn.sendMessage(new TranslationTextComponent(chunkPos), playerIn.getUniqueID());
 
             findChunkMainPoins(position, false).forEach(pos -> {
                 try {
@@ -77,20 +65,20 @@ public class ChunkReplaceCenterItem extends Item {
     }
 
     private static int setBlock(ServerWorld serverworld, BlockPos pos, BlockState state, Boolean isDestroy) throws CommandSyntaxException {
-            boolean flag;
-            if (isDestroy) {
-                serverworld.destroyBlock(pos, true);
-                flag = !state.isAir() || !serverworld.getBlockState(pos).isAir();
-            } else {
-                TileEntity tileentity = serverworld.getTileEntity(pos);
-                IClearable.clearObj(tileentity);
-                flag = true;
-            }
-            SimpleBlockPlacer blockPlacer = new SimpleBlockPlacer();
-            blockPlacer.place(serverworld,pos,state,new Random());
+        boolean flag;
+        if (isDestroy) {
+            serverworld.destroyBlock(pos, true);
+            flag = !state.isAir() || !serverworld.getBlockState(pos).isAir();
+        } else {
+            TileEntity tileentity = serverworld.getTileEntity(pos);
+            IClearable.clearObj(tileentity);
+            flag = true;
+        }
+        SimpleBlockPlacer blockPlacer = new SimpleBlockPlacer();
+        blockPlacer.place(serverworld, pos, state, new Random());
 
-            serverworld.func_230547_a_(pos, state.getBlock());
-            return 1;
+        serverworld.func_230547_a_(pos, state.getBlock());
+        return 1;
     }
 
 
@@ -180,7 +168,7 @@ public class ChunkReplaceCenterItem extends Item {
             /**
              *       +
              */
-            blockPos.add(southWestPos.east(maxSize >> 1).south((maxSize >> 1)+1));
+            blockPos.add(southWestPos.east(maxSize >> 1).south((maxSize >> 1) + 1));
         }
         return blockPos;
     }
