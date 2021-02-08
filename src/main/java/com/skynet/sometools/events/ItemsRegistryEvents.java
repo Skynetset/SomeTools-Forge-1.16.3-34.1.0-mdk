@@ -47,7 +47,7 @@ import org.apache.logging.log4j.Logger;
 import static net.minecraft.item.Items.BUCKET;
 
 /**
- * TODO RegistryEvents
+ * RegistryEvents
  *
  * @program: SomeTools-Forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com
@@ -65,6 +65,8 @@ class ItemsRegistryEvents {
     @SubscribeEvent
     public static void registerItems(final RegistryEvent.Register<Item> register) {
         register.getRegistry().registerAll(
+                ItemList.OBSIDIAN_REPLACE_1 = new ChunkReplaceCenterItem().setRegistryName(location(
+                        "chunk_replace_center_item")),
                 ItemList.OBSIDIAN_BLOCK = new BlockItem(RegisteredBlockList.obsidian_block,
                         new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(location(
                         "obsidian_block")),

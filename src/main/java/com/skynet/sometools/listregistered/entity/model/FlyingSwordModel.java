@@ -7,7 +7,7 @@ import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 
 /**
- * TODO FlyingSwordModel
+ * FlyingSwordModel
  *
  * @program: SomeTools-Forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com

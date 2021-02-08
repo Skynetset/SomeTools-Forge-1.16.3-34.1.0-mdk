@@ -20,7 +20,7 @@ import net.minecraft.world.IWorld;
 import javax.annotation.Nullable;
 
 /**
- * TODO
+ *
  *
  * @program: forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com
@@ -63,12 +63,11 @@ public class ObsidianFrame extends Block implements IWaterLoggable {
         BlockPos blockpos = context.getPos();
         BlockState blockstate = context.getWorld().getBlockState(blockpos);
         if (blockstate.isIn(this)) {
-            return blockstate.with(WATERLOGGED, Boolean.valueOf(false));
+            return blockstate.with(WATERLOGGED, Boolean.FALSE);
         } else {
             FluidState fluidstate = context.getWorld().getFluidState(blockpos);
-            BlockState blockstate1 = this.getDefaultState().with(WATERLOGGED,
-                    Boolean.valueOf(fluidstate.getFluid() == Fluids.WATER));
-            return blockstate1;
+            return this.getDefaultState().with(WATERLOGGED,
+                    fluidstate.getFluid() == Fluids.WATER);
         }
     }
 

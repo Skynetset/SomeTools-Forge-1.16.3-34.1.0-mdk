@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * TODO ObsidianWrenchBakedModel
+ * ObsidianWrenchBakedModel
  *
  * @program: SomeTools-Forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com

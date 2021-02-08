@@ -13,7 +13,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 /**
- * TODO ObsidianFirstContainer
+ * ObsidianFirstContainer
  *
  * @program: SomeTools-Forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com

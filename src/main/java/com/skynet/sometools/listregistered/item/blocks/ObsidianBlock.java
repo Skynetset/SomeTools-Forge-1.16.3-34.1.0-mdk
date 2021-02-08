@@ -4,7 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
 /**
- * TODO ObsidianBlock
+ * ObsidianBlock
  *
  * @program: forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com

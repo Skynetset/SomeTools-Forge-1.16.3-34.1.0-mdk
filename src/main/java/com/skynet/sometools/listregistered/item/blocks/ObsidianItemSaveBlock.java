@@ -14,7 +14,7 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.World;
 
 /**
- * TODO ObsidianItemSaveBlock
+ * ObsidianItemSaveBlock
  *
  * @program: SomeTools-Forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com

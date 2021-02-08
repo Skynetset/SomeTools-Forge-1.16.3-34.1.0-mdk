@@ -7,7 +7,7 @@ import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 
 /**
- * TODO
+ *
  *
  * @program: forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com

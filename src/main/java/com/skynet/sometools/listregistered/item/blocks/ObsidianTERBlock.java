@@ -8,7 +8,7 @@ import net.minecraft.world.IBlockReader;
 import javax.annotation.Nullable;
 
 /**
- * TODO ObsidianTERBlock
+ * ObsidianTERBlock
  *
  * @program: forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com

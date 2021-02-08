@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * TODO ObsidianHiddenBlockModel
+ * ObsidianHiddenBlockModel
  *
  * @program: forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com
@@ -63,7 +63,7 @@ public class ObsidianHiddenBlockModel implements IBakedModel {
     @Override
     public IModelData getModelData(IBlockDisplayReader world, BlockPos pos, BlockState state, IModelData tileData) {
 
-        Integer i = 1;
+        int i = 1;
         BlockState downBlockState;
         ModelDataMap modelDataMap = new ModelDataMap.Builder().withInitial(COPIED_BLOCK, null).build();
         //        获取下方方块的BlockState

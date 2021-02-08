@@ -20,7 +20,7 @@ import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
 import javax.annotation.Nullable;
 
 /**
- * TODO ICapabilityEvent   能力注册
+ * ICapabilityEvent   能力注册
  *
  * @program: SomeTools-Forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com

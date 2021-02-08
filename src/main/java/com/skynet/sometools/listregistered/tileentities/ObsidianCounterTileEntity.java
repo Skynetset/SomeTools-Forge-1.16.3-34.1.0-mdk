@@ -6,7 +6,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 
 /**
- * TODO ObsidianCounterTileEntity
+ * ObsidianCounterTileEntity
  *
  * @program: forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com
@@ -38,8 +38,8 @@ public class ObsidianCounterTileEntity extends TileEntity {
      */
     public int increase() {
         counter++;
-        /**
-         * 标记要保存的数据，在定时保存时会保存该值
+        /*
+          标记要保存的数据，在定时保存时会保存该值
          */
         markDirty();
         return counter;

@@ -13,7 +13,7 @@ import net.minecraft.world.storage.WorldSavedData;
 import java.util.Stack;
 
 /**
- * TODO ObsidianWorldSavedData
+ * ObsidianWorldSavedData
  *
  * @program: SomeTools-Forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com
@@ -37,9 +37,9 @@ public class ObsidianWorldSavedData extends WorldSavedData {
             throw new RuntimeException("Attempted to get the data from a client world. This is wrong.");
         }
         ServerWorld world = worldIn.getServer().getWorld(World.OVERWORLD);
-        /***
-         *   如果你需要每个纬度都有一个自己的World Saved Data。
-         *  用 ServerWorld world = (ServerWorld)world; 代替上面那句。
+        /*
+         如果你需要每个纬度都有一个自己的World Saved Data。
+         用 ServerWorld world = (ServerWorld)world; 代替上面那句。
          */
         DimensionSavedDataManager storage = world.getSavedData();
         return storage.getOrCreate(ObsidianWorldSavedData::new, NAME);

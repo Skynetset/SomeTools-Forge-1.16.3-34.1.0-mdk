@@ -5,7 +5,7 @@ import com.skynet.sometools.listregistered.item.blocks.blockentity.container.Obs
 import net.minecraft.inventory.container.ContainerType;
 
 /**
- * TODO ContainerTypeList
+ * ContainerTypeList
  *
  * @program: SomeTools-Forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com

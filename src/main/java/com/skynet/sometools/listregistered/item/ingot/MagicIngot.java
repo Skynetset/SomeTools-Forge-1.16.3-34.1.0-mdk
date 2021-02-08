@@ -5,7 +5,7 @@ import com.skynet.sometools.listregistered.item.SomeToolsGroup;
 import net.minecraft.item.Item;
 
 /**
- * TODO
+ *
  *
  * @program: forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com

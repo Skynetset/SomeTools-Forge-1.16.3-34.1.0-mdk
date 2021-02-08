@@ -7,7 +7,7 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 
 /**
- * TODO ObsidianApple
+ * ObsidianApple
  *
  * @program: forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com

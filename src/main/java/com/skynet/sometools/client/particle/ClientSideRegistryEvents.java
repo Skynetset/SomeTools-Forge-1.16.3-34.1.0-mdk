@@ -33,7 +33,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import java.util.Map;
 
 /**
- * TODO
+ * ClientSideRegistryEvents
  *
  * @program: forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com
@@ -48,29 +48,21 @@ class ClientSideRegistryEvents {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
 
-        event.enqueueWork(() -> {
-            ScreenManager.registerFactory(RegisteredContainerTypeList.OBSIDIAN_FIRST_CONTAINER,
-                    ObsidianFirstContainerScreen::new);
-        });
-        event.enqueueWork(() -> {
-            ScreenManager.registerFactory(RegisteredContainerTypeList.MY_CHEST_CONTAINER,
-                    MyChestContainerScreen::new);
-        });
+        event.enqueueWork(() -> ScreenManager.registerFactory(RegisteredContainerTypeList.OBSIDIAN_FIRST_CONTAINER,
+                ObsidianFirstContainerScreen::new));
+        event.enqueueWork(() -> ScreenManager.registerFactory(RegisteredContainerTypeList.MY_CHEST_CONTAINER,
+                MyChestContainerScreen::new));
 
         // 注册键盘快捷键
         event.enqueueWork(() -> ClientRegistry.registerKeyBinding(KeyBoardInput.MESSAGE_KEY));
 
         // 魔法锭
-        event.enqueueWork(() -> {
-            ItemModelsProperties.registerProperty(RegisteredItemList.magic_ingot, new ResourceLocation(Utils.MOD_ID,
-                            "size"),
-                    (itemStack, clientWorld, livingEntity) -> itemStack.getCount());
-        });
+        event.enqueueWork(() -> ItemModelsProperties.registerProperty(RegisteredItemList.magic_ingot, new ResourceLocation(Utils.MOD_ID,
+                        "size"),
+                (itemStack, clientWorld, livingEntity) -> itemStack.getCount()));
 
-        event.enqueueWork(() -> {
-            ClientRegistry.bindTileEntityRenderer(RegisteredTileEntityTypeList.obsidian_ter_tile_block,
-                    ObsidianTER::new);
-        });
+        event.enqueueWork(() -> ClientRegistry.bindTileEntityRenderer(RegisteredTileEntityTypeList.obsidian_ter_tile_block,
+                ObsidianTER::new));
 
         event.enqueueWork(() -> {
             RenderTypeLookup.setRenderLayer(RegisteredBlockList.glass_jar, RenderType.getTranslucent());

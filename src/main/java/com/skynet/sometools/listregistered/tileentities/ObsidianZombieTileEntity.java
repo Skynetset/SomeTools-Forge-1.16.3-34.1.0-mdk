@@ -15,7 +15,7 @@ import net.minecraftforge.common.util.Constants;
 import javax.annotation.Nullable;
 
 /**
- * TODO ObsidianZombieTileEntity
+ * ObsidianZombieTileEntity
  *
  * @program: forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com

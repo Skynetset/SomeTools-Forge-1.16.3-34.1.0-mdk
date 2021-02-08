@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 /**
- * TODO ObsidianPickaxe
+ * ObsidianPickaxe
  *
  * @program: forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com

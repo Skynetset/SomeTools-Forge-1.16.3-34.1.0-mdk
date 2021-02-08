@@ -8,7 +8,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.function.Supplier;
 
 /**
- * TODO SendPack
+ * SendPack
  *
  * @program: SomeTools-Forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com
@@ -32,9 +32,7 @@ public class SendPack {
     }
 
     public void handler(Supplier<NetworkEvent.Context> ctx) {
-        ctx.get().enqueueWork(() -> {
-            LOGGER.info(this.message);
-        });
+        ctx.get().enqueueWork(() -> LOGGER.info(this.message));
         ctx.get().setPacketHandled(true);
     }
 }

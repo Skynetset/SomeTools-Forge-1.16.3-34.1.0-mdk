@@ -11,7 +11,7 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
 /**
- * TODO SoundTestItem
+ * SoundTestItem
  *
  * @program: SomeTools-Forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com

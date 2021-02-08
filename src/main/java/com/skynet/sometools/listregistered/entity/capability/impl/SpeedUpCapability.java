@@ -4,7 +4,7 @@ import com.skynet.sometools.listregistered.entity.capability.ISpeedUpCapability;
 import net.minecraft.nbt.CompoundNBT;
 
 /**
- * TODO SpeedUpCapability
+ * SpeedUpCapability
  *
  * @program: SomeTools-Forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com

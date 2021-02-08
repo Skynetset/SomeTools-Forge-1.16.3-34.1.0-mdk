@@ -5,7 +5,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
 /**
- * TODO groups
+ * groups
  *
  * @program: forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com

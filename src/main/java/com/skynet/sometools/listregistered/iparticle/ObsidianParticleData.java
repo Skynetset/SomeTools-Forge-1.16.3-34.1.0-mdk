@@ -13,7 +13,7 @@ import java.awt.*;
 import java.util.Locale;
 
 /**
- * TODO ObsidianParticleData
+ * ObsidianParticleData
  *
  * @program: SomeTools-Forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com
@@ -93,7 +93,7 @@ public class ObsidianParticleData implements IParticleData {
 
     @Override
     public String getParameters() {
-        return String.format(Locale.ROOT, "%s %.2f %i %i %i %i %.2d %.2d %.2d",
+        return String.format(Locale.ROOT, "%s %.2f %d %d %d %d %.2d %.2d %.2d",
                 this.getType().getRegistryName(), diameter, color.getRed(), color.getGreen(), color.getBlue(),
                 color.getAlpha(), speed.getX(), speed.getY(), speed.getZ());
     }

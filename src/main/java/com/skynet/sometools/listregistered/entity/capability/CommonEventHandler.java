@@ -12,7 +12,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 /**
- * TODO CommonEventHandler
+ * CommonEventHandler
  *
  * @program: SomeTools-Forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com
@@ -79,11 +79,7 @@ public class CommonEventHandler {
             LazyOptional<ISpeedUpCapability> newSpeedCap =
                     event.getPlayer().getCapability(SomeToolsCapability.SPEED_UP_CAPABILITY);
             if (oldSpeedCap.isPresent() && newSpeedCap.isPresent()) {
-                newSpeedCap.ifPresent((newCap) -> {
-                    oldSpeedCap.ifPresent((oldCap) -> {
-                        newCap.deserializeNBT(oldCap.serializeNBT());
-                    });
-                });
+                newSpeedCap.ifPresent((newCap) -> oldSpeedCap.ifPresent((oldCap) -> newCap.deserializeNBT(oldCap.serializeNBT())));
             }
         }
     }

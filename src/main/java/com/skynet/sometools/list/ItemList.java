@@ -3,7 +3,7 @@ package com.skynet.sometools.list;
 import net.minecraft.item.Item;
 
 /**
- * TODO ItemList
+ * ItemList
  *
  * @program: SomeTools-Forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com
@@ -12,6 +12,7 @@ import net.minecraft.item.Item;
 
 public class ItemList {
     public static Item OBSIDIAN_BLOCK;
+    public static Item OBSIDIAN_REPLACE_1;
     public static Item OBSIDIAN_RUBIK_CUBE;
     public static Item OBSIDIAN_FRAME;
     public static Item GLASS_JAR;

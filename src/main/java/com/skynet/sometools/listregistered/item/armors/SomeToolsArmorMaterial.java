@@ -13,7 +13,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import java.util.function.Supplier;
 
 /**
- * TODO Armors
+ * Armors
  *
  * @program: forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com

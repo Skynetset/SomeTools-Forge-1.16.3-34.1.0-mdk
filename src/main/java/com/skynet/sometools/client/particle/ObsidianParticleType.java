@@ -8,7 +8,7 @@ import net.minecraft.util.math.vector.Vector3d;
 import java.awt.*;
 
 /**
- * TODO ObsidianParticleType
+ * ObsidianParticleType
  *
  * @program: SomeTools-Forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com

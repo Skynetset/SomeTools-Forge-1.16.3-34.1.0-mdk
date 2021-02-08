@@ -19,7 +19,7 @@ import net.minecraftforge.fml.network.NetworkHooks;
 import javax.annotation.Nullable;
 
 /**
- * TODO ObsidianFirstContainerBlock
+ * ObsidianFirstContainerBlock
  *
  * @program: SomeTools-Forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com
@@ -49,9 +49,7 @@ public class ObsidianFirstContainerBlock extends Block {
             ObsidianFirstContainerTileEntity obsidianFirstContainerTileEntity =
                     (ObsidianFirstContainerTileEntity) worldIn.getTileEntity(pos);
             NetworkHooks.openGui((ServerPlayerEntity) player, obsidianFirstContainerTileEntity,
-                    (PacketBuffer packerBuffer) -> {
-                packerBuffer.writeBlockPos(obsidianFirstContainerTileEntity.getPos());
-            });
+                    (PacketBuffer packerBuffer) -> packerBuffer.writeBlockPos(obsidianFirstContainerTileEntity.getPos()));
         }
         return ActionResultType.SUCCESS;
     }

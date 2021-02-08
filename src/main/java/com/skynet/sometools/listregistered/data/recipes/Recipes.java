@@ -11,7 +11,7 @@ import net.minecraftforge.common.data.ForgeRecipeProvider;
 import java.util.function.Consumer;
 
 /**
- * TODO Recipes
+ * Recipes
  *
  * @program: SomeTools-Forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com

@@ -3,7 +3,7 @@ package com.skynet.sometools.config;
 import net.minecraftforge.common.ForgeConfigSpec;
 
 /**
- * TODO Config
+ * Config
  *
  * @program: SomeTools-Forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com

@@ -14,7 +14,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 /**
- * TODO ObsidianFirstGui
+ * ObsidianFirstGui
  *
  * @program: SomeTools-Forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com
@@ -46,7 +46,7 @@ public class ObsidianFirstGui extends Screen {
         this.addButton(button);
 
         this.sliderPercentageOption = new SliderPercentageOption(Utils.MOD_ID + ".sliderbar", 5, 100, 5,
-                (setting) -> Double.valueOf(0), (setting, value) -> {
+                (setting) -> (double) 0, (setting, value) -> {
         }, (gameSettings, sliderPercentageOption1) -> new TranslationTextComponent("gui." + Utils.MOD_ID + ".first" +
                 ".test"));
         this.sliderBar = this.sliderPercentageOption.createWidget(Minecraft.getInstance().gameSettings,

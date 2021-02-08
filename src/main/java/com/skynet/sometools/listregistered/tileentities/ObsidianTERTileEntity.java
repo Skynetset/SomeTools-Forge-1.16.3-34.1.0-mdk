@@ -4,7 +4,7 @@ import com.skynet.sometools.listregistered.RegisteredTileEntityTypeList;
 import net.minecraft.tileentity.TileEntity;
 
 /**
- * TODO ObsidianTERTileEntity
+ * ObsidianTERTileEntity
  *
  * @program: forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com

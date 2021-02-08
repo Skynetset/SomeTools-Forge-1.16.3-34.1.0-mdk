@@ -3,7 +3,7 @@ package com.skynet.sometools.listregistered.item.blocks.blockentity.container;
 import net.minecraft.util.IIntArray;
 
 /**
- * TODO ObsidianFirstContainerItemNumber
+ * ObsidianFirstContainerItemNumber
  *
  * @program: SomeTools-Forge-1.16.3-34.1.0-mdk
  * @author: 1260535819@qq.com
