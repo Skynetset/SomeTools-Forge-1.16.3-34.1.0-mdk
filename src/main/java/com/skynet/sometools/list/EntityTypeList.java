@@ -1,7 +1,7 @@
 package com.skynet.sometools.list;
 
-import com.skynet.sometools.listregistered.entity.FlyingSwordEntity;
-import com.skynet.sometools.listregistered.entity.ObsidianAnimalEntity;
+import com.skynet.sometools.list.entity.FlyingSwordEntity;
+import com.skynet.sometools.list.entity.ObsidianAnimalEntity;
 import net.minecraft.entity.EntityType;
 
 /**

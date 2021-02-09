@@ -1,7 +1,7 @@
 package com.skynet.sometools.client.particle;
 
 import com.mojang.serialization.Codec;
-import com.skynet.sometools.listregistered.iparticle.ObsidianParticleData;
+import com.skynet.sometools.list.ObsidianParticleData;
 import net.minecraft.particles.ParticleType;
 import net.minecraft.util.math.vector.Vector3d;
 

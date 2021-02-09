@@ -1,7 +1,7 @@
 package com.skynet.sometools.list;
 
-import com.skynet.sometools.listregistered.item.blocks.blockentity.container.MyChestContainer;
-import com.skynet.sometools.listregistered.item.blocks.blockentity.container.ObsidianFirstContainer;
+import com.skynet.sometools.list.item.blocks.blockentity.container.MyChestContainer;
+import com.skynet.sometools.list.item.blocks.blockentity.container.ObsidianFirstContainer;
 import net.minecraft.inventory.container.ContainerType;
 
 /**

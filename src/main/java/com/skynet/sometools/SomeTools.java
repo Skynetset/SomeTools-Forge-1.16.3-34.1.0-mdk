@@ -2,7 +2,7 @@ package com.skynet.sometools;
 
 import com.skynet.sometools.common.Utils;
 import com.skynet.sometools.config.Config;
-import com.skynet.sometools.listregistered.fluid.FluidRegister;
+import com.skynet.sometools.list.fluid.FluidRegister;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;

@@ -1,6 +1,6 @@
 package com.skynet.sometools.client.particle;
 
-import com.skynet.sometools.listregistered.iparticle.ObsidianParticleData;
+import com.skynet.sometools.list.ObsidianParticleData;
 import net.minecraft.client.particle.IAnimatedSprite;
 import net.minecraft.client.particle.IParticleFactory;
 import net.minecraft.client.particle.Particle;

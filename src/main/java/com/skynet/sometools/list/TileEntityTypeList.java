@@ -1,6 +1,6 @@
 package com.skynet.sometools.list;
 
-import com.skynet.sometools.listregistered.tileentities.*;
+import com.skynet.sometools.list.tileentities.*;
 import net.minecraft.tileentity.TileEntityType;
 
 /**
