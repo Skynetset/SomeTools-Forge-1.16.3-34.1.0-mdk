@@ -1,6 +1,6 @@
 package com.skynet.sometools.listregistered.tileentities;
 
-import com.skynet.sometools.listregistered.RegisteredTileEntityTypeList;
+import com.skynet.sometools.list.TileEntityTypeList;
 import net.minecraft.tileentity.TileEntity;
 
 /**
@@ -13,7 +13,7 @@ import net.minecraft.tileentity.TileEntity;
 
 public class ObsidianTERTileEntity extends TileEntity {
     public ObsidianTERTileEntity() {
-        super(RegisteredTileEntityTypeList.obsidian_ter_tile_block);
+        super(TileEntityTypeList.OBSIDIAN_TER_TILE_ENTITY);
     }
 }
 

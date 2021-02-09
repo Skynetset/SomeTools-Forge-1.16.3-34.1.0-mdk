@@ -2,8 +2,8 @@ package com.skynet.sometools.listregistered.item.tools;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.skynet.sometools.common.Utils;
-import com.skynet.sometools.listregistered.RegisteredBlockList;
-import com.skynet.sometools.listregistered.RegisteredSounds;
+import com.skynet.sometools.list.BlockList;
+import com.skynet.sometools.list.SoundList;
 import com.skynet.sometools.listregistered.item.SomeToolsGroup;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -50,7 +50,7 @@ public class ChunkReplaceCenterItem extends Item {
             findChunkMainPoins(position, false).forEach(pos -> {
                 try {
                     setBlock(worldIn.getServer().getWorld(playerIn.getEntityWorld().getDimensionKey()), pos,
-                            RegisteredBlockList.obsidian_block.getDefaultState(), false);
+                            BlockList.OBSIDIAN_BLOCK.getDefaultState(), false);
                 } catch (CommandSyntaxException e) {
                     e.printStackTrace();
                 }
@@ -58,7 +58,7 @@ public class ChunkReplaceCenterItem extends Item {
         }
 
         if (worldIn.isRemote) {
-            worldIn.playSound(playerIn, playerIn.getPosition(), RegisteredSounds.MEA_SOUND,
+            worldIn.playSound(playerIn, playerIn.getPosition(), SoundList.MEA_SOUND,
                     SoundCategory.AMBIENT, 10f, 1f);
         }
         return super.onItemRightClick(worldIn, playerIn, handIn);

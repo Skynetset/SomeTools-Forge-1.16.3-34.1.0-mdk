@@ -4,12 +4,12 @@ import com.skynet.sometools.client.input.KeyBoardInput;
 import com.skynet.sometools.common.Utils;
 import com.skynet.sometools.ibakedmodel.ObsidianHiddenBlockModel;
 import com.skynet.sometools.ibakedmodel.ObsidianWrenchBakedModel;
-import com.skynet.sometools.listregistered.*;
+import com.skynet.sometools.list.*;
 import com.skynet.sometools.listregistered.entity.render.FlyingSwordRender;
 import com.skynet.sometools.listregistered.entity.render.ObsidianAnimalRender;
+import com.skynet.sometools.listregistered.fluid.FluidRegister;
 import com.skynet.sometools.listregistered.item.blocks.blockentity.screen.MyChestContainerScreen;
 import com.skynet.sometools.listregistered.item.blocks.blockentity.screen.ObsidianFirstContainerScreen;
-import com.skynet.sometools.listregistered.fluid.FluidRegister;
 import com.skynet.sometools.render.tileentityrenderer.ObsidianTER;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
@@ -48,33 +48,33 @@ class ClientSideRegistryEvents {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
 
-        event.enqueueWork(() -> ScreenManager.registerFactory(RegisteredContainerTypeList.OBSIDIAN_FIRST_CONTAINER,
+        event.enqueueWork(() -> ScreenManager.registerFactory(ContainerTypeList.OBSIDIAN_FIRST_CONTAINER,
                 ObsidianFirstContainerScreen::new));
-        event.enqueueWork(() -> ScreenManager.registerFactory(RegisteredContainerTypeList.MY_CHEST_CONTAINER,
+        event.enqueueWork(() -> ScreenManager.registerFactory(ContainerTypeList.MY_CHEST_CONTAINER,
                 MyChestContainerScreen::new));
 
         // 注册键盘快捷键
         event.enqueueWork(() -> ClientRegistry.registerKeyBinding(KeyBoardInput.MESSAGE_KEY));
 
         // 魔法锭
-        event.enqueueWork(() -> ItemModelsProperties.registerProperty(RegisteredItemList.magic_ingot, new ResourceLocation(Utils.MOD_ID,
+        event.enqueueWork(() -> ItemModelsProperties.registerProperty(ItemList.MAGIC_INGOT, new ResourceLocation(Utils.MOD_ID,
                         "size"),
                 (itemStack, clientWorld, livingEntity) -> itemStack.getCount()));
 
-        event.enqueueWork(() -> ClientRegistry.bindTileEntityRenderer(RegisteredTileEntityTypeList.obsidian_ter_tile_block,
+        event.enqueueWork(() -> ClientRegistry.bindTileEntityRenderer(TileEntityTypeList.OBSIDIAN_TER_TILE_ENTITY,
                 ObsidianTER::new));
 
         event.enqueueWork(() -> {
-            RenderTypeLookup.setRenderLayer(RegisteredBlockList.glass_jar, RenderType.getTranslucent());
+            RenderTypeLookup.setRenderLayer(BlockList.GLASS_JAR, RenderType.getTranslucent());
 
             RenderTypeLookup.setRenderLayer(FluidRegister.obsidianFluid.get(), RenderType.getTranslucent());
             RenderTypeLookup.setRenderLayer(FluidRegister.obsidianFluidFlowing.get(), RenderType.getTranslucent());
         });
 
         // 实体渲染
-        RenderingRegistry.registerEntityRenderingHandler(RegisteredEntityTypeList.FLYING_SWORD_ENTITY,
+        RenderingRegistry.registerEntityRenderingHandler(EntityTypeList.FLYING_SWORD_ENTITY,
                 FlyingSwordRender::new);
-        RenderingRegistry.registerEntityRenderingHandler(RegisteredEntityTypeList.OBSIDIAN_ANIMAL_ENTITY,
+        RenderingRegistry.registerEntityRenderingHandler(EntityTypeList.OBSIDIAN_ANIMAL_ENTITY,
                 ObsidianAnimalRender::new);
 
 
@@ -82,14 +82,14 @@ class ClientSideRegistryEvents {
 
     @SubscribeEvent
     public static void onParticleFactoryRegistration(ParticleFactoryRegisterEvent event) {
-        Minecraft.getInstance().particles.registerFactory(RegisteredParticleList.OBSIDIAN_PARTICLE,
+        Minecraft.getInstance().particles.registerFactory(ParticleList.OBSIDIAN_PARTICLE,
                 ObsidianParticleFactory::new);
     }
 
     @SubscribeEvent
     public static void onObsidianWrenchModelBaked(ModelBakeEvent event) {
         Map<ResourceLocation, IBakedModel> modelRegistry = event.getModelRegistry();
-        ModelResourceLocation location = new ModelResourceLocation(RegisteredItemList.obsidian_wrench.getRegistryName()
+        ModelResourceLocation location = new ModelResourceLocation(ItemList.OBSIDIAN_WRENCH.getRegistryName()
                 , "inventory");
         IBakedModel existingModel = modelRegistry.get(location);
         if (existingModel == null) {
@@ -104,7 +104,7 @@ class ClientSideRegistryEvents {
 
     @SubscribeEvent
     public static void onObsidianHiddenBlockModelBaked(ModelBakeEvent event) {
-        for (BlockState blockstate : RegisteredBlockList.obsidian_hidden_block.getStateContainer().getValidStates()) {
+        for (BlockState blockstate : BlockList.OBSIDIAN_HIDDEN_BLOCK.getStateContainer().getValidStates()) {
             ModelResourceLocation modelResourceLocation = BlockModelShapes.getModelLocation(blockstate);
             IBakedModel existingModel = event.getModelRegistry().get(modelResourceLocation);
             if (existingModel == null) {

@@ -1,6 +1,6 @@
 package com.skynet.sometools.listregistered.tileentities;
 
-import com.skynet.sometools.listregistered.RegisteredTileEntityTypeList;
+import com.skynet.sometools.list.TileEntityTypeList;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
@@ -25,7 +25,7 @@ public class ObsidianCounterTileEntity extends TileEntity {
      * @date : 2021/1/14 9:30
      */
     public ObsidianCounterTileEntity() {
-        super(RegisteredTileEntityTypeList.obsidian_counter_tile_entity);
+        super(TileEntityTypeList.OBSIDIAN_COUNTER_TILE_ENTITY);
     }
 
     /**

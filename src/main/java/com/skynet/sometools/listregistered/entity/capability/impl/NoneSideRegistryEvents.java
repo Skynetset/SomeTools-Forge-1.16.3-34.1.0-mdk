@@ -1,6 +1,6 @@
 package com.skynet.sometools.listregistered.entity.capability.impl;
 
-import com.skynet.sometools.listregistered.RegisteredEntityTypeList;
+import com.skynet.sometools.list.EntityTypeList;
 import com.skynet.sometools.listregistered.data.recipes.Recipes;
 import com.skynet.sometools.listregistered.entity.capability.ISimpleCapability;
 import com.skynet.sometools.listregistered.entity.capability.ISpeedUpCapability;
@@ -51,7 +51,7 @@ class NoneSideRegistryEvents {
               添加了一个属性即Attributes.MAX_HEALTH，并且设置了默认值是100，这样生物默认就是100点的血量。
               @param event
              */
-            GlobalEntityTypeAttributes.put(RegisteredEntityTypeList.OBSIDIAN_ANIMAL_ENTITY,
+            GlobalEntityTypeAttributes.put(EntityTypeList.OBSIDIAN_ANIMAL_ENTITY,
                     MobEntity.func_233666_p_().createMutableAttribute(Attributes.MAX_HEALTH, 100.0D).create());
 
             CapabilityManager.INSTANCE.register(

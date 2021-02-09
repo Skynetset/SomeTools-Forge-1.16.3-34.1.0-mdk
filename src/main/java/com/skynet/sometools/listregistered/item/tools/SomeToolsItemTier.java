@@ -1,6 +1,6 @@
 package com.skynet.sometools.listregistered.item.tools;
 
-import com.skynet.sometools.listregistered.RegisteredItemList;
+import com.skynet.sometools.list.ItemList;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyValue;
@@ -25,7 +25,7 @@ public enum SomeToolsItemTier implements IItemTier {
      * @return : null
      */
     OBSIDIAN(3, 2000, 10.0F, 4.0F, 30, () -> {
-        return Ingredient.fromItems(RegisteredItemList.obsidian_ingot);
+        return Ingredient.fromItems(ItemList.OBSIDIAN_INGOT);
     });
 
     private final int harvestLevel;

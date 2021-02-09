@@ -1,6 +1,6 @@
 package com.skynet.sometools.listregistered.tileentities;
 
-import com.skynet.sometools.listregistered.RegisteredTileEntityTypeList;
+import com.skynet.sometools.list.TileEntityTypeList;
 import com.skynet.sometools.listregistered.entity.capability.SomeToolsCapability;
 import com.skynet.sometools.listregistered.entity.capability.impl.SimpleCapability;
 import net.minecraft.tileentity.TileEntity;
@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 
 public class ObsidianDownBlockTileEntity extends TileEntity {
     public ObsidianDownBlockTileEntity() {
-        super(RegisteredTileEntityTypeList.obsidian_down_tile_block);
+        super(TileEntityTypeList.OBSIDIAN_DOWN_BLOCK_ENTITY);
     }
 
     @Nonnull

@@ -1,6 +1,6 @@
 package com.skynet.sometools.listregistered.tileentities;
 
-import com.skynet.sometools.listregistered.RegisteredTileEntityTypeList;
+import com.skynet.sometools.list.TileEntityTypeList;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
@@ -29,7 +29,7 @@ public class ObsidianZombieTileEntity extends TileEntity implements ITickableTil
 
 
     public ObsidianZombieTileEntity() {
-        super(RegisteredTileEntityTypeList.obsidian_zombie_tile_block);
+        super(TileEntityTypeList.OBSIDIAN_ZOMBIE_TILE_ENTITY);
     }
 
     @Override

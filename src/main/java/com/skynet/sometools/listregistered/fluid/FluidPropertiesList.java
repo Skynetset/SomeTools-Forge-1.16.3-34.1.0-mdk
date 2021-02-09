@@ -1,7 +1,7 @@
 package com.skynet.sometools.listregistered.fluid;
 
-import com.skynet.sometools.listregistered.RegisteredBlockList;
-import com.skynet.sometools.listregistered.RegisteredItemList;
+import com.skynet.sometools.list.BlockList;
+import com.skynet.sometools.list.ItemList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidAttributes;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
@@ -23,8 +23,8 @@ public class FluidPropertiesList {
                     .color(0xFF420372)
                     .density(4000)
                     .viscosity(4000))
-                    .bucket(() -> RegisteredItemList.obsidian_fluid_bucket)
-                    .block(() -> RegisteredBlockList.obsidian_fluid)
+                    .bucket(() -> ItemList.obsidianFluidBucket)
+                    .block(() -> BlockList.OBSIDIAN_FLUID_BLOCK)
                     .slopeFindDistance(3)
                     .explosionResistance(100F);
 }

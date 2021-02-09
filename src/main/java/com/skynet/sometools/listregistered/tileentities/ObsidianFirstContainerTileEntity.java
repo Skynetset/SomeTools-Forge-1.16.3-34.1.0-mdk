@@ -1,7 +1,7 @@
 package com.skynet.sometools.listregistered.tileentities;
 
 import com.skynet.sometools.common.Utils;
-import com.skynet.sometools.listregistered.RegisteredTileEntityTypeList;
+import com.skynet.sometools.list.TileEntityTypeList;
 import com.skynet.sometools.listregistered.item.blocks.blockentity.container.ObsidianFirstContainer;
 import com.skynet.sometools.listregistered.item.blocks.blockentity.container.ObsidianFirstContainerItemNumber;
 import net.minecraft.block.BlockState;
@@ -35,7 +35,7 @@ public class ObsidianFirstContainerTileEntity extends TileEntity implements ITic
     private final ObsidianFirstContainerItemNumber itemNumber = new ObsidianFirstContainerItemNumber();
 
     public ObsidianFirstContainerTileEntity() {
-        super(RegisteredTileEntityTypeList.obsidian_first_container_tile_entity);
+        super(TileEntityTypeList.OBSIDIAN_FIRST_CONTAINER_TILE_ENTITY);
     }
 
     @Override

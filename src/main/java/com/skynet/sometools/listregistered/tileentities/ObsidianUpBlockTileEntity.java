@@ -1,6 +1,6 @@
 package com.skynet.sometools.listregistered.tileentities;
 
-import com.skynet.sometools.listregistered.RegisteredTileEntityTypeList;
+import com.skynet.sometools.list.TileEntityTypeList;
 import com.skynet.sometools.listregistered.entity.capability.ISimpleCapability;
 import com.skynet.sometools.listregistered.entity.capability.SomeToolsCapability;
 import net.minecraft.tileentity.ITickableTileEntity;
@@ -22,7 +22,7 @@ public class ObsidianUpBlockTileEntity extends TileEntity implements ITickableTi
     private static final Logger logger = LogManager.getLogger();
 
     public ObsidianUpBlockTileEntity() {
-        super(RegisteredTileEntityTypeList.obsidian_up_tile_block);
+        super(TileEntityTypeList.OBSIDIAN_UP_BLOCK_ENTITY);
     }
 
     @Override

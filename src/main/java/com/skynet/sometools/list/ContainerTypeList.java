@@ -1,5 +1,7 @@
 package com.skynet.sometools.list;
 
+import com.skynet.sometools.listregistered.item.blocks.blockentity.container.MyChestContainer;
+import com.skynet.sometools.listregistered.item.blocks.blockentity.container.ObsidianFirstContainer;
 import net.minecraft.inventory.container.ContainerType;
 
 /**
@@ -11,6 +13,6 @@ import net.minecraft.inventory.container.ContainerType;
  */
 
 public class ContainerTypeList {
-    public static ContainerType<?> OBSIDIAN_FIRST_CONTAINER;
-    public static ContainerType<?> MY_CHEST_CONTAINER;
+    public static ContainerType<ObsidianFirstContainer> OBSIDIAN_FIRST_CONTAINER;
+    public static ContainerType<MyChestContainer> MY_CHEST_CONTAINER;
 }

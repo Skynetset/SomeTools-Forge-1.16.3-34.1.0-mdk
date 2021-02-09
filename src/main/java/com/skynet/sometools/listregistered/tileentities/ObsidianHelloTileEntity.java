@@ -1,6 +1,6 @@
 package com.skynet.sometools.listregistered.tileentities;
 
-import com.skynet.sometools.listregistered.RegisteredTileEntityTypeList;
+import com.skynet.sometools.list.TileEntityTypeList;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
@@ -19,7 +19,7 @@ public class ObsidianHelloTileEntity extends TileEntity implements ITickableTile
     private int timer = 0;
 
     public ObsidianHelloTileEntity() {
-        super(RegisteredTileEntityTypeList.obsidian_hello_block);
+        super(TileEntityTypeList.OBSIDIAN_HELLO_TILE_ENTITY);
     }
 
     @Override

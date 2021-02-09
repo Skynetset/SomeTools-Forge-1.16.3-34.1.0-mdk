@@ -1,6 +1,6 @@
 package com.skynet.sometools.listregistered.item;
 
-import com.skynet.sometools.listregistered.RegisteredItemList;
+import com.skynet.sometools.list.ItemList;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
@@ -16,37 +16,37 @@ public class SomeToolsGroup {
     public static final ItemGroup INGOT_GROUP = new ItemGroup("ingot") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(RegisteredItemList.obsidian_ingot);
+            return new ItemStack(ItemList.OBSIDIAN_INGOT);
         }
     };
     public static final ItemGroup FOOD_GROUP = new ItemGroup("food") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(RegisteredItemList.obsidian_apple);
+            return new ItemStack(ItemList.OBSIDIAN_APPLE);
         }
     };
     public static final ItemGroup TOOLS_GROUP = new ItemGroup("tools") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(RegisteredItemList.obsidian_sword);
+            return new ItemStack(ItemList.OBSIDIAN_SWORD);
         }
     };
     public static final ItemGroup ARMER_GROUP = new ItemGroup("armer") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(RegisteredItemList.obsidian_chestplate);
+            return new ItemStack(ItemList.OBSIDIAN_CHEST_PLATE);
         }
     };
     public static final ItemGroup BLOCK_GROUP = new ItemGroup("blocks") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(RegisteredItemList.obsidian_block);
+            return new ItemStack(ItemList.OBSIDIAN_BLOCK);
         }
     };
     public static final ItemGroup ITEMS_GROUP = new ItemGroup("items") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(RegisteredItemList.obsidian_fluid_bucket);
+            return new ItemStack(ItemList.obsidianFluidBucket);
         }
     };
 }

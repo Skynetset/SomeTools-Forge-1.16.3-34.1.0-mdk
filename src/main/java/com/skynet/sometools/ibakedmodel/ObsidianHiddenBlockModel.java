@@ -1,6 +1,6 @@
 package com.skynet.sometools.ibakedmodel;
 
-import com.skynet.sometools.listregistered.RegisteredBlockList;
+import com.skynet.sometools.list.BlockList;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
@@ -69,7 +69,7 @@ public class ObsidianHiddenBlockModel implements IBakedModel {
         //        获取下方方块的BlockState
         do {
             downBlockState = world.getBlockState(pos.down(i++));
-        } while (downBlockState.getBlock() == RegisteredBlockList.obsidian_hidden_block);
+        } while (downBlockState.getBlock() == BlockList.OBSIDIAN_HIDDEN_BLOCK);
 
         if (downBlockState.getBlock() == Blocks.AIR) {
             return modelDataMap;

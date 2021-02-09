@@ -1,6 +1,6 @@
 package com.skynet.sometools.listregistered.item.tools;
 
-import com.skynet.sometools.listregistered.RegisteredSounds;
+import com.skynet.sometools.list.SoundList;
 import com.skynet.sometools.listregistered.item.SomeToolsGroup;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -26,7 +26,7 @@ public class SoundTestItem extends Item {
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         if (worldIn.isRemote) {
-            worldIn.playSound(playerIn, playerIn.getPosition(), RegisteredSounds.MEA_SOUND,
+            worldIn.playSound(playerIn, playerIn.getPosition(), SoundList.MEA_SOUND,
                     SoundCategory.AMBIENT, 10f, 1f);
         }
         return super.onItemRightClick(worldIn, playerIn, handIn);

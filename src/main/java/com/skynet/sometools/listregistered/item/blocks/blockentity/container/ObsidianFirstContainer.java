@@ -1,6 +1,6 @@
 package com.skynet.sometools.listregistered.item.blocks.blockentity.container;
 
-import com.skynet.sometools.listregistered.RegisteredContainerTypeList;
+import com.skynet.sometools.list.ContainerTypeList;
 import com.skynet.sometools.listregistered.tileentities.ObsidianFirstContainerTileEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -25,7 +25,7 @@ public class ObsidianFirstContainer extends Container {
 
     public ObsidianFirstContainer(int id, PlayerInventory playerInventory, BlockPos pos, World world,
                                   ObsidianFirstContainerItemNumber intArray) {
-        super(RegisteredContainerTypeList.OBSIDIAN_FIRST_CONTAINER, id);
+        super(ContainerTypeList.OBSIDIAN_FIRST_CONTAINER, id);
         this.intArray = intArray;
         trackIntArray(this.intArray);
         ObsidianFirstContainerTileEntity obsidianFirstContainerTileEntity =

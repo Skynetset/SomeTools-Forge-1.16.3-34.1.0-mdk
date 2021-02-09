@@ -1,6 +1,6 @@
 package com.skynet.sometools.listregistered.item.armors;
 
-import com.skynet.sometools.listregistered.RegisteredItemList;
+import com.skynet.sometools.list.ItemList;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.crafting.Ingredient;
@@ -27,7 +27,7 @@ public enum SomeToolsArmorMaterial implements IArmorMaterial {
      * @return : null
      */
     OBSIDIAN("obsidian", 40, new int[]{50, 80, 100, 50}, 20, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F, 0.0F, () -> {
-        return Ingredient.fromItems(RegisteredItemList.obsidian_ingot);
+        return Ingredient.fromItems(ItemList.OBSIDIAN_INGOT);
     });
 
     private static final int[] MAX_DAMAGE_ARRAY = new int[]{13, 15, 16, 11};

@@ -1,7 +1,7 @@
 package com.skynet.sometools.client.hud.event;
 
 import com.skynet.sometools.client.hud.ObsidianGUI;
-import com.skynet.sometools.listregistered.RegisteredItemList;
+import com.skynet.sometools.list.ItemList;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.Hand;
 import net.minecraftforge.api.distmarker.Dist;
@@ -24,7 +24,7 @@ public class HudClientEvent {
         if (event.getType() != RenderGameOverlayEvent.ElementType.ALL) {
             return;
         }
-        if (Minecraft.getInstance().player == null || Minecraft.getInstance().player.getHeldItem(Hand.MAIN_HAND).getItem() != RegisteredItemList.obsidian_hud) {
+        if (Minecraft.getInstance().player == null || Minecraft.getInstance().player.getHeldItem(Hand.MAIN_HAND).getItem() != ItemList.OBSIDIAN_HUD_ITEM) {
             return;
         }
         ObsidianGUI obsidianGUI = new ObsidianGUI(event.getMatrixStack());

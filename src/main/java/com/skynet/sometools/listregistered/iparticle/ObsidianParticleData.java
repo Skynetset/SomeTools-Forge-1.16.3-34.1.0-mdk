@@ -2,7 +2,7 @@ package com.skynet.sometools.listregistered.iparticle;
 
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import com.skynet.sometools.listregistered.RegisteredParticleList;
+import com.skynet.sometools.list.ParticleList;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.particles.ParticleType;
@@ -76,7 +76,7 @@ public class ObsidianParticleData implements IParticleData {
 
     @Override
     public ParticleType<?> getType() {
-        return RegisteredParticleList.OBSIDIAN_PARTICLE;
+        return ParticleList.OBSIDIAN_PARTICLE;
     }
 
     @Override

@@ -1,7 +1,7 @@
 package com.skynet.sometools.listregistered.tileentities;
 
 import com.skynet.sometools.common.Utils;
-import com.skynet.sometools.listregistered.RegisteredTileEntityTypeList;
+import com.skynet.sometools.list.TileEntityTypeList;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -69,7 +69,7 @@ public class MyChestWithContainerTileEntity extends LockableLootTileEntity imple
     //    private ObsidianFirstContainerItemNumber itemNumber = new ObsidianFirstContainerItemNumber();
 
     public MyChestWithContainerTileEntity() {
-        super(RegisteredTileEntityTypeList.my_chest_with_container_tile_entity);
+        super(TileEntityTypeList.MY_CHEST_WITH_CONTAINER_TILE_ENTITY);
     }
 
     public static int calculatePlayersUsingSync(World p_213977_0_, LockableTileEntity p_213977_1_, int p_213977_2_,

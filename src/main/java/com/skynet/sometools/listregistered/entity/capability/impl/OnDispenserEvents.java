@@ -1,6 +1,6 @@
 package com.skynet.sometools.listregistered.entity.capability.impl;
 
-import com.skynet.sometools.listregistered.RegisteredItemList;
+import com.skynet.sometools.list.ItemList;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.dispenser.IBlockSource;
@@ -26,7 +26,7 @@ public class OnDispenserEvents {
 
     @SubscribeEvent
     public static void onDispenserRegister(FMLCommonSetupEvent event) {
-        DispenserBlock.registerDispenseBehavior(() -> RegisteredItemList.obsidian_fluid_bucket,
+        DispenserBlock.registerDispenseBehavior(() -> ItemList.obsidianFluidBucket,
                 new DefaultDispenseItemBehavior() {
                     private final DefaultDispenseItemBehavior dispenseItemBehavior = new DefaultDispenseItemBehavior();
 

@@ -3,16 +3,16 @@ package com.skynet.sometools.events;
 import com.skynet.sometools.client.particle.ObsidianParticleType;
 import com.skynet.sometools.common.Utils;
 import com.skynet.sometools.list.*;
-import com.skynet.sometools.listregistered.RegisteredBlockList;
 import com.skynet.sometools.listregistered.entity.FlyingSwordEntity;
 import com.skynet.sometools.listregistered.entity.ObsidianAnimalEntity;
+import com.skynet.sometools.listregistered.fluid.FluidRegister;
+import com.skynet.sometools.listregistered.iparticle.ObsidianParticleData;
 import com.skynet.sometools.listregistered.item.SomeToolsGroup;
 import com.skynet.sometools.listregistered.item.armors.SomeToolsArmorMaterial;
 import com.skynet.sometools.listregistered.item.blocks.*;
 import com.skynet.sometools.listregistered.item.blocks.blockentity.container.MyChestContainer;
 import com.skynet.sometools.listregistered.item.blocks.blockentity.container.ObsidianFirstContainer;
 import com.skynet.sometools.listregistered.item.blocks.blockentity.container.ObsidianFirstContainerItemNumber;
-import com.skynet.sometools.listregistered.fluid.FluidRegister;
 import com.skynet.sometools.listregistered.item.food.ObsidianApple;
 import com.skynet.sometools.listregistered.item.ingot.MagicIngot;
 import com.skynet.sometools.listregistered.item.itemstacktileentityrenderer.ObsidianWrenchItemStackTileEntityRenderer;
@@ -67,54 +67,41 @@ class ItemsRegistryEvents {
         register.getRegistry().registerAll(
                 ItemList.OBSIDIAN_REPLACE_1 = new ChunkReplaceCenterItem().setRegistryName(location(
                         "chunk_replace_center_item")),
-                ItemList.OBSIDIAN_BLOCK = new BlockItem(RegisteredBlockList.obsidian_block,
-                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(location(
-                        "obsidian_block")),
-                ItemList.OBSIDIAN_RUBIK_CUBE = new BlockItem(RegisteredBlockList.obsidian_rubik_cube,
+                ItemList.OBSIDIAN_BLOCK = new BlockItem(BlockList.OBSIDIAN_BLOCK,
+                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(
+                        BlockList.OBSIDIAN_BLOCK.getRegistryName()),
+                ItemList.OBSIDIAN_RUBIK_CUBE = new BlockItem(BlockList.OBSIDIAN_RUBIK_CUBE,
                         new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP))
-                        .setRegistryName(location("obsidian_rubik_cube")),
-                ItemList.OBSIDIAN_FRAME = new BlockItem(RegisteredBlockList.obsidian_frame,
-                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(location(
-                        "obsidian_frame")),
-                ItemList.GLASS_JAR = new BlockItem(RegisteredBlockList.glass_jar,
-                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(location("glass_jar")),
-                ItemList.OBSIDIAN_OBJ = new BlockItem(RegisteredBlockList.obsidian_obj,
-                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(location(
-                        "obsidian_obj")),
-                ItemList.OBSIDIAN_COUNTER = new BlockItem(RegisteredBlockList.obsidian_counter_block,
-                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(location(
-                        "obsidian_counter_block")),
-                ItemList.OBSIDIAN_HELLO = new BlockItem(RegisteredBlockList.obsidian_hello_block,
-                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(location(
-                        "obsidian_hello_block")),
-                ItemList.OBSIDIAN_ZOMBIE_BLOCK = new BlockItem(RegisteredBlockList.obsidian_zombie_block,
-                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(location(
-                        "obsidian_zombie_block")),
-                ItemList.OBSIDIAN_HIDDEN_BLOCK = new BlockItem(RegisteredBlockList.obsidian_hidden_block,
-                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(location(
-                        "obsidian_hidden_block")),
-                ItemList.OBSIDIAN_TER_BLOCK = new BlockItem(RegisteredBlockList.obsidian_ter_block,
-                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(location(
-                        "obsidian_ter_block")),
-                ItemList.OBSIDIAN_UP_BLOCK = new BlockItem(RegisteredBlockList.obsidian_up_block,
-                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(location(
-                        "obsidian_up_block")),
-                ItemList.OBSIDIAN_DOWN_BLOCK = new BlockItem(RegisteredBlockList.obsidian_down_block,
-                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(location(
-                        "obsidian_down_block")),
-                ItemList.OBSIDIAN_TRASH_BLOCK = new BlockItem(RegisteredBlockList.obsidian_trash_block,
-                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(location(
-                        "obsidian_trash_block")),
-                ItemList.OBSIDIAN_ITEM_SAVE = new BlockItem(RegisteredBlockList.obsidian_item_save,
-                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(location(
-                        "obsidian_item_save")),
-                ItemList.OBSIDIAN_FIRST_CONTAINER = new BlockItem(RegisteredBlockList.obsidian_first_container,
-                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(location(
-                        "obsidian_first_container")),
+                        .setRegistryName(BlockList.OBSIDIAN_RUBIK_CUBE.getRegistryName()),
+                ItemList.OBSIDIAN_FRAME = new BlockItem(BlockList.OBSIDIAN_FRAME,
+                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(BlockList.OBSIDIAN_FRAME.getRegistryName()),
+                ItemList.GLASS_JAR = new BlockItem(BlockList.GLASS_JAR,
+                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(BlockList.GLASS_JAR.getRegistryName()),
+                ItemList.OBSIDIAN_OBJ = new BlockItem(BlockList.OBSIDIAN_OBJ,
+                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(BlockList.OBSIDIAN_OBJ.getRegistryName()),
+                ItemList.OBSIDIAN_COUNTER = new BlockItem(BlockList.OBSIDIAN_COUNTER,
+                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(BlockList.OBSIDIAN_COUNTER.getRegistryName()),
+                ItemList.OBSIDIAN_HELLO = new BlockItem(BlockList.OBSIDIAN_HELLO,
+                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(BlockList.OBSIDIAN_HELLO.getRegistryName()),
+                ItemList.OBSIDIAN_ZOMBIE_BLOCK = new BlockItem(BlockList.OBSIDIAN_ZOMBIE_BLOCK,
+                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(BlockList.OBSIDIAN_ZOMBIE_BLOCK.getRegistryName()),
+                ItemList.OBSIDIAN_HIDDEN_BLOCK = new BlockItem(BlockList.OBSIDIAN_HIDDEN_BLOCK,
+                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(BlockList.OBSIDIAN_HIDDEN_BLOCK.getRegistryName()),
+                ItemList.OBSIDIAN_TER_BLOCK = new BlockItem(BlockList.OBSIDIAN_TER_BLOCK,
+                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(BlockList.OBSIDIAN_TER_BLOCK.getRegistryName()),
+                ItemList.OBSIDIAN_UP_BLOCK = new BlockItem(BlockList.OBSIDIAN_UP_BLOCK,
+                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(BlockList.OBSIDIAN_UP_BLOCK.getRegistryName()),
+                ItemList.OBSIDIAN_DOWN_BLOCK = new BlockItem(BlockList.OBSIDIAN_DOWN_BLOCK,
+                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(BlockList.OBSIDIAN_DOWN_BLOCK.getRegistryName()),
+                ItemList.OBSIDIAN_TRASH_BLOCK = new BlockItem(BlockList.OBSIDIAN_TRASH_BLOCK,
+                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(BlockList.OBSIDIAN_TRASH_BLOCK.getRegistryName()),
+                ItemList.OBSIDIAN_ITEM_SAVE = new BlockItem(BlockList.OBSIDIAN_ITEM_SAVE_BLOCK,
+                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(BlockList.OBSIDIAN_ITEM_SAVE_BLOCK.getRegistryName()),
+                ItemList.OBSIDIAN_FIRST_CONTAINER = new BlockItem(BlockList.OBSIDIAN_FIRST_CONTAINER_BLOCK,
+                        new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(BlockList.OBSIDIAN_FIRST_CONTAINER_BLOCK.getRegistryName()),
                 ItemList.MY_CHEST_WITH_CONTAINER_BLOCK =
-                        new BlockItem(RegisteredBlockList.my_chest_with_container,
-                                new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(location(
-                                "my_chest_with_container")),
+                        new BlockItem(BlockList.MY_CHEST_WITH_CONTAINER_BLOCK,
+                                new Item.Properties().group(SomeToolsGroup.BLOCK_GROUP)).setRegistryName(BlockList.MY_CHEST_WITH_CONTAINER_BLOCK.getRegistryName()),
 
                 ItemList.OBSIDIAN_INGOT =
                         new Item(new Item.Properties().group(SomeToolsGroup.INGOT_GROUP)).setRegistryName(location(
@@ -193,21 +180,21 @@ class ItemsRegistryEvents {
     public static void registerContainerType(final RegistryEvent.Register<ContainerType<?>> register) {
         register.getRegistry().registerAll(
                 ContainerTypeList.MY_CHEST_CONTAINER =
-                        IForgeContainerType.create((int windowId, PlayerInventory inv, PacketBuffer data) -> MyChestContainer.createGeneric9X3(windowId, inv)).setRegistryName(location("my_chest_container")),
+                        (ContainerType<MyChestContainer>) IForgeContainerType.create((int windowId, PlayerInventory inv, PacketBuffer data) -> MyChestContainer.createGeneric9X3(windowId, inv)).setRegistryName(location("my_chest_container")),
                 ContainerTypeList.OBSIDIAN_FIRST_CONTAINER =
-                        IForgeContainerType.create((int windowId, PlayerInventory inv, PacketBuffer data) -> new ObsidianFirstContainer(windowId, inv, data.readBlockPos(), Minecraft.getInstance().world, new ObsidianFirstContainerItemNumber())).setRegistryName(location("obsidian_first_container"))
+                        (ContainerType<ObsidianFirstContainer>) IForgeContainerType.create((int windowId, PlayerInventory inv, PacketBuffer data) -> new ObsidianFirstContainer(windowId, inv, data.readBlockPos(), Minecraft.getInstance().world, new ObsidianFirstContainerItemNumber())).setRegistryName(location("obsidian_first_container"))
         );
     }
 
     @SubscribeEvent
     public static void registerEntityTypes(final RegistryEvent.Register<EntityType<?>> register) {
         register.getRegistry().registerAll(
-                EntityTypeList.FLYING_SWORD_ENTITY = EntityType.Builder.create(FlyingSwordEntity::new,
+                EntityTypeList.FLYING_SWORD_ENTITY = (EntityType<FlyingSwordEntity>) EntityType.Builder.create(FlyingSwordEntity::new,
                         EntityClassification.MISC)
                         .size(3, 0.5F)
                         .build("flying_sword")
                         .setRegistryName(location("flying_sword")),
-                EntityTypeList.OBSIDIAN_ANIMAL_ENTITY = EntityType.Builder.create(ObsidianAnimalEntity::new,
+                EntityTypeList.OBSIDIAN_ANIMAL_ENTITY = (EntityType<ObsidianAnimalEntity>) EntityType.Builder.create(ObsidianAnimalEntity::new,
                         EntityClassification.MISC)
                         .size(3, 0.5F)
                         .build("obsidian_animal")
@@ -219,49 +206,49 @@ class ItemsRegistryEvents {
     public static void registerTileEntityType(final RegistryEvent.Register<TileEntityType<?>> register) {
         register.getRegistry().registerAll(
                 TileEntityTypeList.MY_CHEST_WITH_CONTAINER_TILE_ENTITY =
-                        TileEntityType.Builder.create(MyChestWithContainerTileEntity::new,
-                                RegisteredBlockList.my_chest_with_container)
+                        (TileEntityType<MyChestWithContainerTileEntity>) TileEntityType.Builder.create(MyChestWithContainerTileEntity::new,
+                                BlockList.MY_CHEST_WITH_CONTAINER_BLOCK)
                                 .build(null)
                                 .setRegistryName(location("my_chest_with_container_tile_entity")),
                 TileEntityTypeList.OBSIDIAN_COUNTER_TILE_ENTITY =
-                        TileEntityType.Builder.create(ObsidianCounterTileEntity::new,
-                                RegisteredBlockList.obsidian_counter_block)
+                        (TileEntityType<ObsidianCounterTileEntity>) TileEntityType.Builder.create(ObsidianCounterTileEntity::new,
+                                BlockList.OBSIDIAN_FIRST_CONTAINER_BLOCK)
                                 .build(null)
                                 .setRegistryName(location("obsidian_counter_tile_entity")),
                 TileEntityTypeList.OBSIDIAN_DOWN_BLOCK_ENTITY =
-                        TileEntityType.Builder.create(ObsidianDownBlockTileEntity::new,
-                                RegisteredBlockList.obsidian_down_block)
+                        (TileEntityType<ObsidianDownBlockTileEntity>) TileEntityType.Builder.create(ObsidianDownBlockTileEntity::new,
+                                BlockList.OBSIDIAN_DOWN_BLOCK)
                                 .build(null)
                                 .setRegistryName(location("obsidian_down_tile_block")),
                 TileEntityTypeList.OBSIDIAN_FIRST_CONTAINER_TILE_ENTITY =
-                        TileEntityType.Builder.create(ObsidianFirstContainerTileEntity::new,
-                                RegisteredBlockList.obsidian_first_container)
+                        (TileEntityType<ObsidianFirstContainerTileEntity>) TileEntityType.Builder.create(ObsidianFirstContainerTileEntity::new,
+                                BlockList.OBSIDIAN_FIRST_CONTAINER_BLOCK)
                                 .build(null)
                                 .setRegistryName(location("obsidian_first_container_tile_entity")),
                 TileEntityTypeList.OBSIDIAN_HELLO_TILE_ENTITY =
-                        TileEntityType.Builder.create(ObsidianHelloTileEntity::new,
-                                RegisteredBlockList.obsidian_hello_block)
+                        (TileEntityType<ObsidianHelloTileEntity>) TileEntityType.Builder.create(ObsidianHelloTileEntity::new,
+                                BlockList.OBSIDIAN_HELLO)
                                 .build(null)
                                 .setRegistryName(location("obsidian_hello_block")),
                 TileEntityTypeList.OBSIDIAN_TER_TILE_ENTITY =
-                        TileEntityType.Builder.create(ObsidianTERTileEntity::new,
-                                RegisteredBlockList.obsidian_ter_block)
+                        (TileEntityType<ObsidianTERTileEntity>) TileEntityType.Builder.create(ObsidianTERTileEntity::new,
+                                BlockList.OBSIDIAN_TER_BLOCK)
                                 .build(null)
                                 .setRegistryName(location("obsidian_ter_tile_block")),
                 TileEntityTypeList.OBSIDIAN_TRASH_TILE_ENTITY =
-                        TileEntityType.Builder.create(ObsidianTrashTileEntity::new,
-                                RegisteredBlockList.obsidian_trash_block)
+                        (TileEntityType<ObsidianTrashTileEntity>) TileEntityType.Builder.create(ObsidianTrashTileEntity::new,
+                                BlockList.OBSIDIAN_TRASH_BLOCK)
                                 .build(null)
                                 .setRegistryName(location(
                                         "obsidian_trash_tile_block")),
                 TileEntityTypeList.OBSIDIAN_UP_BLOCK_ENTITY =
-                        TileEntityType.Builder.create(ObsidianUpBlockTileEntity::new,
-                                RegisteredBlockList.obsidian_up_block)
+                        (TileEntityType<ObsidianUpBlockTileEntity>) TileEntityType.Builder.create(ObsidianUpBlockTileEntity::new,
+                                BlockList.OBSIDIAN_UP_BLOCK)
                                 .build(null)
                                 .setRegistryName(location("obsidian_up_tile_block")),
                 TileEntityTypeList.OBSIDIAN_ZOMBIE_TILE_ENTITY =
-                        TileEntityType.Builder.create(ObsidianZombieTileEntity::new,
-                                RegisteredBlockList.obsidian_zombie_block)
+                        (TileEntityType<ObsidianZombieTileEntity>) TileEntityType.Builder.create(ObsidianZombieTileEntity::new,
+                                BlockList.OBSIDIAN_ZOMBIE_BLOCK)
                                 .build(null)
                                 .setRegistryName(location("obsidian_zombie_tile_block"))
         );
@@ -270,7 +257,7 @@ class ItemsRegistryEvents {
     @SubscribeEvent
     public static void registerParticleType(final RegistryEvent.Register<ParticleType<?>> register) {
         register.getRegistry().registerAll(
-                ParticleList.OBSIDIAN_PARTICLE = new ObsidianParticleType().setRegistryName(location(
+                ParticleList.OBSIDIAN_PARTICLE = (ParticleType<ObsidianParticleData>) new ObsidianParticleType().setRegistryName(location(
                         "obsidian_particle"))
         );
     }

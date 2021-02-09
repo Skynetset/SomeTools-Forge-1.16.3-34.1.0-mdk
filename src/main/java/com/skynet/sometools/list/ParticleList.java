@@ -1,5 +1,6 @@
 package com.skynet.sometools.list;
 
+import com.skynet.sometools.listregistered.iparticle.ObsidianParticleData;
 import net.minecraft.particles.ParticleType;
 
 /**
@@ -11,5 +12,5 @@ import net.minecraft.particles.ParticleType;
  */
 
 public class ParticleList {
-    public static ParticleType<?> OBSIDIAN_PARTICLE;
+    public static ParticleType<ObsidianParticleData> OBSIDIAN_PARTICLE;
 }

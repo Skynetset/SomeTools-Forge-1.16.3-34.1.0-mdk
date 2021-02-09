@@ -1,6 +1,6 @@
 package com.skynet.sometools.listregistered.data.recipes;
 
-import com.skynet.sometools.listregistered.RegisteredItemList;
+import com.skynet.sometools.list.ItemList;
 import net.minecraft.advancements.criterion.InventoryChangeTrigger;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
@@ -25,7 +25,7 @@ public class Recipes extends ForgeRecipeProvider {
 
     @Override
     protected void registerRecipes(Consumer<IFinishedRecipe> consumer) {
-        ShapedRecipeBuilder.shapedRecipe(RegisteredItemList.obsidian_wrench)
+        ShapedRecipeBuilder.shapedRecipe(ItemList.OBSIDIAN_WRENCH)
                 .patternLine("III")
                 .patternLine(" G ")
                 .patternLine(" G ")
@@ -34,19 +34,19 @@ public class Recipes extends ForgeRecipeProvider {
                 .addCriterion("iron_ingot", InventoryChangeTrigger.Instance.forItems(Items.IRON_INGOT,
                         Items.GOLD_INGOT))
                 .build(consumer);
-        ShapedRecipeBuilder.shapedRecipe(RegisteredItemList.obsidian_block)
+        ShapedRecipeBuilder.shapedRecipe(ItemList.OBSIDIAN_BLOCK)
                 .patternLine("III")
                 .patternLine("III")
                 .patternLine("III")
-                .key('I', RegisteredItemList.obsidian_ingot)
+                .key('I', ItemList.OBSIDIAN_INGOT)
                 .addCriterion("obsidian_ingot",
-                        InventoryChangeTrigger.Instance.forItems(RegisteredItemList.obsidian_ingot))
+                        InventoryChangeTrigger.Instance.forItems(ItemList.OBSIDIAN_INGOT))
                 .build(consumer);
-        ShapedRecipeBuilder.shapedRecipe(RegisteredItemList.obsidian_ingot)
+        ShapedRecipeBuilder.shapedRecipe(ItemList.OBSIDIAN_INGOT)
                 .patternLine("I  ")
-                .key('I', RegisteredItemList.obsidian_block)
+                .key('I', ItemList.OBSIDIAN_BLOCK)
                 .addCriterion("obsidian_block",
-                        InventoryChangeTrigger.Instance.forItems(RegisteredItemList.obsidian_block))
+                        InventoryChangeTrigger.Instance.forItems(ItemList.OBSIDIAN_BLOCK))
                 .build(consumer);
     }
 }

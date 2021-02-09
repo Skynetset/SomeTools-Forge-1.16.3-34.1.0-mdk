@@ -1,6 +1,6 @@
 package com.skynet.sometools.listregistered.tileentities;
 
-import com.skynet.sometools.listregistered.RegisteredTileEntityTypeList;
+import com.skynet.sometools.list.TileEntityTypeList;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.tileentity.TileEntity;
@@ -23,7 +23,7 @@ import javax.annotation.Nullable;
 
 public class ObsidianTrashTileEntity extends TileEntity {
     public ObsidianTrashTileEntity() {
-        super(RegisteredTileEntityTypeList.obsidian_trash_tile_block);
+        super(TileEntityTypeList.OBSIDIAN_TRASH_TILE_ENTITY);
     }
 
     @Nonnull

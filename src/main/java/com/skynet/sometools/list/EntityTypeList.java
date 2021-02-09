@@ -1,5 +1,7 @@
 package com.skynet.sometools.list;
 
+import com.skynet.sometools.listregistered.entity.FlyingSwordEntity;
+import com.skynet.sometools.listregistered.entity.ObsidianAnimalEntity;
 import net.minecraft.entity.EntityType;
 
 /**
@@ -11,6 +13,6 @@ import net.minecraft.entity.EntityType;
  */
 
 public class EntityTypeList {
-    public static EntityType<?> FLYING_SWORD_ENTITY;
-    public static EntityType<?> OBSIDIAN_ANIMAL_ENTITY;
+    public static EntityType<FlyingSwordEntity> FLYING_SWORD_ENTITY;
+    public static EntityType<ObsidianAnimalEntity> OBSIDIAN_ANIMAL_ENTITY;
 }
