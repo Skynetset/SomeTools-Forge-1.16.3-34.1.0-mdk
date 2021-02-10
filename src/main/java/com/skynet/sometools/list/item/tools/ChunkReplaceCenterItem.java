@@ -2,18 +2,17 @@ package com.skynet.sometools.list.item.tools;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.skynet.sometools.common.Utils;
-import com.skynet.sometools.list.BlockList;
-import com.skynet.sometools.list.SoundList;
 import com.skynet.sometools.list.item.SomeToolsGroup;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.IClearable;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
@@ -39,30 +38,52 @@ public class ChunkReplaceCenterItem extends Item {
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
+        String text = "";
 
         //服务端
         if (!worldIn.isRemote) {
             BlockPos position = playerIn.getPosition();
-            String chunkPos = String.format("Chunk: %d %d %d in %d %d %d", position.getX() & 15, position.getY() & 15,
+            text = String.format("Chunk: %d %d %d in %d %d %d", position.getX() & 15, position.getY() & 15,
                     position.getZ() & 15, position.getX() >> 4, position.getY() >> 4, position.getZ() >> 4);
-            playerIn.sendMessage(new TranslationTextComponent(chunkPos), playerIn.getUniqueID());
+            playerIn.sendMessage(new TranslationTextComponent(text), playerIn.getUniqueID());
 
-            findChunkMainPoins(position, false).forEach(pos -> {
-                try {
-                    setBlock(worldIn.getServer().getWorld(playerIn.getEntityWorld().getDimensionKey()), pos,
-                            BlockList.OBSIDIAN_BLOCK.getDefaultState(), false);
-                } catch (CommandSyntaxException e) {
-                    e.printStackTrace();
-                }
-            });
+            ItemStack itemStack = playerIn.getHeldItemOffhand();
+            PlayerInventory playerInventory = playerIn.inventory;
+            List<Integer> allSlot = Utils.getAllSlot(playerInventory, itemStack);
+            int countOfStack = Utils.getTotalCountOfStack(playerInventory, allSlot);
+            List<BlockPos> poins = findChunkMainPoins(position, false);
+
+            if (countOfStack < 1) {
+                text = "副手中可用于替换的方块数量不够，请查看副手方块";
+            } else {
+                poins.forEach(pos -> {
+                    ItemStack stackInSlot = playerInventory.getStackInSlot(allSlot.get(0));
+                    if (stackInSlot.isEmpty()) {
+                        playerInventory.removeStackFromSlot(allSlot.get(0));
+                    } else {
+                        try {
+                            int inSlotCount = stackInSlot.getCount();
+                            setBlock(worldIn.getServer().getWorld(playerIn.getEntityWorld().getDimensionKey()), pos,
+                                    Block.getBlockFromItem(stackInSlot.getItem()).getDefaultState(), false);
+                            stackInSlot.setCount(--inSlotCount);
+                        } catch (CommandSyntaxException commandSyntaxException) {
+                            commandSyntaxException.printStackTrace();
+                        }
+                    }
+                    allSlot.removeIf(e -> playerInventory.getStackInSlot(e).isEmpty());
+                });
+            }
+
         }
 
-        if (worldIn.isRemote) {
-            worldIn.playSound(playerIn, playerIn.getPosition(), SoundList.MEA_SOUND,
-                    SoundCategory.AMBIENT, 10f, 1f);
-        }
+        // if (worldIn.isRemote) {
+        //     worldIn.playSound(playerIn, playerIn.getPosition(), SoundList.MEA_SOUND,
+        //             SoundCategory.AMBIENT, 10f, 1f);
+        // }
+        playerIn.sendMessage(new TranslationTextComponent(text), playerIn.getUniqueID());
         return super.onItemRightClick(worldIn, playerIn, handIn);
     }
+
 
     private static int setBlock(ServerWorld serverworld, BlockPos pos, BlockState state, Boolean isDestroy) throws CommandSyntaxException {
         boolean flag;
